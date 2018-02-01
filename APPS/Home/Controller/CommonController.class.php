@@ -31,7 +31,7 @@ class CommonController extends Controller{
         }
         define("LoginS",$login_status);
         //基本设置
-        $this->assign(array('logo'=>cfg_web_logo,'btitle'=>cfg_web_title,'rootURL'=>cfg_web_address,'wkeyworld'=>cfg_web_keyworld,'wdescription'=>cfg_web_description,'footinfo'=>cfg_web_footinfo,'beian'=>cfg_web_beian,'beian'=>cfg_web_beian,'Login'=>$this->a_url("","Home","Member","login","","",1),'Reg'=>$this->a_url("","Home","Member","reg","","",1),'LoginOut'=>$this->a_url("","Home","Member","loginout","","",1),'login_status'=>$login_status));
+        $this->assign(array('logo'=>tupain.cfg_web_logo,'btitle'=>cfg_web_title,'rootURL'=>cfg_web_address,'wkeyworld'=>cfg_web_keyworld,'wdescription'=>cfg_web_description,'footinfo'=>cfg_web_footinfo,'beian'=>cfg_web_beian,'beian'=>cfg_web_beian,'Login'=>$this->a_url("","Home","Member","login","","",1),'Reg'=>$this->a_url("","Home","Member","reg","","",1),'LoginOut'=>$this->a_url("","Home","Member","loginout","","",1),'login_status'=>$login_status));
     }
     
        
@@ -58,7 +58,7 @@ class CommonController extends Controller{
     
     //顶部导航显示
     public function nav(){
-        $navArr = $this->query("select * from `".PR."column` where ".sql_true." and siteid=".site." and pid=0  order by orderid asc ");
+        $navArr = $this->query("select * from `".PR."column` where ".sql_true." and siteid=".site." and pid=0 and show_weizhi like '%,2%' order by orderid asc ");
         $nav_str = "";
         $mo =I("mo","1");
         $cluinid =I("cluinid",1);
@@ -70,7 +70,7 @@ class CommonController extends Controller{
             }else{
                 $moC ="";
             }
-            $nav_str .= '<li '.$stick.'><a '.$moC.' href="'.$v["url"].'&mo='.$i.'">'.$v["title"].'</a></li>';
+            $nav_str .= '<a href="'.$v["url"].'" class="menu_item">'.$v["title"].'</a>';
             $i++;
         }
         $this->assign("nav",$nav_str);

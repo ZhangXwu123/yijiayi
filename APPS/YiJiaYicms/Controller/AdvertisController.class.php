@@ -24,13 +24,13 @@ class AdvertisController extends CommonController{
          $url1 = $this->a_url("","YiJiaYicms","Advertis","is_switch","",array("id","if"));
          $url2 = $this->a_url("","YiJiaYicms","Advertis","addup","",array("id","if"));
          $url3 = $this->a_url("","YiJiaYicms","Advertis","del","",array("id","if"));
-         $reuslt = $this->GetPage("select * from `".PR."ad` where ".sql_tf." $sql order by orderid  asc ",20);
+         $reuslt = $this->GetPage("select * from `".PR."ad` where ".sql_tf." $sql order by addtime desc, orderid  asc,colunmid asc ",20);
          foreach($reuslt as $key=>$v){
                         $str .='<tr>'; 
                         $type_t = $this->GetOne("select * from `".PR."ad_type` where id= ".$v["type"]." ");
                         $str .='<td title="'.$v["title"].'" style="text-align: left; padding: 15px;"><a target="_blank" href="'.$v["url"].'"> <img src="__ROOT__'.$v["pic"].'" style="width:60px; height:60px; border:1px solid #ccc; margin:2px; padding:1px;"> </a></td>';  
                         $str .='<td style="text-align: left; padding: 15px;">'.$type_t["title"]." [".$type_t["id"]."]".'</td>'; 
-                        $str .='<td>'.$v["title"].'</td>'; 
+                        $str .='<td style="text-align: left; padding: 15px;">'.$v["title"].'</td>'; 
                         $colunmResult   = $this->GetOne("select title from `".PR."column` where id=".$v["colunmid"]." ");
                         $siteResult     = $this->GetOne("select site from `".PR."site` where id=".$v["siteid"]." ");
                         if(!empty($colunmResult))   $colunmStr= $colunmResult["title"]; else $colunmStr='栏目未设置';
@@ -117,7 +117,7 @@ class AdvertisController extends CommonController{
         }
         
         if ($upload == 1 && !empty($_FILES)) { //上传
-                    $result = $this->uplodes($_FILES, date("YmdHis",thistime).$this->getRandChar(2),0, 220, 80, 'JCHK/'.date("Y",thistime)."/".date("Ymd",thistime));
+                    $result = $this->uplodes($_FILES, date("YmdHis",thistime).$this->getRandChar(2),0, 220, 80, 'YiJiaYi/'.date("Y",thistime)."/".date("Ymd",thistime));
                     if ($result[0] > 0) {
                             exit(json_encode(array("error" => 1, "errortxt" => $result[1])));
                     }

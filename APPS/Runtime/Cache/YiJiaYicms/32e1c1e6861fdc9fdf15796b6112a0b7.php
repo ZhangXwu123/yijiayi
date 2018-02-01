@@ -1,7 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
-To change this template file, choose __PUBLIC__/JiCheng/tools | Templates
+To change this template file, choose __PUBLIC__/YiJiaYi/tools | Templates
 and open the template in the editor.
 -->
 <html>
@@ -11,9 +11,9 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <link href="__PUBLIC__/JiCheng/css/css.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="__PUBLIC__/JiCheng/javascript/jquery-1.12.3.min.js"></script>
-        <script type="text/javascript" src="__PUBLIC__/JiCheng/javascript/js.js"></script>
+        <link href="__PUBLIC__/YiJiaYi/css/css.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="__PUBLIC__/YiJiaYi/javascript/jquery-1.12.3.min.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/YiJiaYi/javascript/js.js"></script>
     </head>
     <body>
         <div class="master">

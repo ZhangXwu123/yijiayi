@@ -1,0 +1,56 @@
+/*Õº∆¨*/
+.team{
+  width: 1080px;
+  height: 420px;
+}
+/*Œƒ◊÷ΩÈ…‹*/
+.text{
+  margin-top: 95px;
+  margin-bottom: 102px;
+}
+.text .name{
+  font-size: 65px;
+}
+.text .introduce{
+  font-size: 30px;
+}
+/*----------------------*/
+/*¿œ ¶ΩÈ…‹*/
+  /*¿œ ¶Õ∑œÒ*/
+  .teacher{
+    margin-top: 83px;
+  }
+  .teacher .pic{
+     width: 246px;
+     height: 246px;
+     margin: 0 auto;
+   }
+  /*√˚≥∆*/
+  .teacher .name{
+    width: 940px;
+    margin: 0 auto;
+    margin-top: 84px;
+  }
+  .teacher .name .teacher_name{
+    margin-right: 400px;
+    font-size: 40px;
+  }
+  .teacher .name>div{
+    display: inline-block;
+  }
+  .teacher .name .btn.btn-red.border35{
+    width: 235px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 35px;
+  }
+  /*ΩÈ…‹*/
+.teacher .teacher_introduce{
+  width: 100%;
+  background-color: #f6f6f6;
+  padding: 53px 19px;
+  font-size: 30px;
+  margin-top: 80px;
+  border-bottom: 1px solid #bebebe;
+  border-top: 1px solid #bebebe;
+}

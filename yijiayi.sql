@@ -1,24 +1,22 @@
 /*
- Navicat Premium Data Transfer
+Navicat MySQL Data Transfer
 
- Source Server         : 本地数据
- Source Server Type    : MySQL
- Source Server Version : 50534
- Source Host           : localhost
- Source Database       : yijiayi
+Source Server         : 本地数据库
+Source Server Version : 100109
+Source Host           : localhost:3306
+Source Database       : yijiayi
 
- Target Server Type    : MySQL
- Target Server Version : 50534
- File Encoding         : utf-8
+Target Server Type    : MYSQL
+Target Server Version : 100109
+File Encoding         : 65001
 
- Date: 02/01/2018 12:27:19 PM
+Date: 2018-02-01 17:39:56
 */
 
-SET NAMES utf8;
-SET FOREIGN_KEY_CHECKS = 0;
+SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
---  Table structure for `yiyi_ad`
+-- Table structure for yiyi_ad
 -- ----------------------------
 DROP TABLE IF EXISTS `yiyi_ad`;
 CREATE TABLE `yiyi_ad` (
@@ -39,48 +37,15 @@ CREATE TABLE `yiyi_ad` (
   `deladmin` smallint(5) unsigned NOT NULL,
   `sys` enum('true','false') CHARACTER SET utf8 NOT NULL DEFAULT 'false',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='广告管理';
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='广告管理';
 
 -- ----------------------------
---  Records of `yiyi_ad`
+-- Records of yiyi_ad
 -- ----------------------------
-BEGIN;
-INSERT INTO `yiyi_ad` VALUES ('7', '1', '1', '1', '幻灯', '/Public/upload/JCHK/2018/20180116/2018/20180116/20180116090747bo.png', '', 'true', '1', '1516064869', '2', '1516757880', '2', '0', '0', 'false'), ('8', '1', '1', '1', '幻灯', '/Public/upload/JCHK/2018/20180116/2018/20180116/20180116090816fJ.png', '', 'true', '0', '1516064897', '2', '0', '0', '0', '0', 'false'), ('9', '2', '1', '1', '广告', '/Public/upload/JCHK/2018/20180116/2018/20180116/20180116091219tB.jpg', '', 'true', '0', '1516065140', '2', '0', '0', '0', '0', 'false'), ('6', '1', '1', '1', '幻灯', '/Public/upload/JCHK/2018/20180115/2018/20180115/20180115174346I4.jpg', '', 'true', '0', '1516009429', '2', '0', '0', '0', '0', 'false'), ('10', '2', '1', '11', '广告', '/Public/upload/JCHK/2018/20180116/2018/20180116/20180116091253Ck.jpg', '', 'true', '4', '1516065175', '2', '1517307395', '2', '0', '0', 'false'), ('11', '2', '1', '12', '广告', '/Public/upload/JCHK/2018/20180116/2018/20180116/20180116091315Fb.jpg', '', 'true', '2', '1516065196', '2', '1517306972', '2', '0', '0', 'false'), ('12', '2', '1', '11', '2', '/Public/upload/JCHK/2018/20180130/2018/20180130/20180130181458l2.jpg', '', 'true', '0', '1517307300', '2', '0', '0', '0', '0', 'false'), ('13', '2', '1', '12', '3', '/Public/upload/JCHK/2018/20180130/2018/20180130/20180130190203La.jpg', '', 'true', '0', '1517310124', '2', '0', '0', '0', '0', 'false');
-COMMIT;
+INSERT INTO `yiyi_ad` VALUES ('1', '1', '1', '1', '1', '/Public/upload/YiJiaYi/2018/20180201/2018/20180201/20180201152452Kd.png', '', 'true', '0', '1517469894', '2', '0', '0', '0', '0', 'false');
 
 -- ----------------------------
---  Table structure for `yiyi_ad_type`
--- ----------------------------
-DROP TABLE IF EXISTS `yiyi_ad_type`;
-CREATE TABLE `yiyi_ad_type` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
-  `pid` smallint(5) unsigned NOT NULL COMMENT '上级id',
-  `ptr` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT '0,' COMMENT '上级id字符串',
-  `title` varchar(30) CHARACTER SET utf8 NOT NULL COMMENT '广告位名称',
-  `width` smallint(5) unsigned NOT NULL COMMENT '广告位宽度',
-  `height` smallint(5) unsigned NOT NULL COMMENT '广告位高度',
-  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列顺序',
-  `switch` enum('true','false','del','delete') CHARACTER SET utf8 NOT NULL DEFAULT 'true',
-  `addtime` int(10) NOT NULL,
-  `addadmin` int(10) unsigned NOT NULL,
-  `uptime` int(10) NOT NULL,
-  `upadmin` int(10) unsigned NOT NULL,
-  `deltime` int(10) NOT NULL,
-  `deladmin` smallint(10) unsigned NOT NULL,
-  `sys` enum('true','false') CHARACTER SET utf8 NOT NULL DEFAULT 'false' COMMENT '系统默认  当为true时不能被开发组以外的组删除',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='广告类型管理';
-
--- ----------------------------
---  Records of `yiyi_ad_type`
--- ----------------------------
-BEGIN;
-INSERT INTO `yiyi_ad_type` VALUES ('1', '1', '0', '0,', '顶部幻灯', '0', '0', '0', 'true', '0', '0', '0', '0', '0', '0', 'false'), ('2', '1', '0', '0,', '顶部中间', '0', '0', '0', 'true', '0', '0', '0', '0', '0', '0', 'false'), ('3', '1', '0', '0,', '顶部右侧', '0', '0', '0', 'true', '0', '0', '0', '0', '0', '0', 'false'), ('4', '1', '0', '0,', '子页位置', '0', '0', '0', 'true', '0', '0', '0', '0', '0', '0', 'false'), ('5', '1', '0', '0,', '其他位置', '0', '0', '0', 'true', '0', '0', '0', '0', '0', '0', 'false');
-COMMIT;
-
--- ----------------------------
---  Table structure for `yiyi_admin`
+-- Table structure for yiyi_admin
 -- ----------------------------
 DROP TABLE IF EXISTS `yiyi_admin`;
 CREATE TABLE `yiyi_admin` (
@@ -126,14 +91,14 @@ CREATE TABLE `yiyi_admin` (
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='管理人员 或行政人员表';
 
 -- ----------------------------
---  Records of `yiyi_admin`
+-- Records of yiyi_admin
 -- ----------------------------
-BEGIN;
-INSERT INTO `yiyi_admin` VALUES ('1', 'admin2', '95c9fcc8f4753dca11e1034123e765eb610041c2', 'Zq7C', '0', '0', null, '4', '1', '421122222222222222', '027-4340187', '13871277495', '1286364316@qq.com', '1286364316@163.com', '1286364316', '1', '1517405815', '0.0.0.0', '1517405784', '0.0.0.0', '/Public/upload/fujian/20160707/20160707135803.jpg', '', 'y', '0', 'true', '0', '1467871568', '0', '1517405815', '0', '1467870353', '0', 'true', '0', '', '', '', null), ('2', 'admin', '91811f4c76ae8bb1868d86fe7afb9764c59db5cf', 'nsvY', '0000', '0', '1,,', '1', '0', '431222222222222000', '021-464548974654', '13871277000', '1000@qq.com', '', '', '2', '1517406789', '0.0.0.0', '1517363065', '0.0.0.0', '', '', 'y', '0', 'true', '0', '1467871568', '0', '1517406789', '3', '0', '0', 'false', '7', '', '', '', '/Public/upload/JCHK/headpic/2018/20180115/20180115110121va.png'), ('3', 'ceshi', 'd1af77297f52ffd16130b925f3cd4947ad93e711', 'j3BP', '10000', '0', '1,2,3', '3', '0', '4212222222222222212', null, '13871277001', '123@qq.com', null, '', '1', '1515983566', '0.0.0.0', '1515982617', '0.0.0.0', null, '', 'y', '0', 'true', '0', '1468823220', '1', '1515985272', '3', '0', '0', 'false', '7', '', '', '权限测试', '/Public/upload/JCHK/headpic/2018/20180115/20180115110109he.jpg');
-COMMIT;
+INSERT INTO `yiyi_admin` VALUES ('1', 'admin2', '563936ebf286eca7cf001d0e78e62f2a61e85c72', 'aOnH', '0', '0', null, '4', '1', '421122222222222222', '027-4340187', '13871277495', '1286364316@qq.com', '1286364316@163.com', '1286364316', '1', '1517470603', '0.0.0.0', '1517405815', '0.0.0.0', '/Public/upload/fujian/20160707/20160707135803.jpg', '', 'y', '0', 'true', '0', '1467871568', '0', '1517470603', '0', '1467870353', '0', 'true', '0', '', '', '', null);
+INSERT INTO `yiyi_admin` VALUES ('2', 'admin', '63334f3a4b29d0e2705b45966393e996799df75f', 'lOKh', '0000', '0', '1,,', '1', '0', '431222222222222000', '021-464548974654', '13871277000', '1000@qq.com', '', '', '2', '1517466875', '0.0.0.0', '1517459888', '0.0.0.0', '', '', 'y', '0', 'true', '0', '1467871568', '0', '1517466875', '3', '0', '0', 'false', '7', '', '', '', '/Public/upload/JCHK/headpic/2018/20180115/20180115110121va.png');
+INSERT INTO `yiyi_admin` VALUES ('3', 'ceshi', 'd1af77297f52ffd16130b925f3cd4947ad93e711', 'j3BP', '10000', '0', '1,2,3', '3', '0', '4212222222222222212', null, '13871277001', '123@qq.com', null, '', '1', '1515983566', '0.0.0.0', '1515982617', '0.0.0.0', null, '', 'y', '0', 'true', '0', '1468823220', '1', '1515985272', '3', '0', '0', 'false', '7', '', '', '权限测试', '/Public/upload/JCHK/headpic/2018/20180115/20180115110109he.jpg');
 
 -- ----------------------------
---  Table structure for `yiyi_admin_group`
+-- Table structure for yiyi_admin_group
 -- ----------------------------
 DROP TABLE IF EXISTS `yiyi_admin_group`;
 CREATE TABLE `yiyi_admin_group` (
@@ -156,14 +121,13 @@ CREATE TABLE `yiyi_admin_group` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='权限组表';
 
 -- ----------------------------
---  Records of `yiyi_admin_group`
+-- Records of yiyi_admin_group
 -- ----------------------------
-BEGIN;
-INSERT INTO `yiyi_admin_group` VALUES ('1', '1', '技术管理员', '开发管理员拥有最高权限。请合理分配权限。', 'YiJiaYicms_Index,YiJiaYicms_Index_index,YiJiaYicms_Index,YiJiaYicms_Index_EditPassword,YiJiaYicms_Config,YiJiaYicms_Config_index,YiJiaYicms_Advertis,YiJiaYicms_Advertis_index,YiJiaYicms_Advertis_add,YiJiaYicms_Advertis_edit,YiJiaYicms_Advertis_del,YiJiaYicms_Advertis_is_switch,YiJiaYicms_Link,YiJiaYicms_Link_index,YiJiaYicms_Link_add,YiJiaYicms_Link_edit,YiJiaYicms_Link_del,YiJiaYicms_Link_is_switch,YiJiaYicms_Log,YiJiaYicms_Log_index,YiJiaYicms_Log_look,YiJiaYicms_City,YiJiaYicms_City_index,YiJiaYicms_City_is_switch,YiJiaYicms_Index,YiJiaYicms_Index_EditCode,YiJiaYicms_AdminGroup,YiJiaYicms_AdminGroup_index,YiJiaYicms_AdminGroup,YiJiaYicms_AdminGroup_index,YiJiaYicms_AdminGroup_add,YiJiaYicms_AdminGroup_edit,YiJiaYicms_AdminGroup_del2,YiJiaYicms_AdminGroup_is_switch2,YiJiaYicms_AdminGroup_JSGetCity,YiJiaYicms_AdminGroup,YiJiaYicms_AdminGroup_group,YiJiaYicms_AdminGroup_is_switch,YiJiaYicms_AdminGroup_del,YiJiaYicms_AdminGroup_group_addup_add,YiJiaYicms_AdminGroup_group_addup_edit,YiJiaYicms_Column,YiJiaYicms_Column_index,YiJiaYicms_Column,YiJiaYicms_Column_index,YiJiaYicms_Column_add,YiJiaYicms_Column_edit,YiJiaYicms_Column_del2,YiJiaYicms_Column_is_switch2,YiJiaYicms_Column,YiJiaYicms_Column_column,YiJiaYicms_Column_column_addup_add,YiJiaYicms_Column_column_addup_edit,YiJiaYicms_Column_is_switch,YiJiaYicms_Column_del,YiJiaYicms_Column_show_position,YiJiaYicms_ZhaoPin,YiJiaYicms_ZhaoPin_index,YiJiaYicms_ZhaoPin,YiJiaYicms_ZhaoPin_index,YiJiaYicms_ZhaoPin_add,YiJiaYicms_ZhaoPin_edit,YiJiaYicms_ZhaoPin_del,YiJiaYicms_ZhaoPin_is_switch,YiJiaYicms_Product,YiJiaYicms_Product_index,YiJiaYicms_Product,YiJiaYicms_Product_index,YiJiaYicms_Product_add,YiJiaYicms_Product_edit,YiJiaYicms_Product_del,YiJiaYicms_Product_is_switch,YiJiaYicms_ProductType,YiJiaYicms_ProductType_index,YiJiaYicms_ProductType_add,YiJiaYicms_ProductType_edit,YiJiaYicms_ProductType_del,YiJiaYicms_ProductType_is_switch,YiJiaYicms_Member,YiJiaYicms_Member_index,YiJiaYicms_Member,YiJiaYicms_Member_index,YiJiaYicms_Member_edit,YiJiaYicms_Member_del,YiJiaYicms_Member_is_switch', '1', 'true', '1468547516', '3', '1517406698', '1', '1468547947', '3', '0', 'false'), ('2', '10', '系统管理员管理', '系统管理员管理', 'YiJiaYicms_Index,YiJiaYicms_Index_index,YiJiaYicms_Index,YiJiaYicms_Index_EditPassword,YiJiaYicms_Config,YiJiaYicms_Config_index,YiJiaYicms_Advertis,YiJiaYicms_Advertis_index,YiJiaYicms_Advertis_add,YiJiaYicms_Advertis_edit,YiJiaYicms_Advertis_del,YiJiaYicms_Advertis_is_switch,YiJiaYicms_Link,YiJiaYicms_Link_index,YiJiaYicms_Link_add,YiJiaYicms_Link_edit,YiJiaYicms_Link_del,YiJiaYicms_Link_is_switch,YiJiaYicms_Column,YiJiaYicms_Column_index,YiJiaYicms_Column,YiJiaYicms_Column_index,YiJiaYicms_Column_add,YiJiaYicms_Column_edit,YiJiaYicms_Column_del2,YiJiaYicms_Column_is_switch2,YiJiaYicms_Column,YiJiaYicms_Column_column,YiJiaYicms_Column_column_addup_add,YiJiaYicms_Column_column_addup_edit,YiJiaYicms_Column_is_switch,YiJiaYicms_Column_del,YiJiaYicms_Column_show_position,YiJiaYicms_ZhaoPin,YiJiaYicms_ZhaoPin_index,YiJiaYicms_ZhaoPin,YiJiaYicms_ZhaoPin_index,YiJiaYicms_ZhaoPin_add,YiJiaYicms_ZhaoPin_edit,YiJiaYicms_ZhaoPin_del,YiJiaYicms_ZhaoPin_is_switch,YiJiaYicms_Product,YiJiaYicms_Product_index,YiJiaYicms_Product,YiJiaYicms_Product_index,YiJiaYicms_Product_add,YiJiaYicms_Product_edit,YiJiaYicms_Product_del,YiJiaYicms_Product_is_switch,YiJiaYicms_ProductType,YiJiaYicms_ProductType_index,YiJiaYicms_ProductType_add,YiJiaYicms_ProductType_edit,YiJiaYicms_ProductType_del,YiJiaYicms_ProductType_is_switch,YiJiaYicms_Member,YiJiaYicms_Member_index,YiJiaYicms_Member,YiJiaYicms_Member_index,YiJiaYicms_Member_edit,YiJiaYicms_Member_del,YiJiaYicms_Member_is_switch', '1', 'true', '1501475335', '3', '1517406771', '1', '0', '0', '0', 'false');
-COMMIT;
+INSERT INTO `yiyi_admin_group` VALUES ('1', '1', '技术管理员', '开发管理员拥有最高权限。请合理分配权限。', 'YiJiaYicms_Index,YiJiaYicms_Index_index,YiJiaYicms_Index,YiJiaYicms_Index_EditPassword,YiJiaYicms_Config,YiJiaYicms_Config_index,YiJiaYicms_Advertis,YiJiaYicms_Advertis_index,YiJiaYicms_Advertis_add,YiJiaYicms_Advertis_edit,YiJiaYicms_Advertis_del,YiJiaYicms_Advertis_is_switch,YiJiaYicms_Link,YiJiaYicms_Link_index,YiJiaYicms_Link_add,YiJiaYicms_Link_edit,YiJiaYicms_Link_del,YiJiaYicms_Link_is_switch,YiJiaYicms_Log,YiJiaYicms_Log_index,YiJiaYicms_Log_look,YiJiaYicms_City,YiJiaYicms_City_index,YiJiaYicms_City_is_switch,YiJiaYicms_Index,YiJiaYicms_Index_EditCode,YiJiaYicms_AdminGroup,YiJiaYicms_AdminGroup_index,YiJiaYicms_AdminGroup,YiJiaYicms_AdminGroup_index,YiJiaYicms_AdminGroup_add,YiJiaYicms_AdminGroup_edit,YiJiaYicms_AdminGroup_del2,YiJiaYicms_AdminGroup_is_switch2,YiJiaYicms_AdminGroup_JSGetCity,YiJiaYicms_AdminGroup,YiJiaYicms_AdminGroup_group,YiJiaYicms_AdminGroup_is_switch,YiJiaYicms_AdminGroup_del,YiJiaYicms_AdminGroup_group_addup_add,YiJiaYicms_AdminGroup_group_addup_edit,YiJiaYicms_Column,YiJiaYicms_Column_index,YiJiaYicms_Column,YiJiaYicms_Column_index,YiJiaYicms_Column_add,YiJiaYicms_Column_edit,YiJiaYicms_Column_del2,YiJiaYicms_Column_is_switch2,YiJiaYicms_Column,YiJiaYicms_Column_column,YiJiaYicms_Column_column_addup_add,YiJiaYicms_Column_column_addup_edit,YiJiaYicms_Column_is_switch,YiJiaYicms_Column_del,YiJiaYicms_Column_show_position,YiJiaYicms_ZhaoPin,YiJiaYicms_ZhaoPin_index,YiJiaYicms_ZhaoPin,YiJiaYicms_ZhaoPin_index,YiJiaYicms_ZhaoPin_add,YiJiaYicms_ZhaoPin_edit,YiJiaYicms_ZhaoPin_del,YiJiaYicms_ZhaoPin_is_switch,YiJiaYicms_Product,YiJiaYicms_Product_index,YiJiaYicms_Product,YiJiaYicms_Product_index,YiJiaYicms_Product_add,YiJiaYicms_Product_edit,YiJiaYicms_Product_del,YiJiaYicms_Product_is_switch,YiJiaYicms_ProductType,YiJiaYicms_ProductType_index,YiJiaYicms_ProductType_add,YiJiaYicms_ProductType_edit,YiJiaYicms_ProductType_del,YiJiaYicms_ProductType_is_switch,YiJiaYicms_Member,YiJiaYicms_Member_index,YiJiaYicms_Member,YiJiaYicms_Member_index,YiJiaYicms_Member_edit,YiJiaYicms_Member_del,YiJiaYicms_Member_is_switch', '1', 'true', '1468547516', '3', '1517406698', '1', '1468547947', '3', '0', 'false');
+INSERT INTO `yiyi_admin_group` VALUES ('2', '10', '系统管理员管理', '系统管理员管理', 'YiJiaYicms_Index,YiJiaYicms_Index_index,YiJiaYicms_Index,YiJiaYicms_Index_EditPassword,YiJiaYicms_Config,YiJiaYicms_Config_index,YiJiaYicms_Advertis,YiJiaYicms_Advertis_index,YiJiaYicms_Advertis_add,YiJiaYicms_Advertis_edit,YiJiaYicms_Advertis_del,YiJiaYicms_Advertis_is_switch,YiJiaYicms_Link,YiJiaYicms_Link_index,YiJiaYicms_Link_add,YiJiaYicms_Link_edit,YiJiaYicms_Link_del,YiJiaYicms_Link_is_switch,YiJiaYicms_Column,YiJiaYicms_Column_index,YiJiaYicms_Column,YiJiaYicms_Column_index,YiJiaYicms_Column_add,YiJiaYicms_Column_edit,YiJiaYicms_Column_del2,YiJiaYicms_Column_is_switch2,YiJiaYicms_Column,YiJiaYicms_Column_column,YiJiaYicms_Column_column_addup_add,YiJiaYicms_Column_column_addup_edit,YiJiaYicms_Column_is_switch,YiJiaYicms_Column_del,YiJiaYicms_Column_show_position,YiJiaYicms_ZhaoPin,YiJiaYicms_ZhaoPin_index,YiJiaYicms_ZhaoPin,YiJiaYicms_ZhaoPin_index,YiJiaYicms_ZhaoPin_add,YiJiaYicms_ZhaoPin_edit,YiJiaYicms_ZhaoPin_del,YiJiaYicms_ZhaoPin_is_switch,YiJiaYicms_Product,YiJiaYicms_Product_index,YiJiaYicms_Product,YiJiaYicms_Product_index,YiJiaYicms_Product_add,YiJiaYicms_Product_edit,YiJiaYicms_Product_del,YiJiaYicms_Product_is_switch,YiJiaYicms_ProductType,YiJiaYicms_ProductType_index,YiJiaYicms_ProductType_add,YiJiaYicms_ProductType_edit,YiJiaYicms_ProductType_del,YiJiaYicms_ProductType_is_switch,YiJiaYicms_Member,YiJiaYicms_Member_index,YiJiaYicms_Member,YiJiaYicms_Member_index,YiJiaYicms_Member_edit,YiJiaYicms_Member_del,YiJiaYicms_Member_is_switch', '1', 'true', '1501475335', '3', '1517406771', '1', '0', '0', '0', 'false');
 
 -- ----------------------------
---  Table structure for `yiyi_admin_menu`
+-- Table structure for yiyi_admin_menu
 -- ----------------------------
 DROP TABLE IF EXISTS `yiyi_admin_menu`;
 CREATE TABLE `yiyi_admin_menu` (
@@ -189,14 +153,65 @@ CREATE TABLE `yiyi_admin_menu` (
 ) ENGINE=MyISAM AUTO_INCREMENT=10045 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='后台菜单表';
 
 -- ----------------------------
---  Records of `yiyi_admin_menu`
+-- Records of yiyi_admin_menu
 -- ----------------------------
-BEGIN;
-INSERT INTO `yiyi_admin_menu` VALUES ('2', '1', '0,1,', '密码修改', 'YiJiaYicms', 'Index', 'EditPassword', '', '', '', '1', 'EditPassword', '', 'true', 'true', '2', '1', 'false'), ('3', '1', '0,1,', '基本设置', 'YiJiaYicms', 'Config', 'index', '', '', '', '1', 'index', '', 'true', 'true', '3', '1', 'false'), ('26', '25', '0,25,', '产品列表', 'YiJiaYicms', 'Product', 'index', '', '', '', '1', 'index,add,edit,del,is_switch', '', 'true', 'true', '27', '1', 'false'), ('27', '25', '0,25,', '产品分类', 'YiJiaYicms', 'ProductType', 'index', '', '', '', '1', 'index,add,edit,del,is_switch', '', 'true', 'true', '26', '1', 'false'), ('21', '20', '0,20,', '栏目列表', 'YiJiaYicms', 'Column', 'index', '', '', '', '1', 'index,add,edit,del2,is_switch2', '', 'true', 'true', '22', '1', 'false'), ('8', '1', '0,1,', '代码编辑', 'YiJiaYicms', 'Index', 'EditCode', '', '', '', '1', 'EditCode', '', 'true', 'true', '8', '1', 'false'), ('28', '0', '0,', '用户管理', 'YiJiaYicms', 'Member', 'index', '', '', '', '0', 'index', '', 'true', 'true', '28', '1', 'false'), ('23', '0', '0,', '招聘管理', 'YiJiaYicms', 'ZhaoPin', 'index', '', '', '', '0', 'index', '', 'true', 'true', '23', '1', 'false'), ('24', '23', '0,23,', '招聘列表', 'YiJiaYicms', 'ZhaoPin', 'index', '', '', '', '1', 'index,add,edit,del,is_switch', '', 'true', 'true', '28', '1', 'false'), ('5', '1', '0,1,', '友情链接', 'YiJiaYicms', 'Link', 'index', '', '', '', '1', 'index,add,edit,del,is_switch', '', 'true', 'true', '5', '1', 'false'), ('29', '28', '0,28,', '用户列表', 'YiJiaYicms', 'Member', 'index', '', '', '', '1', 'index,edit,del,is_switch', '', 'true', 'true', '29', '1', 'false'), ('4', '1', '0,1,', '广告管理', 'YiJiaYicms', 'Advertis', 'index', '', '', '', '1', 'index,add,edit,del,is_switch', '', 'true', 'true', '4', '1', 'false'), ('11', '10', '0,10,', '管理员列表', 'YiJiaYicms', 'AdminGroup', 'index', '', '', '', '1', 'index,add,edit,del2,is_switch2,JSGetCity', '', 'true', 'true', '11', '1', 'false'), ('12', '10', '0,10,', '管理员组', 'YiJiaYicms', 'AdminGroup', 'group', '', '', '', '1', 'group,is_switch,del,group_addup_add,group_addup_edit', '', 'true', 'true', '12', '1', 'false'), ('25', '0', '0,', '产品管理', 'YiJiaYicms', 'Product', 'index', '', '', '', '0', 'index', '', 'true', 'true', '25', '1', 'false'), ('22', '20', '0,20,', '栏目分类', 'YiJiaYicms', 'Column', 'column', '', '', '', '1', 'column,column_addup_add,column_addup_edit,is_switch,del,show_position', '', 'true', 'true', '21', '1', 'false'), ('1', '0', '0,', '系统管理', 'YiJiaYicms', 'Index', 'index', '', '', '', '0', 'index', '', 'true', 'true', '1', '1', 'false'), ('6', '1', '0,1,', '日志管理', 'YiJiaYicms', 'Log', 'index', '', '', '', '1', 'index,look', '', 'true', 'true', '6', '1', 'false'), ('7', '1', '0,1,', '地区管理', 'YiJiaYicms', 'City', 'index', '', '', '', '1', 'index,is_switch', '', 'true', 'true', '7', '1', 'false'), ('10', '0', '0,', '管理员管理', 'YiJiaYicms', 'AdminGroup', 'index', '', '', '', '0', 'index', '', 'true', 'true', '10', '1', 'false'), ('20', '0', '0,', '栏目管理', 'YiJiaYicms', 'Column', 'index', '', '', '', '0', 'index', '', 'true', 'true', '20', '1', 'false');
-COMMIT;
+INSERT INTO `yiyi_admin_menu` VALUES ('2', '1', '0,1,', '密码修改', 'YiJiaYicms', 'Index', 'EditPassword', '', '', '', '1', 'EditPassword', '', 'true', 'true', '2', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('3', '1', '0,1,', '基本设置', 'YiJiaYicms', 'Config', 'index', '', '', '', '1', 'index', '', 'true', 'true', '3', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('26', '25', '0,25,', '学生管理', 'YiJiaYicms', 'Product', 'index', '', '', '', '1', 'index,add,edit,del,is_switch', '', 'true', 'true', '27', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('27', '25', '0,25,', '产品分类', 'YiJiaYicms', 'ProductType', 'index', '', '', '', '1', 'index,add,edit,del,is_switch', '', 'true', 'true', '26', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('21', '20', '0,20,', '栏目列表', 'YiJiaYicms', 'Column', 'index', '', '', '', '1', 'index,add,edit,del2,is_switch2', '', 'true', 'true', '5', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('8', '1', '0,1,', '代码编辑', 'YiJiaYicms', 'Index', 'EditCode', '', '', '', '1', 'EditCode', '', 'true', 'true', '8', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('28', '0', '0,', '用户管理', 'YiJiaYicms', 'Member', 'index', '', '', '', '0', 'index', '', 'true', 'true', '28', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('23', '0', '0,', '招聘管理', 'YiJiaYicms', 'ZhaoPin', 'index', '', '', '', '0', 'index', '', 'true', 'true', '23', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('24', '23', '0,23,', '招聘列表', 'YiJiaYicms', 'ZhaoPin', 'index', '', '', '', '1', 'index,add,edit,del,is_switch', '', 'true', 'true', '28', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('5', '1', '0,1,', '友情链接', 'YiJiaYicms', 'Link', 'index', '', '', '', '1', 'index,add,edit,del,is_switch', '', 'true', 'true', '7', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('29', '28', '0,28,', '用户列表', 'YiJiaYicms', 'Member', 'index', '', '', '', '1', 'index,edit,del,is_switch', '', 'true', 'true', '29', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('4', '1', '0,1,', '广告管理', 'YiJiaYicms', 'Advertis', 'index', '', '', '', '1', 'index,add,edit,del,is_switch', '', 'true', 'true', '6', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('11', '10', '0,10,', '管理员列表', 'YiJiaYicms', 'AdminGroup', 'index', '', '', '', '1', 'index,add,edit,del2,is_switch2,JSGetCity', '', 'true', 'true', '11', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('12', '10', '0,10,', '管理员组', 'YiJiaYicms', 'AdminGroup', 'group', '', '', '', '1', 'group,is_switch,del,group_addup_add,group_addup_edit', '', 'true', 'true', '12', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('25', '0', '0,', '学生管理', 'YiJiaYicms', 'Product', 'index', '', '', '', '0', 'index', '', 'true', 'true', '25', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('22', '20', '0,20,', '栏目分类', 'YiJiaYicms', 'Column', 'column', '', '', '', '1', 'column,column_addup_add,column_addup_edit,is_switch,del,show_position', '', 'true', 'true', '4', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('1', '0', '0,', '系统管理', 'YiJiaYicms', 'Index', 'index', '', '', '', '0', 'index', '', 'true', 'true', '1', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('6', '1', '0,1,', '日志管理', 'YiJiaYicms', 'Log', 'index', '', '', '', '1', 'index,look', '', 'true', 'true', '8', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('7', '1', '0,1,', '地区管理', 'YiJiaYicms', 'City', 'index', '', '', '', '1', 'index,is_switch', '', 'true', 'true', '9', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('10', '0', '0,', '管理员管理', 'YiJiaYicms', 'AdminGroup', 'index', '', '', '', '0', 'index', '', 'true', 'true', '10', '1', 'false');
+INSERT INTO `yiyi_admin_menu` VALUES ('20', '0', '0,', '栏目管理', 'YiJiaYicms', 'Column', 'index', '', '', '', '0', 'index', '', 'true', 'true', '20', '1', 'false');
 
 -- ----------------------------
---  Table structure for `yiyi_area`
+-- Table structure for yiyi_ad_type
+-- ----------------------------
+DROP TABLE IF EXISTS `yiyi_ad_type`;
+CREATE TABLE `yiyi_ad_type` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
+  `pid` smallint(5) unsigned NOT NULL COMMENT '上级id',
+  `ptr` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT '0,' COMMENT '上级id字符串',
+  `title` varchar(30) CHARACTER SET utf8 NOT NULL COMMENT '广告位名称',
+  `width` smallint(5) unsigned NOT NULL COMMENT '广告位宽度',
+  `height` smallint(5) unsigned NOT NULL COMMENT '广告位高度',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列顺序',
+  `switch` enum('true','false','del','delete') CHARACTER SET utf8 NOT NULL DEFAULT 'true',
+  `addtime` int(10) NOT NULL,
+  `addadmin` int(10) unsigned NOT NULL,
+  `uptime` int(10) NOT NULL,
+  `upadmin` int(10) unsigned NOT NULL,
+  `deltime` int(10) NOT NULL,
+  `deladmin` smallint(10) unsigned NOT NULL,
+  `sys` enum('true','false') CHARACTER SET utf8 NOT NULL DEFAULT 'false' COMMENT '系统默认  当为true时不能被开发组以外的组删除',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='广告类型管理';
+
+-- ----------------------------
+-- Records of yiyi_ad_type
+-- ----------------------------
+INSERT INTO `yiyi_ad_type` VALUES ('1', '1', '0', '0,', '顶部幻灯', '0', '0', '0', 'true', '0', '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_ad_type` VALUES ('2', '1', '0', '0,', '顶部中间', '0', '0', '0', 'true', '0', '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_ad_type` VALUES ('3', '1', '0', '0,', '顶部右侧', '0', '0', '0', 'true', '0', '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_ad_type` VALUES ('4', '1', '0', '0,', '子页位置', '0', '0', '0', 'true', '0', '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_ad_type` VALUES ('5', '1', '0', '0,', '其他位置', '0', '0', '0', 'true', '0', '0', '0', '0', '0', '0', 'false');
+
+-- ----------------------------
+-- Table structure for yiyi_area
 -- ----------------------------
 DROP TABLE IF EXISTS `yiyi_area`;
 CREATE TABLE `yiyi_area` (
@@ -217,18 +232,3277 @@ CREATE TABLE `yiyi_area` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3267 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
---  Records of `yiyi_area`
+-- Records of yiyi_area
 -- ----------------------------
-BEGIN;
-INSERT INTO `yiyi_area` VALUES ('1', '0', '北京', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2', '1', '北京市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3', '2', '东城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('4', '2', '西城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('5', '2', '崇文区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('6', '2', '宣武区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('7', '2', '朝阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('8', '2', '丰台区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('9', '2', '石景山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('10', '2', '海淀区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('11', '2', '门头沟区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('12', '2', '房山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('13', '2', '通州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('14', '2', '顺义区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('15', '2', '昌平区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('16', '2', '大兴区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('17', '2', '怀柔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('18', '2', '平谷区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('19', '2', '密云县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('20', '2', '延庆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('21', '0', '上海', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('22', '21', '上海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('23', '22', '黄浦区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('24', '22', '卢湾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('25', '22', '徐汇区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('26', '22', '长宁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('27', '22', '静安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('28', '22', '普陀区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('29', '22', '闸北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('30', '22', '虹口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('31', '22', '杨浦区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('32', '22', '闵行区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('33', '22', '宝山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('34', '22', '嘉定区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('35', '22', '浦东新区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('36', '22', '金山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('37', '22', '松江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('38', '22', '青浦区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('39', '22', '南汇区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('40', '22', '奉贤区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('41', '22', '崇明县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('42', '0', '天津', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('43', '42', '天津市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('44', '43', '和平区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('45', '43', '河东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('46', '43', '河西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('47', '43', '南开区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('48', '43', '河北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('49', '43', '红桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('50', '43', '塘沽区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('51', '43', '汉沽区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('52', '43', '大港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('53', '43', '东丽区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('54', '43', '西青区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('55', '43', '津南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('56', '43', '北辰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('57', '43', '武清区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('58', '43', '宝坻区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('59', '43', '宁河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('60', '43', '静海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('61', '43', '蓟县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('62', '0', '重庆', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('63', '62', '重庆市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('64', '63', '万州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('65', '63', '涪陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('66', '63', '渝中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('67', '63', '大渡口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('68', '63', '江北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('69', '63', '沙坪坝区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('70', '63', '九龙坡区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('71', '63', '南岸区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('72', '63', '北碚区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('73', '63', '万盛区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('74', '63', '双桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('75', '63', '渝北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('76', '63', '巴南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('77', '63', '黔江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('78', '63', '长寿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('79', '63', '綦江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('80', '63', '潼南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('81', '63', '铜梁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('82', '63', '大足县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('83', '63', '荣昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('84', '63', '璧山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('85', '63', '梁平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('86', '63', '城口县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('87', '63', '丰都县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('88', '63', '垫江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('89', '63', '武隆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('90', '63', '忠县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('91', '63', '开县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('92', '63', '云阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('93', '63', '奉节县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('94', '63', '巫山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('95', '63', '巫溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('96', '63', '石柱土家族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('97', '63', '秀山土家族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('98', '63', '酉阳土家族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('99', '63', '彭水苗族土家族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('100', '63', '江津市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('101', '63', '合川市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('102', '63', '永川市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('103', '63', '南川市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('104', '0', '安徽', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('105', '104', '合肥市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('106', '105', '瑶海区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('107', '105', '庐阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('108', '105', '蜀山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('109', '105', '包河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('110', '105', '长丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('111', '105', '肥东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('112', '105', '肥西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('113', '104', '安庆市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('114', '113', '迎江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('115', '113', '大观区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('116', '113', '郊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('117', '113', '怀宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('118', '113', '枞阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('119', '113', '潜山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('120', '113', '太湖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('121', '113', '宿松县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('122', '113', '望江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('123', '113', '岳西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('124', '113', '桐城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('125', '104', '蚌埠市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('126', '125', '龙子湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('127', '125', '蚌山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('128', '125', '禹会区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('129', '125', '淮上区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('130', '125', '怀远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('131', '125', '五河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('132', '125', '固镇县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('133', '104', '亳州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('134', '133', '谯城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('135', '133', '涡阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('136', '133', '蒙城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('137', '133', '利辛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('138', '104', '巢湖市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('139', '138', '居巢区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('140', '138', '庐江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('141', '138', '无为县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('142', '138', '含山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('143', '138', '和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('144', '104', '池州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('145', '144', '贵池区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('146', '144', '东至县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('147', '144', '石台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('148', '144', '青阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('149', '104', '滁州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('150', '149', '琅琊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('151', '149', '南谯区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('152', '149', '来安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('153', '149', '全椒县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('154', '149', '定远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('155', '149', '凤阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('156', '149', '天长市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('157', '149', '明光市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('158', '104', '阜阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('159', '158', '颍州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('160', '158', '颍东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('161', '158', '颍泉区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('162', '158', '临泉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('163', '158', '太和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('164', '158', '阜南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('165', '158', '颍上县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('166', '158', '界首市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('167', '104', '淮北市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('168', '167', '杜集区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('169', '167', '相山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('170', '167', '烈山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('171', '167', '濉溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('172', '104', '淮南市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('173', '172', '大通区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('174', '172', '田家庵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('175', '172', '谢家集区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('176', '172', '八公山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('177', '172', '潘集区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('178', '172', '凤台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('179', '104', '黄山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('180', '179', '屯溪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('181', '179', '黄山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('182', '179', '徽州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('183', '179', '歙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('184', '179', '休宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('185', '179', '黟县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('186', '179', '祁门县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('187', '104', '六安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('188', '187', '金安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('189', '187', '裕安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('190', '187', '寿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('191', '187', '霍邱县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('192', '187', '舒城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('193', '187', '金寨县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('194', '187', '霍山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('195', '104', '马鞍山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('196', '195', '金家庄区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('197', '195', '花山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('198', '195', '雨山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('199', '195', '当涂县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('200', '104', '宿州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('201', '200', '墉桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('202', '200', '砀山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('203', '200', '萧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('204', '200', '灵璧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('205', '200', '泗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('206', '104', '铜陵市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('207', '206', '铜官山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('208', '206', '狮子山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('209', '206', '郊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('210', '206', '铜陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('211', '104', '芜湖市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('212', '211', '镜湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('213', '211', '马塘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('214', '211', '新芜区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('215', '211', '鸠江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('216', '211', '芜湖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('217', '211', '繁昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('218', '211', '南陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('219', '104', '宣城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('220', '219', '宣州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('221', '219', '郎溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('222', '219', '广德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('223', '219', '泾县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('224', '219', '绩溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('225', '219', '旌德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('226', '219', '宁国市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('227', '0', '福建', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('228', '227', '福州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('229', '228', '鼓楼区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('230', '228', '台江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('231', '228', '仓山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('232', '228', '马尾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('233', '228', '晋安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('234', '228', '闽侯县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('235', '228', '连江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('236', '228', '罗源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('237', '228', '闽清县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('238', '228', '永泰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('239', '228', '平潭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('240', '228', '福清市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('241', '228', '长乐市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('242', '227', '龙岩市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('243', '242', '新罗区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('244', '242', '长汀县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('245', '242', '永定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('246', '242', '上杭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('247', '242', '武平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('248', '242', '连城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('249', '242', '漳平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('250', '227', '南平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('251', '250', '延平区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('252', '250', '顺昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('253', '250', '浦城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('254', '250', '光泽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('255', '250', '松溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('256', '250', '政和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('257', '250', '邵武市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('258', '250', '武夷山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('259', '250', '建瓯市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('260', '250', '建阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('261', '227', '宁德市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('262', '261', '蕉城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('263', '261', '霞浦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('264', '261', '古田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('265', '261', '屏南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('266', '261', '寿宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('267', '261', '周宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('268', '261', '柘荣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('269', '261', '福安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('270', '261', '福鼎市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('271', '227', '莆田市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('272', '271', '城厢区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('273', '271', '涵江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('274', '271', '荔城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('275', '271', '秀屿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('276', '271', '仙游县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('277', '227', '泉州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('278', '277', '鲤城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('279', '277', '丰泽区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('280', '277', '洛江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('281', '277', '泉港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('282', '277', '惠安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('283', '277', '安溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('284', '277', '永春县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('285', '277', '德化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('286', '277', '金门县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('287', '277', '石狮市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('288', '277', '晋江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('289', '277', '南安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('290', '227', '三明市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('291', '290', '梅列区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('292', '290', '三元区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('293', '290', '明溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('294', '290', '清流县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('295', '290', '宁化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('296', '290', '大田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('297', '290', '尤溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('298', '290', '沙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('299', '290', '将乐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('300', '290', '泰宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('301', '290', '建宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('302', '290', '永安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('303', '227', '厦门市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('304', '303', '思明区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('305', '303', '海沧区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('306', '303', '湖里区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('307', '303', '集美区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('308', '303', '同安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('309', '303', '翔安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('310', '227', '漳州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('311', '310', '芗城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('312', '310', '龙文区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('313', '310', '云霄县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('314', '310', '漳浦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('315', '310', '诏安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('316', '310', '长泰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('317', '310', '东山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('318', '310', '南靖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('319', '310', '平和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('320', '310', '华安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('321', '310', '龙海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('322', '0', '甘肃', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('323', '322', '兰州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('324', '323', '城关区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('325', '323', '七里河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('326', '323', '西固区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('327', '323', '安宁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('328', '323', '红古区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('329', '323', '永登县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('330', '323', '皋兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('331', '323', '榆中县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('332', '322', '白银市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('333', '332', '白银区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('334', '332', '平川区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('335', '332', '靖远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('336', '332', '会宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('337', '332', '景泰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('338', '322', '定西市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('339', '338', '安定区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('340', '338', '通渭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('341', '338', '陇西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('342', '338', '渭源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('343', '338', '临洮县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('344', '338', '漳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('345', '338', '岷县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('346', '322', '甘南藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('347', '346', '合作市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('348', '346', '临潭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('349', '346', '卓尼县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('350', '346', '舟曲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('351', '346', '迭部县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('352', '346', '玛曲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('353', '346', '碌曲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('354', '346', '夏河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('355', '322', '嘉峪关市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('356', '322', '金昌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('357', '356', '金川区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('358', '356', '永昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('359', '322', '酒泉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('360', '359', '肃州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('361', '359', '金塔县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('362', '359', '安西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('363', '359', '肃北蒙古族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('364', '359', '阿克塞哈萨克族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('365', '359', '玉门市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('366', '359', '敦煌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('367', '322', '临夏回族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('368', '367', '临夏市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('369', '367', '临夏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('370', '367', '康乐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('371', '367', '永靖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('372', '367', '广河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('373', '367', '和政县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('374', '367', '东乡族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('375', '367', '积石山保安族东乡族撒拉族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('376', '322', '陇南市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('377', '376', '武都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('378', '376', '成县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('379', '376', '文县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('380', '376', '宕昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('381', '376', '康县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('382', '376', '西和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('383', '376', '礼县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('384', '376', '徽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('385', '376', '两当县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('386', '322', '平凉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('387', '386', '崆峒区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('388', '386', '泾川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('389', '386', '灵台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('390', '386', '崇信县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('391', '386', '华亭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('392', '386', '庄浪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('393', '386', '静宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('394', '322', '庆阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('395', '394', '西峰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('396', '394', '庆城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('397', '394', '环县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('398', '394', '华池县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('399', '394', '合水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('400', '394', '正宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('401', '394', '宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('402', '394', '镇原县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('403', '322', '天水市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('404', '403', '秦城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('405', '403', '北道区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('406', '403', '清水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('407', '403', '秦安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('408', '403', '甘谷县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('409', '403', '武山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('410', '403', '张家川回族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('411', '322', '武威市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('412', '411', '凉州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('413', '411', '民勤县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('414', '411', '古浪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('415', '411', '天祝藏族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('416', '322', '张掖市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('417', '416', '甘州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('418', '416', '肃南裕固族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('419', '416', '民乐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('420', '416', '临泽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('421', '416', '高台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('422', '416', '山丹县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('423', '0', '广东', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('424', '423', '广州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('425', '424', '东山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('426', '424', '荔湾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('427', '424', '越秀区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('428', '424', '海珠区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('429', '424', '天河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('430', '424', '芳村区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('431', '424', '白云区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('432', '424', '黄埔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('433', '424', '番禺区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('434', '424', '花都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('435', '424', '增城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('436', '424', '从化市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('437', '423', '潮州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('438', '437', '湘桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('439', '437', '潮安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('440', '437', '饶平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('441', '423', '东莞市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('442', '423', '佛山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('443', '442', '禅城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('444', '442', '南海区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('445', '442', '顺德区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('446', '442', '三水区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('447', '442', '高明区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('448', '423', '河源市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('449', '448', '源城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('450', '448', '紫金县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('451', '448', '龙川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('452', '448', '连平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('453', '448', '和平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('454', '448', '东源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('455', '423', '惠州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('456', '455', '惠城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('457', '455', '惠阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('458', '455', '博罗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('459', '455', '惠东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('460', '455', '龙门县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('461', '423', '江门市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('462', '461', '蓬江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('463', '461', '江海区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('464', '461', '新会区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('465', '461', '台山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('466', '461', '开平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('467', '461', '鹤山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('468', '461', '恩平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('469', '423', '揭阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('470', '469', '榕城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('471', '469', '揭东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('472', '469', '揭西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('473', '469', '惠来县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('474', '469', '普宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('475', '423', '茂名市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('476', '475', '茂南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('477', '475', '茂港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('478', '475', '电白县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('479', '475', '高州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('480', '475', '化州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('481', '475', '信宜市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('482', '423', '梅江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('483', '423', '梅州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('484', '483', '梅县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('485', '483', '大埔县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('486', '483', '丰顺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('487', '483', '五华县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('488', '483', '平远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('489', '483', '蕉岭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('490', '483', '兴宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('491', '423', '清远市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('492', '491', '清城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('493', '491', '佛冈县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('494', '491', '阳山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('495', '491', '连山壮族瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('496', '491', '连南瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('497', '491', '清新县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('498', '491', '英德市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('499', '491', '连州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('500', '423', '汕头市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('501', '500', '龙湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('502', '500', '金平区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('503', '500', '濠江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('504', '500', '潮阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('505', '500', '潮南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('506', '500', '澄海区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('507', '500', '南澳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('508', '423', '汕尾市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('509', '508', '城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('510', '508', '海丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('511', '508', '陆河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('512', '508', '陆丰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('513', '423', '韶关市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('514', '513', '武江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('515', '513', '浈江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('516', '513', '曲江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('517', '513', '始兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('518', '513', '仁化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('519', '513', '翁源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('520', '513', '乳源瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('521', '513', '新丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('522', '513', '乐昌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('523', '513', '南雄市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('524', '423', '深圳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('525', '524', '罗湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('526', '524', '福田区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('527', '524', '南山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('528', '524', '宝安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('529', '524', '龙岗区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('530', '524', '盐田区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('531', '423', '阳江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('532', '531', '江城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('533', '531', '阳西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('534', '531', '阳东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('535', '531', '阳春市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('536', '423', '云浮市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('537', '536', '云城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('538', '536', '新兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('539', '536', '郁南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('540', '536', '云安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('541', '536', '罗定市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('542', '423', '湛江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('543', '542', '赤坎区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('544', '542', '霞山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('545', '542', '坡头区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('546', '542', '麻章区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('547', '542', '遂溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('548', '542', '徐闻县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('549', '542', '廉江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('550', '542', '雷州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('551', '542', '吴川市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('552', '423', '肇庆市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('553', '552', '端州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('554', '552', '鼎湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('555', '552', '广宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('556', '552', '怀集县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('557', '552', '封开县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('558', '552', '德庆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('559', '552', '高要市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('560', '552', '四会市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('561', '423', '中山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('562', '423', '珠海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('563', '562', '香洲区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('564', '562', '斗门区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('565', '562', '金湾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('566', '0', '广西', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('567', '566', '南宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('568', '567', '兴宁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('569', '567', '青秀区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('570', '567', '江南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('571', '567', '西乡塘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('572', '567', '良庆区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('573', '567', '邕宁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('574', '567', '武鸣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('575', '567', '隆安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('576', '567', '马山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('577', '567', '上林县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('578', '567', '宾阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('579', '567', '横县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('580', '566', '百色市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('581', '580', '右江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('582', '580', '田阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('583', '580', '田东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('584', '580', '平果县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('585', '580', '德保县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('586', '580', '靖西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('587', '580', '那坡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('588', '580', '凌云县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('589', '580', '乐业县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('590', '580', '田林县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('591', '580', '西林县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('592', '580', '隆林各族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('593', '566', '北海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('594', '593', '海城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('595', '593', '银海区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('596', '593', '铁山港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('597', '593', '合浦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('598', '566', '崇左市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('599', '598', '江洲区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('600', '598', '扶绥县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('601', '598', '宁明县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('602', '598', '龙州县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('603', '598', '大新县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('604', '598', '天等县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('605', '598', '凭祥市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('606', '566', '防城港市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('607', '606', '港口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('608', '606', '防城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('609', '606', '上思县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('610', '606', '东兴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('611', '566', '贵港市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('612', '611', '港北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('613', '611', '港南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('614', '611', '覃塘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('615', '611', '平南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('616', '611', '桂平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('617', '566', '桂林市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('618', '617', '秀峰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('619', '617', '叠彩区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('620', '617', '象山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('621', '617', '七星区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('622', '617', '雁山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('623', '617', '阳朔县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('624', '617', '临桂县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('625', '617', '灵川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('626', '617', '全州县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('627', '617', '兴安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('628', '617', '永福县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('629', '617', '灌阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('630', '617', '龙胜各族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('631', '617', '资源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('632', '617', '平乐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('633', '617', '荔蒲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('634', '617', '恭城瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('635', '566', '河池市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('636', '635', '金城江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('637', '635', '南丹县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('638', '635', '天峨县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('639', '635', '凤山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('640', '635', '东兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('641', '635', '罗城仫佬族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('642', '635', '环江毛南族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('643', '635', '巴马瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('644', '635', '都安瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('645', '635', '大化瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('646', '635', '宜州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('647', '566', '贺州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('648', '647', '八步区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('649', '647', '昭平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('650', '647', '钟山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('651', '647', '富川瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('652', '566', '来宾市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('653', '652', '兴宾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('654', '652', '忻城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('655', '652', '象州县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('656', '652', '武宣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('657', '652', '金秀瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('658', '652', '合山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('659', '566', '柳州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('660', '659', '城中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('661', '659', '鱼峰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('662', '659', '柳南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('663', '659', '柳北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('664', '659', '柳江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('665', '659', '柳城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('666', '659', '鹿寨县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('667', '659', '融安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('668', '659', '融水苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('669', '659', '三江侗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('670', '566', '钦州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('671', '670', '钦南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('672', '670', '钦北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('673', '670', '灵山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('674', '670', '浦北县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('675', '566', '梧州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('676', '675', '万秀区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('677', '675', '蝶山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('678', '675', '长洲区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('679', '675', '苍梧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('680', '675', '藤县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('681', '675', '蒙山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('682', '675', '岑溪市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('683', '566', '玉林市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('684', '683', '玉州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('685', '683', '容县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('686', '683', '陆川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('687', '683', '博白县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('688', '683', '兴业县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('689', '683', '北流市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('690', '0', '贵州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('691', '690', '贵阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('692', '691', '南明区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('693', '691', '云岩区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('694', '691', '花溪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('695', '691', '乌当区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('696', '691', '白云区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('697', '691', '小河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('698', '691', '开阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('699', '691', '息烽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('700', '691', '修文县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('701', '691', '清镇市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('702', '690', '安顺市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('703', '702', '西秀区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('704', '702', '平坝县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('705', '702', '普定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('706', '702', '镇宁布依族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('707', '702', '关岭布依族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('708', '702', '紫云苗族布依族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('709', '690', '毕节地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('710', '709', '毕节市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('711', '709', '大方县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('712', '709', '黔西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('713', '709', '金沙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('714', '709', '织金县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('715', '709', '纳雍县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('716', '709', '威宁彝族回族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('717', '709', '赫章县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('718', '690', '六盘水市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('719', '718', '钟山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('720', '718', '六枝特区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('721', '718', '水城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('722', '718', '盘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('723', '690', '黔东南苗族侗族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('724', '723', '凯里市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('725', '723', '黄平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('726', '723', '施秉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('727', '723', '三穗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('728', '723', '镇远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('729', '723', '岑巩县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('730', '723', '天柱县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('731', '723', '锦屏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('732', '723', '剑河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('733', '723', '台江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('734', '723', '黎平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('735', '723', '榕江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('736', '723', '从江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('737', '723', '雷山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('738', '723', '麻江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('739', '723', '丹寨县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('740', '690', '黔南布依族苗族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('741', '740', '都匀市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('742', '740', '福泉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('743', '740', '荔波县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('744', '740', '贵定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('745', '740', '瓮安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('746', '740', '独山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('747', '740', '平塘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('748', '740', '罗甸县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('749', '740', '长顺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('750', '740', '龙里县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('751', '740', '惠水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('752', '740', '三都水族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('753', '690', '黔西南布依族苗族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('754', '753', '兴义市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('755', '753', '兴仁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('756', '753', '普安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('757', '753', '晴隆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('758', '753', '贞丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('759', '753', '望谟县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('760', '753', '册亨县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('761', '753', '安龙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('762', '690', '铜仁地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('763', '762', '铜仁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('764', '762', '江口县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('765', '762', '玉屏侗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('766', '762', '石阡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('767', '762', '思南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('768', '762', '印江土家族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('769', '762', '德江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('770', '762', '沿河土家族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('771', '762', '松桃苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('772', '762', '万山特区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('773', '690', '遵义市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('774', '773', '红花岗区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('775', '773', '汇川区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('776', '773', '遵义县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('777', '773', '桐梓县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('778', '773', '绥阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('779', '773', '正安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('780', '773', '道真仡佬族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('781', '773', '务川仡佬族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('782', '773', '凤冈县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('783', '773', '湄潭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('784', '773', '余庆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('785', '773', '习水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('786', '773', '赤水市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('787', '773', '仁怀市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('788', '0', '海南', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('789', '788', '海口市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('790', '789', '秀英区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('791', '789', '龙华区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('792', '789', '琼山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('793', '789', '美兰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('794', '788', '白沙黎族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('795', '788', '保亭黎族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('796', '788', '昌江黎族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('797', '788', '澄迈县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('798', '788', '儋州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('799', '788', '定安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('800', '788', '东方市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('801', '788', '乐东黎族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('802', '788', '临高县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('803', '788', '陵水黎族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('804', '788', '南沙群岛', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('805', '788', '琼海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('806', '788', '琼中黎族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('807', '788', '三亚市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('808', '788', '屯昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('809', '788', '万宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('810', '788', '文昌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
-INSERT INTO `yiyi_area` VALUES ('811', '788', '五指山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('812', '788', '西沙群岛', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('813', '788', '中沙群岛的岛礁及其海域', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('814', '0', '河北', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('815', '814', '石家庄市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('816', '815', '长安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('817', '815', '桥东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('818', '815', '桥西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('819', '815', '新华区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('820', '815', '井陉矿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('821', '815', '裕华区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('822', '815', '井陉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('823', '815', '正定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('824', '815', '栾城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('825', '815', '行唐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('826', '815', '灵寿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('827', '815', '高邑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('828', '815', '深泽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('829', '815', '赞皇县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('830', '815', '无极县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('831', '815', '平山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('832', '815', '元氏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('833', '815', '赵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('834', '815', '辛集市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('835', '815', '藁城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('836', '815', '晋州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('837', '815', '新乐市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('838', '815', '鹿泉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('839', '814', '保定市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('840', '839', '新市区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('841', '839', '北市区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('842', '839', '南市区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('843', '839', '满城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('844', '839', '清苑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('845', '839', '涞水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('846', '839', '阜平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('847', '839', '徐水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('848', '839', '定兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('849', '839', '唐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('850', '839', '高阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('851', '839', '容城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('852', '839', '涞源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('853', '839', '望都县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('854', '839', '安新县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('855', '839', '易县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('856', '839', '曲阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('857', '839', '蠡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('858', '839', '顺平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('859', '839', '博野县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('860', '839', '雄县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('861', '839', '涿州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('862', '839', '定州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('863', '839', '安国市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('864', '839', '高碑店市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('865', '814', '沧州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('866', '865', '新华区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('867', '865', '运河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('868', '865', '沧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('869', '865', '青县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('870', '865', '东光县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('871', '865', '海兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('872', '865', '盐山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('873', '865', '肃宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('874', '865', '南皮县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('875', '865', '吴桥县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('876', '865', '献县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('877', '865', '孟村回族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('878', '865', '泊头市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('879', '865', '任丘市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('880', '865', '黄骅市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('881', '865', '河间市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('882', '814', '承德市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('883', '882', '双桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('884', '882', '双滦区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('885', '882', '鹰手营子矿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('886', '882', '承德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('887', '882', '兴隆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('888', '882', '平泉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('889', '882', '滦平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('890', '882', '隆化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('891', '882', '丰宁满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('892', '882', '宽城满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('893', '882', '围场满族蒙古族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('894', '814', '邯郸市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('895', '894', '邯山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('896', '894', '丛台区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('897', '894', '复兴区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('898', '894', '峰峰矿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('899', '894', '邯郸县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('900', '894', '临漳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('901', '894', '成安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('902', '894', '大名县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('903', '894', '涉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('904', '894', '磁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('905', '894', '肥乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('906', '894', '永年县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('907', '894', '邱县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('908', '894', '鸡泽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('909', '894', '广平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('910', '894', '馆陶县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('911', '894', '魏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('912', '894', '曲周县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('913', '894', '武安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('914', '814', '衡水市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('915', '914', '桃城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('916', '914', '枣强县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('917', '914', '武邑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('918', '914', '武强县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('919', '914', '饶阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('920', '914', '安平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('921', '914', '故城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('922', '914', '景县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('923', '914', '阜城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('924', '914', '冀州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('925', '914', '深州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('926', '814', '廊坊市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('927', '926', '安次区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('928', '926', '广阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('929', '926', '固安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('930', '926', '永清县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('931', '926', '香河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('932', '926', '大城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('933', '926', '文安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('934', '926', '大厂回族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('935', '926', '霸州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('936', '926', '三河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('937', '814', '秦皇岛市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('938', '937', '海港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('939', '937', '山海关区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('940', '937', '北戴河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('941', '937', '青龙满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('942', '937', '昌黎县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('943', '937', '抚宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('944', '937', '卢龙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('945', '814', '唐山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('946', '945', '路南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('947', '945', '路北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('948', '945', '古冶区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('949', '945', '开平区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('950', '945', '丰南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('951', '945', '丰润区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('952', '945', '滦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('953', '945', '滦南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('954', '945', '乐亭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('955', '945', '迁西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('956', '945', '玉田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('957', '945', '唐海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('958', '945', '遵化市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('959', '945', '迁安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('960', '814', '邢台市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('961', '960', '桥东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('962', '960', '桥西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('963', '960', '邢台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('964', '960', '临城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('965', '960', '内丘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('966', '960', '柏乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('967', '960', '隆尧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('968', '960', '任县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('969', '960', '南和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('970', '960', '宁晋县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('971', '960', '巨鹿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('972', '960', '新河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('973', '960', '广宗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('974', '960', '平乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('975', '960', '威县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('976', '960', '清河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('977', '960', '临西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('978', '960', '南宫市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('979', '960', '沙河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('980', '814', '张家口市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('981', '980', '桥东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('982', '980', '桥西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('983', '980', '宣化区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('984', '980', '下花园区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('985', '980', '宣化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('986', '980', '张北县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('987', '980', '康保县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('988', '980', '沽源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('989', '980', '尚义县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('990', '980', '蔚县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('991', '980', '阳原县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('992', '980', '怀安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('993', '980', '万全县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('994', '980', '怀来县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('995', '980', '涿鹿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('996', '980', '赤城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('997', '980', '崇礼县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('998', '0', '河南', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('999', '998', '郑州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1000', '999', '中原区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1001', '999', '二七区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1002', '999', '管城回族区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1003', '999', '金水区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1004', '999', '上街区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1005', '999', '邙山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1006', '999', '中牟县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1007', '999', '巩义市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1008', '999', '荥阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1009', '999', '新密市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1010', '999', '新郑市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1011', '999', '登封市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1012', '998', '安阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1013', '1012', '文峰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1014', '1012', '北关区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1015', '1012', '殷都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1016', '1012', '龙安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1017', '1012', '安阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1018', '1012', '汤阴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1019', '1012', '滑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1020', '1012', '内黄县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1021', '1012', '林州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1022', '998', '鹤壁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1023', '1022', '鹤山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1024', '1022', '山城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1025', '1022', '淇滨区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1026', '1022', '浚县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1027', '1022', '淇县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1028', '998', '济源市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1029', '998', '焦作市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1030', '1029', '解放区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1031', '1029', '中站区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1032', '1029', '马村区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1033', '1029', '山阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1034', '1029', '修武县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1035', '1029', '博爱县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1036', '1029', '武陟县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1037', '1029', '温县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1038', '1029', '济源市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1039', '1029', '沁阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1040', '1029', '孟州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1041', '998', '开封市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1042', '1041', '龙亭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1043', '1041', '顺河回族区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1044', '1041', '鼓楼区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1045', '1041', '南关区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1046', '1041', '郊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1047', '1041', '杞县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1048', '1041', '通许县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1049', '1041', '尉氏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1050', '1041', '开封县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1051', '1041', '兰考县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1052', '998', '洛阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1053', '1052', '老城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1054', '1052', '西工区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1055', '1052', '廛河回族区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1056', '1052', '涧西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1057', '1052', '吉利区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1058', '1052', '洛龙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1059', '1052', '孟津县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1060', '1052', '新安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1061', '1052', '栾川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1062', '1052', '嵩县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1063', '1052', '汝阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1064', '1052', '宜阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1065', '1052', '洛宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1066', '1052', '伊川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1067', '1052', '偃师市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1068', '998', '漯河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1069', '1068', '源汇区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1070', '1068', '郾城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1071', '1068', '召陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1072', '1068', '舞阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1073', '1068', '临颍县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1074', '998', '南阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1075', '1074', '宛城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1076', '1074', '卧龙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1077', '1074', '南召县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1078', '1074', '方城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1079', '1074', '西峡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1080', '1074', '镇平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1081', '1074', '内乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1082', '1074', '淅川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1083', '1074', '社旗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1084', '1074', '唐河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1085', '1074', '新野县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1086', '1074', '桐柏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1087', '1074', '邓州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1088', '998', '平顶山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1089', '1088', '新华区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1090', '1088', '卫东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1091', '1088', '石龙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1092', '1088', '湛河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1093', '1088', '宝丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1094', '1088', '叶县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1095', '1088', '鲁山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1096', '1088', '郏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1097', '1088', '舞钢市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1098', '1088', '汝州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1099', '998', '濮阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1100', '1099', '华龙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1101', '1099', '清丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1102', '1099', '南乐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1103', '1099', '范县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1104', '1099', '台前县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1105', '1099', '濮阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1106', '998', '三门峡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1107', '1106', '湖滨区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1108', '1106', '渑池县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1109', '1106', '陕县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1110', '1106', '卢氏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1111', '1106', '义马市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1112', '1106', '灵宝市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1113', '998', '商丘市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1114', '1113', '梁园区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1115', '1113', '睢阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1116', '1113', '民权县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1117', '1113', '睢县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1118', '1113', '宁陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1119', '1113', '柘城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1120', '1113', '虞城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1121', '1113', '夏邑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1122', '1113', '永城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1123', '998', '新乡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1124', '1123', '红旗区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1125', '1123', '卫滨区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1126', '1123', '凤泉区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1127', '1123', '牧野区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1128', '1123', '新乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1129', '1123', '获嘉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1130', '1123', '原阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1131', '1123', '延津县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1132', '1123', '封丘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1133', '1123', '长垣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1134', '1123', '卫辉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1135', '1123', '辉县市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1136', '998', '信阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1137', '1136', '师河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1138', '1136', '平桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1139', '1136', '罗山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1140', '1136', '光山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1141', '1136', '新县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1142', '1136', '商城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1143', '1136', '固始县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1144', '1136', '潢川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1145', '1136', '淮滨县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1146', '1136', '息县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1147', '998', '许昌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1148', '1147', '魏都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1149', '1147', '许昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1150', '1147', '鄢陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1151', '1147', '襄城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1152', '1147', '禹州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1153', '1147', '长葛市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1154', '998', '周口市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1155', '1154', '川汇区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1156', '1154', '扶沟县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1157', '1154', '西华县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1158', '1154', '商水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1159', '1154', '沈丘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1160', '1154', '郸城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1161', '1154', '淮阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1162', '1154', '太康县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1163', '1154', '鹿邑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1164', '1154', '项城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1165', '998', '驻马店市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1166', '1165', '驿城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1167', '1165', '西平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1168', '1165', '上蔡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1169', '1165', '平舆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1170', '1165', '正阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1171', '1165', '确山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1172', '1165', '泌阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1173', '1165', '汝南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1174', '1165', '遂平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1175', '1165', '新蔡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1176', '0', '黑龙江', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1177', '1176', '哈尔滨市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1178', '1177', '道里区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1179', '1177', '南岗区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1180', '1177', '道外区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1181', '1177', '香坊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1182', '1177', '动力区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1183', '1177', '平房区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1184', '1177', '松北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1185', '1177', '呼兰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1186', '1177', '依兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1187', '1177', '方正县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1188', '1177', '宾县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1189', '1177', '巴彦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1190', '1177', '木兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1191', '1177', '通河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1192', '1177', '延寿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1193', '1177', '阿城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1194', '1177', '双城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1195', '1177', '尚志市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1196', '1177', '五常市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1197', '1176', '大庆市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1198', '1197', '萨尔图区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1199', '1197', '龙凤区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1200', '1197', '让胡路区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1201', '1197', '红岗区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1202', '1197', '大同区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1203', '1197', '肇州县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1204', '1197', '肇源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1205', '1197', '林甸县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1206', '1197', '杜尔伯特蒙古族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1207', '1176', '大兴安岭地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1208', '1207', '呼玛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1209', '1207', '塔河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1210', '1207', '漠河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1211', '1176', '鹤岗市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1212', '1211', '向阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1213', '1211', '工农区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1214', '1211', '南山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1215', '1211', '兴安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1216', '1211', '东山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1217', '1211', '兴山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1218', '1211', '萝北县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1219', '1211', '绥滨县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1220', '1176', '黑河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1221', '1220', '爱辉区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1222', '1220', '嫩江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1223', '1220', '逊克县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1224', '1220', '孙吴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1225', '1220', '北安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1226', '1220', '五大连池市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1227', '1176', '鸡西市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1228', '1227', '鸡冠区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1229', '1227', '恒山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1230', '1227', '滴道区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1231', '1227', '梨树区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1232', '1227', '城子河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1233', '1227', '麻山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1234', '1227', '鸡东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1235', '1227', '虎林市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1236', '1227', '密山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1237', '1176', '佳木斯市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1238', '1237', '永红区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1239', '1237', '向阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1240', '1237', '前进区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1241', '1237', '东风区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1242', '1237', '郊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1243', '1237', '桦南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1244', '1237', '桦川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1245', '1237', '汤原县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1246', '1237', '抚远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1247', '1237', '同江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1248', '1237', '富锦市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1249', '1176', '牡丹江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1250', '1249', '东安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1251', '1249', '阳明区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1252', '1249', '爱民区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1253', '1249', '西安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1254', '1249', '东宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1255', '1249', '林口县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1256', '1249', '绥芬河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1257', '1249', '海林市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1258', '1249', '宁安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1259', '1249', '穆棱市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1260', '1176', '七台河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1261', '1260', '新兴区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1262', '1260', '桃山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1263', '1260', '茄子河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1264', '1260', '勃利县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1265', '1176', '齐齐哈尔市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1266', '1265', '龙沙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1267', '1265', '建华区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1268', '1265', '铁锋区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1269', '1265', '昂昂溪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1270', '1265', '富拉尔基区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1271', '1265', '碾子山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1272', '1265', '梅里斯达斡尔族区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1273', '1265', '龙江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1274', '1265', '依安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1275', '1265', '泰来县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1276', '1265', '甘南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1277', '1265', '富裕县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1278', '1265', '克山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1279', '1265', '克东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1280', '1265', '拜泉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1281', '1265', '讷河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1282', '1176', '双鸭山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1283', '1282', '尖山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1284', '1282', '岭东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1285', '1282', '四方台区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1286', '1282', '宝山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1287', '1282', '集贤县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1288', '1282', '友谊县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1289', '1282', '宝清县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1290', '1282', '饶河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1291', '1176', '绥化市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1292', '1291', '北林区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1293', '1291', '望奎县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1294', '1291', '兰西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1295', '1291', '青冈县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1296', '1291', '庆安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1297', '1291', '明水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1298', '1291', '绥棱县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1299', '1291', '安达市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1300', '1291', '肇东市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1301', '1291', '海伦市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1302', '1176', '伊春市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1303', '1302', '伊春区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1304', '1302', '南岔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1305', '1302', '友好区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1306', '1302', '西林区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1307', '1302', '翠峦区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1308', '1302', '新青区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1309', '1302', '美溪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1310', '1302', '金山屯区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1311', '1302', '五营区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1312', '1302', '乌马河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1313', '1302', '汤旺河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1314', '1302', '带岭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1315', '1302', '乌伊岭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1316', '1302', '红星区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1317', '1302', '上甘岭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1318', '1302', '嘉荫县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1319', '1302', '铁力市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1320', '0', '湖北', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1321', '1320', '武汉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1322', '1321', '江岸区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1323', '1321', '江汉区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1324', '1321', '乔口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1325', '1321', '汉阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1326', '1321', '武昌区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1327', '1321', '青山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1328', '1321', '洪山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1329', '1321', '东西湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1330', '1321', '汉南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1331', '1321', '蔡甸区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1332', '1321', '江夏区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1333', '1321', '黄陂区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1334', '1321', '新洲区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1335', '1320', '鄂州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1336', '1335', '梁子湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1337', '1335', '华容区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1338', '1335', '鄂城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1339', '1320', '恩施土家族苗族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1340', '1339', '恩施市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1341', '1339', '利川市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1342', '1339', '建始县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1343', '1339', '巴东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1344', '1339', '宣恩县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1345', '1339', '咸丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1346', '1339', '来凤县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1347', '1339', '鹤峰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1348', '1320', '黄冈市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1349', '1348', '黄州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1350', '1348', '团风县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1351', '1348', '红安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1352', '1348', '罗田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1353', '1348', '英山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1354', '1348', '浠水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1355', '1348', '蕲春县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1356', '1348', '黄梅县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1357', '1348', '麻城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1358', '1348', '武穴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1359', '1320', '黄石市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1360', '1359', '黄石港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1361', '1359', '西塞山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1362', '1359', '下陆区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1363', '1359', '铁山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1364', '1359', '阳新县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1365', '1359', '大冶市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1366', '1320', '荆门市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1367', '1366', '东宝区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1368', '1366', '掇刀区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1369', '1366', '京山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1370', '1366', '沙洋县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1371', '1366', '钟祥市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1372', '1320', '荆州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1373', '1372', '沙市区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1374', '1372', '荆州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1375', '1372', '公安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1376', '1372', '监利县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1377', '1372', '江陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1378', '1372', '石首市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1379', '1372', '洪湖市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1380', '1372', '松滋市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1381', '1320', '潜江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1382', '1320', '神农架林区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1383', '1320', '十堰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1384', '1383', '茅箭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1385', '1383', '张湾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1386', '1383', '郧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1387', '1383', '郧西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1388', '1383', '竹山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1389', '1383', '竹溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1390', '1383', '房县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1391', '1383', '丹江口市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1392', '1320', '随州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1393', '1392', '曾都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1394', '1392', '广水市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1395', '1320', '天门市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1396', '1320', '仙桃市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1397', '1320', '咸宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1398', '1397', '咸安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1399', '1397', '嘉鱼县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1400', '1397', '通城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1401', '1397', '崇阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1402', '1397', '通山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1403', '1397', '赤壁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1404', '1320', '襄樊市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1405', '1404', '襄城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1406', '1404', '樊城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1407', '1404', '襄阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1408', '1404', '南漳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1409', '1404', '谷城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1410', '1404', '保康县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1411', '1404', '老河口市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1412', '1404', '枣阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1413', '1404', '宜城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1414', '1320', '孝感市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1415', '1414', '孝南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1416', '1414', '孝昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1417', '1414', '大悟县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1418', '1414', '云梦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1419', '1414', '应城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1420', '1414', '安陆市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1421', '1414', '汉川市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1422', '1320', '宜昌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1423', '1422', '西陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1424', '1422', '伍家岗区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1425', '1422', '点军区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1426', '1422', '猇亭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1427', '1422', '夷陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1428', '1422', '远安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1429', '1422', '兴山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1430', '1422', '秭归县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1431', '1422', '长阳土家族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1432', '1422', '五峰土家族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1433', '1422', '宜都市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1434', '1422', '当阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1435', '1422', '枝江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1436', '0', '湖南', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1437', '1436', '长沙市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1438', '1437', '芙蓉区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1439', '1437', '天心区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1440', '1437', '岳麓区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1441', '1437', '开福区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1442', '1437', '雨花区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1443', '1437', '长沙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1444', '1437', '望城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1445', '1437', '宁乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1446', '1437', '浏阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1447', '1436', '常德市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1448', '1447', '武陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1449', '1447', '鼎城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1450', '1447', '安乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1451', '1447', '汉寿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1452', '1447', '澧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1453', '1447', '临澧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1454', '1447', '桃源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1455', '1447', '石门县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1456', '1447', '津市市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1457', '1436', '郴州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1458', '1457', '北湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1459', '1457', '苏仙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1460', '1457', '桂阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1461', '1457', '宜章县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1462', '1457', '永兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1463', '1457', '嘉禾县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1464', '1457', '临武县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1465', '1457', '汝城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1466', '1457', '桂东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1467', '1457', '安仁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1468', '1457', '资兴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1469', '1436', '衡阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1470', '1469', '珠晖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1471', '1469', '雁峰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1472', '1469', '石鼓区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1473', '1469', '蒸湘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1474', '1469', '南岳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1475', '1469', '衡阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1476', '1469', '衡南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1477', '1469', '衡山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1478', '1469', '衡东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1479', '1469', '祁东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1480', '1469', '耒阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1481', '1469', '常宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1482', '1436', '怀化市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1483', '1482', '鹤城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1484', '1482', '中方县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1485', '1482', '沅陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1486', '1482', '辰溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1487', '1482', '溆浦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1488', '1482', '会同县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1489', '1482', '麻阳苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1490', '1482', '新晃侗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1491', '1482', '芷江侗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1492', '1482', '靖州苗族侗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1493', '1482', '通道侗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1494', '1482', '洪江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1495', '1436', '娄底市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1496', '1495', '娄星区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1497', '1495', '双峰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1498', '1495', '新化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1499', '1495', '冷水江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1500', '1495', '涟源市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1501', '1436', '邵阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1502', '1501', '双清区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1503', '1501', '大祥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1504', '1501', '北塔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1505', '1501', '邵东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1506', '1501', '新邵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1507', '1501', '邵阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1508', '1501', '隆回县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1509', '1501', '洞口县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1510', '1501', '绥宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1511', '1501', '新宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1512', '1501', '城步苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1513', '1501', '武冈市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1514', '1436', '湘潭市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1515', '1514', '雨湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1516', '1514', '岳塘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1517', '1514', '湘潭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1518', '1514', '湘乡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1519', '1514', '韶山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1520', '1436', '湘西土家族苗族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1521', '1520', '吉首市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1522', '1520', '泸溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1523', '1520', '凤凰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1524', '1520', '花垣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1525', '1520', '保靖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1526', '1520', '古丈县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1527', '1520', '永顺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1528', '1520', '龙山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1529', '1436', '益阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1530', '1529', '资阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1531', '1529', '赫山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1532', '1529', '南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1533', '1529', '桃江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1534', '1529', '安化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1535', '1529', '沅江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1536', '1436', '永州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1537', '1536', '芝山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1538', '1536', '冷水滩区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1539', '1536', '祁阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1540', '1536', '东安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1541', '1536', '双牌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1542', '1536', '道县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1543', '1536', '江永县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1544', '1536', '宁远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1545', '1536', '蓝山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1546', '1536', '新田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1547', '1536', '江华瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1548', '1436', '岳阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1549', '1548', '岳阳楼区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1550', '1548', '云溪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1551', '1548', '君山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1552', '1548', '岳阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1553', '1548', '华容县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1554', '1548', '湘阴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1555', '1548', '平江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1556', '1548', '汨罗市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1557', '1548', '临湘市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1558', '1436', '张家界市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1559', '1558', '永定区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1560', '1558', '武陵源区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1561', '1558', '慈利县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1562', '1558', '桑植县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1563', '1436', '株洲市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1564', '1563', '荷塘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1565', '1563', '芦淞区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1566', '1563', '石峰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1567', '1563', '天元区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1568', '1563', '株洲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1569', '1563', '攸县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1570', '1563', '茶陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1571', '1563', '炎陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1572', '1563', '醴陵市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1573', '0', '吉林', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1574', '1573', '长春市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1575', '1574', '南关区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1576', '1574', '宽城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1577', '1574', '朝阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1578', '1574', '二道区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1579', '1574', '绿园区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1580', '1574', '双阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1581', '1574', '农安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1582', '1574', '九台市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1583', '1574', '榆树市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1584', '1574', '德惠市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1585', '1573', '白城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1586', '1585', '洮北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1587', '1585', '镇赉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1588', '1585', '通榆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1589', '1585', '洮南市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1590', '1585', '大安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1591', '1573', '白山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1592', '1591', '八道江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1593', '1591', '抚松县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1594', '1591', '靖宇县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1595', '1591', '长白朝鲜族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1596', '1591', '江源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1597', '1591', '临江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1598', '1573', '吉林市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1599', '1598', '昌邑区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1600', '1598', '龙潭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1601', '1598', '船营区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1602', '1598', '丰满区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1603', '1598', '永吉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1604', '1598', '蛟河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
-INSERT INTO `yiyi_area` VALUES ('1605', '1598', '桦甸市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1606', '1598', '舒兰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1607', '1598', '磐石市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1608', '1573', '辽源市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1609', '1608', '龙山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1610', '1608', '西安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1611', '1608', '东丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1612', '1608', '东辽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1613', '1573', '四平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1614', '1613', '铁西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1615', '1613', '铁东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1616', '1613', '梨树县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1617', '1613', '伊通满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1618', '1613', '公主岭市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1619', '1613', '双辽市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1620', '1573', '松原市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1621', '1620', '宁江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1622', '1620', '前郭尔罗斯蒙古族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1623', '1620', '长岭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1624', '1620', '乾安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1625', '1620', '扶余县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1626', '1573', '通化市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1627', '1626', '东昌区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1628', '1626', '二道江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1629', '1626', '通化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1630', '1626', '辉南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1631', '1626', '柳河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1632', '1626', '梅河口市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1633', '1626', '集安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1634', '1573', '延边朝鲜族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1635', '1634', '延吉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1636', '1634', '图们市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1637', '1634', '敦化市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1638', '1634', '珲春市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1639', '1634', '龙井市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1640', '1634', '和龙市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1641', '1634', '汪清县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1642', '1634', '安图县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1643', '0', '江苏', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1644', '1643', '南京市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1645', '1644', '玄武区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1646', '1644', '白下区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1647', '1644', '秦淮区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1648', '1644', '建邺区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1649', '1644', '鼓楼区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1650', '1644', '下关区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1651', '1644', '浦口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1652', '1644', '栖霞区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1653', '1644', '雨花台区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1654', '1644', '江宁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1655', '1644', '六合区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1656', '1644', '溧水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1657', '1644', '高淳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1658', '1643', '常州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1659', '1658', '天宁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1660', '1658', '钟楼区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1661', '1658', '戚墅堰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1662', '1658', '新北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1663', '1658', '武进区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1664', '1658', '溧阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1665', '1658', '金坛市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1666', '1643', '淮安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1667', '1666', '清河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1668', '1666', '楚州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1669', '1666', '淮阴区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1670', '1666', '清浦区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1671', '1666', '涟水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1672', '1666', '洪泽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1673', '1666', '盱眙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1674', '1666', '金湖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1675', '1643', '连云港市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1676', '1675', '连云区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1677', '1675', '新浦区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1678', '1675', '海州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1679', '1675', '赣榆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1680', '1675', '东海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1681', '1675', '灌云县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1682', '1675', '灌南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1683', '1643', '南通市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1684', '1683', '崇川区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1685', '1683', '港闸区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1686', '1683', '海安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1687', '1683', '如东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1688', '1683', '启东市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1689', '1683', '如皋市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1690', '1683', '通州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1691', '1683', '海门市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1692', '1643', '苏州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1693', '1692', '沧浪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1694', '1692', '平江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1695', '1692', '金阊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1696', '1692', '虎丘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1697', '1692', '吴中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1698', '1692', '相城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1699', '1692', '常熟市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1700', '1692', '张家港市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1701', '1692', '昆山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1702', '1692', '吴江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1703', '1692', '太仓市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1704', '1643', '宿迁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1705', '1704', '宿城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1706', '1704', '宿豫区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1707', '1704', '沭阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1708', '1704', '泗阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1709', '1704', '泗洪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1710', '1643', '泰州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1711', '1710', '海陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1712', '1710', '高港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1713', '1710', '兴化市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1714', '1710', '靖江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1715', '1710', '泰兴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1716', '1710', '姜堰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1717', '1643', '无锡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1718', '1717', '崇安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1719', '1717', '南长区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1720', '1717', '北塘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1721', '1717', '锡山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1722', '1717', '惠山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1723', '1717', '滨湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1724', '1717', '江阴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1725', '1717', '宜兴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1726', '1643', '徐州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1727', '1726', '鼓楼区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1728', '1726', '云龙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1729', '1726', '九里区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1730', '1726', '贾汪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1731', '1726', '泉山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1732', '1726', '丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1733', '1726', '沛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1734', '1726', '铜山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1735', '1726', '睢宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1736', '1726', '新沂市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1737', '1726', '邳州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1738', '1643', '盐城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1739', '1738', '亭湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1740', '1738', '盐都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1741', '1738', '响水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1742', '1738', '滨海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1743', '1738', '阜宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1744', '1738', '射阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1745', '1738', '建湖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1746', '1738', '东台市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1747', '1738', '大丰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1748', '1643', '扬州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1749', '1748', '广陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1750', '1748', '邗江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1751', '1748', '郊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1752', '1748', '宝应县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1753', '1748', '仪征市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1754', '1748', '高邮市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1755', '1748', '江都市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1756', '1643', '镇江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1757', '1756', '京口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1758', '1756', '润州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1759', '1756', '丹徒区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1760', '1756', '丹阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1761', '1756', '扬中市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1762', '1756', '句容市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1763', '0', '江西', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1764', '1763', '南昌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1765', '1764', '东湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1766', '1764', '西湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1767', '1764', '青云谱区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1768', '1764', '湾里区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1769', '1764', '青山湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1770', '1764', '南昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1771', '1764', '新建县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1772', '1764', '安义县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1773', '1764', '进贤县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1774', '1763', '抚州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1775', '1774', '临川区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1776', '1774', '南城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1777', '1774', '黎川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1778', '1774', '南丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1779', '1774', '崇仁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1780', '1774', '乐安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1781', '1774', '宜黄县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1782', '1774', '金溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1783', '1774', '资溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1784', '1774', '东乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1785', '1774', '广昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1786', '1763', '赣州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1787', '1786', '章贡区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1788', '1786', '赣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1789', '1786', '信丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1790', '1786', '大余县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1791', '1786', '上犹县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1792', '1786', '崇义县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1793', '1786', '安远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1794', '1786', '龙南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1795', '1786', '定南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1796', '1786', '全南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1797', '1786', '宁都县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1798', '1786', '于都县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1799', '1786', '兴国县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1800', '1786', '会昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1801', '1786', '寻乌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1802', '1786', '石城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1803', '1786', '瑞金市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1804', '1786', '南康市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1805', '1763', '吉安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1806', '1805', '吉州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1807', '1805', '青原区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1808', '1805', '吉安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1809', '1805', '吉水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1810', '1805', '峡江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1811', '1805', '新干县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1812', '1805', '永丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1813', '1805', '泰和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1814', '1805', '遂川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1815', '1805', '万安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1816', '1805', '安福县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1817', '1805', '永新县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1818', '1805', '井冈山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1819', '1763', '景德镇市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1820', '1819', '昌江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1821', '1819', '珠山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1822', '1819', '浮梁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1823', '1819', '乐平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1824', '1763', '九江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1825', '1824', '庐山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1826', '1824', '浔阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1827', '1824', '九江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1828', '1824', '武宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1829', '1824', '修水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1830', '1824', '永修县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1831', '1824', '德安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1832', '1824', '星子县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1833', '1824', '都昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1834', '1824', '湖口县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1835', '1824', '彭泽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1836', '1824', '瑞昌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1837', '1763', '萍乡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1838', '1837', '安源区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1839', '1837', '湘东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1840', '1837', '莲花县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1841', '1837', '上栗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1842', '1837', '芦溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1843', '1763', '上饶市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1844', '1843', '信州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1845', '1843', '上饶县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1846', '1843', '广丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1847', '1843', '玉山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1848', '1843', '铅山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1849', '1843', '横峰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1850', '1843', '弋阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1851', '1843', '余干县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1852', '1843', '鄱阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1853', '1843', '万年县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1854', '1843', '婺源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1855', '1843', '德兴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1856', '1763', '新余市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1857', '1856', '渝水区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1858', '1856', '分宜县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1859', '1763', '宜春市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1860', '1859', '袁州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1861', '1859', '奉新县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1862', '1859', '万载县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1863', '1859', '上高县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1864', '1859', '宜丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1865', '1859', '靖安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1866', '1859', '铜鼓县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1867', '1859', '丰城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1868', '1859', '樟树市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1869', '1859', '高安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1870', '1763', '鹰潭市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1871', '1870', '月湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1872', '1870', '余江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1873', '1870', '贵溪市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1874', '0', '辽宁', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1875', '1874', '沈阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1876', '1875', '和平区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1877', '1875', '沈河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1878', '1875', '大东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1879', '1875', '皇姑区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1880', '1875', '铁西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1881', '1875', '苏家屯区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1882', '1875', '东陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1883', '1875', '新城子区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1884', '1875', '于洪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1885', '1875', '辽中县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1886', '1875', '康平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1887', '1875', '法库县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1888', '1875', '新民市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1889', '1874', '鞍山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1890', '1889', '铁东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1891', '1889', '铁西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1892', '1889', '立山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1893', '1889', '千山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1894', '1889', '台安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1895', '1889', '岫岩满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1896', '1889', '海城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1897', '1874', '本溪市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1898', '1897', '平山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1899', '1897', '溪湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1900', '1897', '明山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1901', '1897', '南芬区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1902', '1897', '本溪满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1903', '1897', '桓仁满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1904', '1874', '朝阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1905', '1904', '双塔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1906', '1904', '龙城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1907', '1904', '朝阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1908', '1904', '建平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1909', '1904', '喀喇沁左翼蒙古族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1910', '1904', '北票市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1911', '1904', '凌源市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1912', '1874', '大连市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1913', '1912', '中山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1914', '1912', '西岗区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1915', '1912', '沙河口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1916', '1912', '甘井子区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1917', '1912', '旅顺口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1918', '1912', '金州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1919', '1912', '长海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1920', '1912', '瓦房店市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1921', '1912', '普兰店市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1922', '1912', '庄河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1923', '1874', '丹东市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1924', '1923', '元宝区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1925', '1923', '振兴区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1926', '1923', '振安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1927', '1923', '宽甸满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1928', '1923', '东港市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1929', '1923', '凤城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1930', '1874', '抚顺市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1931', '1930', '新抚区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1932', '1930', '东洲区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1933', '1930', '望花区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1934', '1930', '顺城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1935', '1930', '抚顺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1936', '1930', '新宾满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1937', '1930', '清原满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1938', '1874', '阜新市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1939', '1938', '海州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1940', '1938', '新邱区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1941', '1938', '太平区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1942', '1938', '清河门区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1943', '1938', '细河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1944', '1938', '阜新蒙古族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1945', '1938', '彰武县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1946', '1874', '葫芦岛市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1947', '1946', '连山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1948', '1946', '龙港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1949', '1946', '南票区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1950', '1946', '绥中县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1951', '1946', '建昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1952', '1946', '兴城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1953', '1874', '锦州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1954', '1953', '古塔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1955', '1953', '凌河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1956', '1953', '太和区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1957', '1953', '黑山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1958', '1953', '义县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1959', '1953', '凌海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1960', '1953', '北宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1961', '1874', '辽阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1962', '1961', '白塔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1963', '1961', '文圣区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1964', '1961', '宏伟区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1965', '1961', '弓长岭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1966', '1961', '太子河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1967', '1961', '辽阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1968', '1961', '灯塔市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1969', '1874', '盘锦市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1970', '1969', '双台子区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1971', '1969', '兴隆台区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1972', '1969', '大洼县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1973', '1969', '盘山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1974', '1874', '铁岭市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1975', '1974', '银州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1976', '1974', '清河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1977', '1974', '铁岭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1978', '1974', '西丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1979', '1974', '昌图县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1980', '1974', '调兵山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1981', '1974', '开原市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1982', '1874', '营口市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1983', '1982', '站前区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1984', '1982', '西市区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1985', '1982', '鲅鱼圈区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1986', '1982', '老边区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1987', '1982', '盖州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1988', '1982', '大石桥市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1989', '0', '内蒙古', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1990', '1989', '呼和浩特市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1991', '1990', '新城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1992', '1990', '回民区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1993', '1990', '玉泉区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1994', '1990', '赛罕区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1995', '1990', '土默特左旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1996', '1990', '托克托县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1997', '1990', '和林格尔县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1998', '1990', '清水河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('1999', '1990', '武川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2000', '1989', '阿拉善盟', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2001', '2000', '阿拉善左旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2002', '2000', '阿拉善右旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2003', '2000', '额济纳旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2004', '1989', '巴彦淖尔市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2005', '2004', '临河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2006', '2004', '五原县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2007', '2004', '磴口县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2008', '2004', '乌拉特前旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2009', '2004', '乌拉特中旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2010', '2004', '乌拉特后旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2011', '2004', '杭锦后旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2012', '1989', '包头市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2013', '2012', '东河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2014', '2012', '昆都仑区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2015', '2012', '青山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2016', '2012', '石拐区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2017', '2012', '白云矿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2018', '2012', '九原区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2019', '2012', '土默特右旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2020', '2012', '固阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2021', '2012', '达尔罕茂明安联合旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2022', '1989', '赤峰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2023', '2022', '红山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2024', '2022', '元宝山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2025', '2022', '松山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2026', '2022', '阿鲁科尔沁旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2027', '2022', '巴林左旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2028', '2022', '巴林右旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2029', '2022', '林西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2030', '2022', '克什克腾旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2031', '2022', '翁牛特旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2032', '2022', '喀喇沁旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2033', '2022', '宁城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2034', '2022', '敖汉旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2035', '1989', '鄂尔多斯市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2036', '2035', '东胜区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2037', '2035', '达拉特旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2038', '2035', '准格尔旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2039', '2035', '鄂托克前旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2040', '2035', '鄂托克旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2041', '2035', '杭锦旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2042', '2035', '乌审旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2043', '2035', '伊金霍洛旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2044', '1989', '呼伦贝尔市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2045', '2044', '海拉尔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2046', '2044', '阿荣旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2047', '2044', '莫力达瓦达斡尔族自治旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2048', '2044', '鄂伦春自治旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2049', '2044', '鄂温克族自治旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2050', '2044', '陈巴尔虎旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2051', '2044', '新巴尔虎左旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2052', '2044', '新巴尔虎右旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2053', '2044', '满洲里市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2054', '2044', '牙克石市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2055', '2044', '扎兰屯市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2056', '2044', '额尔古纳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2057', '2044', '根河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2058', '1989', '通辽市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2059', '2058', '科尔沁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2060', '2058', '科尔沁左翼中旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2061', '2058', '科尔沁左翼后旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2062', '2058', '开鲁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2063', '2058', '库伦旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2064', '2058', '奈曼旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2065', '2058', '扎鲁特旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2066', '2058', '霍林郭勒市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2067', '1989', '乌海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2068', '2067', '海勃湾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2069', '2067', '海南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2070', '2067', '乌达区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2071', '1989', '乌兰察布市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2072', '2071', '集宁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2073', '2071', '卓资县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2074', '2071', '化德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2075', '2071', '商都县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2076', '2071', '兴和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2077', '2071', '凉城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2078', '2071', '察哈尔右翼前旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2079', '2071', '察哈尔右翼中旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2080', '2071', '察哈尔右翼后旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2081', '2071', '四子王旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2082', '2071', '丰镇市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2083', '1989', '锡林郭勒盟', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2084', '2083', '二连浩特市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2085', '2083', '锡林浩特市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2086', '2083', '阿巴嘎旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2087', '2083', '苏尼特左旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2088', '2083', '苏尼特右旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2089', '2083', '东乌珠穆沁旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2090', '2083', '西乌珠穆沁旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2091', '2083', '太仆寺旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2092', '2083', '镶黄旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2093', '2083', '正镶白旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2094', '2083', '正蓝旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2095', '2083', '多伦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2096', '1989', '兴安盟', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2097', '2096', '乌兰浩特市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2098', '2096', '阿尔山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2099', '2096', '科尔沁右翼前旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2100', '2096', '科尔沁右翼中旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2101', '2096', '扎赉特旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2102', '2096', '突泉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2103', '0', '宁夏', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2104', '2103', '银川市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2105', '2104', '兴庆区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2106', '2104', '西夏区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2107', '2104', '金凤区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2108', '2104', '永宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2109', '2104', '贺兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2110', '2104', '灵武市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2111', '2103', '固原市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2112', '2111', '原州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2113', '2111', '西吉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2114', '2111', '隆德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2115', '2111', '泾源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2116', '2111', '彭阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2117', '2103', '石嘴山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2118', '2117', '大武口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2119', '2117', '惠农区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2120', '2117', '平罗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2121', '2103', '吴忠市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2122', '2121', '利通区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2123', '2121', '盐池县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2124', '2121', '同心县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2125', '2121', '青铜峡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2126', '2103', '中卫市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2127', '2126', '沙坡头区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2128', '2126', '中宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2129', '2126', '海原县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2130', '0', '青海', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2131', '2130', '西宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2132', '2131', '城东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2133', '2131', '城中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2134', '2131', '城西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2135', '2131', '城北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2136', '2131', '大通回族土族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2137', '2131', '湟中县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2138', '2131', '湟源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2139', '2130', '果洛藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2140', '2139', '玛沁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2141', '2139', '班玛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2142', '2139', '甘德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2143', '2139', '达日县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2144', '2139', '久治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2145', '2139', '玛多县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2146', '2130', '海北藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2147', '2146', '门源回族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2148', '2146', '祁连县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2149', '2146', '海晏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2150', '2146', '刚察县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2151', '2130', '海东地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2152', '2151', '平安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2153', '2151', '民和回族土族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2154', '2151', '乐都县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2155', '2151', '互助土族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2156', '2151', '化隆回族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2157', '2151', '循化撒拉族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2158', '2130', '海南藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2159', '2158', '共和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2160', '2158', '同德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2161', '2158', '贵德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2162', '2158', '兴海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2163', '2158', '贵南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2164', '2130', '海西蒙古族藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2165', '2164', '格尔木市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2166', '2164', '德令哈市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2167', '2164', '乌兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2168', '2164', '都兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2169', '2164', '天峻县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2170', '2130', '黄南藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2171', '2170', '同仁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2172', '2170', '尖扎县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2173', '2170', '泽库县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2174', '2170', '河南蒙古族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2175', '2130', '玉树藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2176', '2175', '玉树县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2177', '2175', '杂多县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2178', '2175', '称多县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2179', '2175', '治多县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2180', '2175', '囊谦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2181', '2175', '曲麻莱县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2182', '0', '山东', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2183', '2182', '济南市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2184', '2183', '历下区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2185', '2183', '市中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2186', '2183', '槐荫区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2187', '2183', '天桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2188', '2183', '历城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2189', '2183', '长清区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2190', '2183', '平阴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2191', '2183', '济阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2192', '2183', '商河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2193', '2183', '章丘市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2194', '2182', '滨州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2195', '2194', '滨城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2196', '2194', '惠民县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2197', '2194', '阳信县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2198', '2194', '无棣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2199', '2194', '沾化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2200', '2194', '博兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2201', '2194', '邹平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2202', '2182', '德州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2203', '2202', '德城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2204', '2202', '陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2205', '2202', '宁津县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2206', '2202', '庆云县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2207', '2202', '临邑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2208', '2202', '齐河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2209', '2202', '平原县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2210', '2202', '夏津县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2211', '2202', '武城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2212', '2202', '乐陵市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2213', '2202', '禹城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2214', '2182', '东营市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2215', '2214', '东营区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2216', '2214', '河口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2217', '2214', '垦利县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2218', '2214', '利津县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2219', '2214', '广饶县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2220', '2182', '菏泽市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2221', '2220', '牡丹区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2222', '2220', '曹县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2223', '2220', '单县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2224', '2220', '成武县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2225', '2220', '巨野县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2226', '2220', '郓城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2227', '2220', '鄄城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2228', '2220', '定陶县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2229', '2220', '东明县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2230', '2182', '济宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2231', '2230', '市中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2232', '2230', '任城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2233', '2230', '微山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2234', '2230', '鱼台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2235', '2230', '金乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2236', '2230', '嘉祥县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2237', '2230', '汶上县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2238', '2230', '泗水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2239', '2230', '梁山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2240', '2230', '曲阜市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2241', '2230', '兖州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2242', '2230', '邹城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2243', '2182', '莱芜市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2244', '2243', '莱城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2245', '2243', '钢城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2246', '2182', '聊城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2247', '2246', '东昌府区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2248', '2246', '阳谷县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2249', '2246', '莘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2250', '2246', '茌平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2251', '2246', '东阿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2252', '2246', '冠县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2253', '2246', '高唐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2254', '2246', '临清市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2255', '2182', '临沂市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2256', '2255', '兰山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2257', '2255', '罗庄区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2258', '2255', '河东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2259', '2255', '沂南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2260', '2255', '郯城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2261', '2255', '沂水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2262', '2255', '苍山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2263', '2255', '费县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2264', '2255', '平邑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2265', '2255', '莒南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2266', '2255', '蒙阴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2267', '2255', '临沭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2268', '2182', '青岛市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2269', '2268', '市南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2270', '2268', '市北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2271', '2268', '四方区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2272', '2268', '黄岛区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2273', '2268', '崂山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2274', '2268', '李沧区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2275', '2268', '城阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2276', '2268', '胶州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2277', '2268', '即墨市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2278', '2268', '平度市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2279', '2268', '胶南市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2280', '2268', '莱西市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2281', '2182', '日照市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2282', '2281', '东港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2283', '2281', '岚山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2284', '2281', '五莲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2285', '2281', '莒县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2286', '2182', '泰安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2287', '2286', '泰山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2288', '2286', '岱岳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2289', '2286', '宁阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2290', '2286', '东平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2291', '2286', '新泰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2292', '2286', '肥城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2293', '2182', '威海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2294', '2293', '环翠区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2295', '2293', '文登市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2296', '2293', '荣成市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2297', '2293', '乳山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2298', '2182', '潍坊市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2299', '2298', '潍城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2300', '2298', '寒亭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2301', '2298', '坊子区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2302', '2298', '奎文区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2303', '2298', '临朐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2304', '2298', '昌乐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2305', '2298', '青州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2306', '2298', '诸城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2307', '2298', '寿光市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2308', '2298', '安丘市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2309', '2298', '高密市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2310', '2298', '昌邑市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2311', '2182', '烟台市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2312', '2311', '芝罘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2313', '2311', '福山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2314', '2311', '牟平区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2315', '2311', '莱山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2316', '2311', '长岛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2317', '2311', '龙口市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2318', '2311', '莱阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2319', '2311', '莱州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2320', '2311', '蓬莱市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2321', '2311', '招远市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2322', '2311', '栖霞市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2323', '2311', '海阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2324', '2182', '枣庄市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2325', '2324', '市中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2326', '2324', '薛城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2327', '2324', '峄城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2328', '2324', '台儿庄区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2329', '2324', '山亭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2330', '2324', '滕州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2331', '2182', '淄博市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2332', '2331', '淄川区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2333', '2331', '张店区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2334', '2331', '博山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2335', '2331', '临淄区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2336', '2331', '周村区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2337', '2331', '桓台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2338', '2331', '高青县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2339', '2331', '沂源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2340', '0', '山西', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2341', '2340', '太原市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2342', '2341', '小店区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2343', '2341', '迎泽区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2344', '2341', '杏花岭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2345', '2341', '尖草坪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2346', '2341', '万柏林区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2347', '2341', '晋源区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2348', '2341', '清徐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2349', '2341', '阳曲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2350', '2341', '娄烦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2351', '2341', '古交市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2352', '2340', '长治市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2353', '2352', '城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2354', '2352', '郊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2355', '2352', '长治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2356', '2352', '襄垣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2357', '2352', '屯留县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2358', '2352', '平顺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2359', '2352', '黎城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2360', '2352', '壶关县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2361', '2352', '长子县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2362', '2352', '武乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2363', '2352', '沁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2364', '2352', '沁源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2365', '2352', '潞城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2366', '2340', '大同市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2367', '2366', '城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2368', '2366', '矿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2369', '2366', '南郊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2370', '2366', '新荣区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2371', '2366', '阳高县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2372', '2366', '天镇县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2373', '2366', '广灵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2374', '2366', '灵丘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2375', '2366', '浑源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2376', '2366', '左云县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2377', '2366', '大同县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2378', '2340', '晋城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2379', '2378', '城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2380', '2378', '沁水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2381', '2378', '阳城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2382', '2378', '陵川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2383', '2378', '泽州县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2384', '2378', '高平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2385', '2340', '晋中市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2386', '2385', '榆次区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2387', '2385', '榆社县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2388', '2385', '左权县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2389', '2385', '和顺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2390', '2385', '昔阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2391', '2385', '寿阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
-INSERT INTO `yiyi_area` VALUES ('2392', '2385', '太谷县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2393', '2385', '祁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2394', '2385', '平遥县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2395', '2385', '灵石县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2396', '2385', '介休市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2397', '2340', '临汾市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2398', '2397', '尧都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2399', '2397', '曲沃县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2400', '2397', '翼城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2401', '2397', '襄汾县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2402', '2397', '洪洞县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2403', '2397', '古县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2404', '2397', '安泽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2405', '2397', '浮山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2406', '2397', '吉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2407', '2397', '乡宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2408', '2397', '大宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2409', '2397', '隰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2410', '2397', '永和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2411', '2397', '蒲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2412', '2397', '汾西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2413', '2397', '侯马市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2414', '2397', '霍州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2415', '2340', '吕梁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2416', '2415', '离石区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2417', '2415', '文水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2418', '2415', '交城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2419', '2415', '兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2420', '2415', '临县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2421', '2415', '柳林县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2422', '2415', '石楼县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2423', '2415', '岚县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2424', '2415', '方山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2425', '2415', '中阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2426', '2415', '交口县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2427', '2415', '孝义市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2428', '2415', '汾阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2429', '2340', '朔州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2430', '2429', '朔城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2431', '2429', '平鲁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2432', '2429', '山阴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2433', '2429', '应县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2434', '2429', '右玉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2435', '2429', '怀仁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2436', '2340', '忻州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2437', '2436', '忻府区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2438', '2436', '定襄县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2439', '2436', '五台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2440', '2436', '代县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2441', '2436', '繁峙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2442', '2436', '宁武县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2443', '2436', '静乐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2444', '2436', '神池县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2445', '2436', '五寨县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2446', '2436', '岢岚县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2447', '2436', '河曲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2448', '2436', '保德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2449', '2436', '偏关县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2450', '2436', '原平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2451', '2340', '阳泉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2452', '2451', '城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2453', '2451', '矿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2454', '2451', '郊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2455', '2451', '平定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2456', '2451', '盂县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2457', '2340', '运城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2458', '2457', '盐湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2459', '2457', '临猗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2460', '2457', '万荣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2461', '2457', '闻喜县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2462', '2457', '稷山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2463', '2457', '新绛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2464', '2457', '绛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2465', '2457', '垣曲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2466', '2457', '夏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2467', '2457', '平陆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2468', '2457', '芮城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2469', '2457', '永济市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2470', '2457', '河津市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2471', '0', '陕西', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2472', '2471', '西安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2473', '2472', '新城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2474', '2472', '碑林区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2475', '2472', '莲湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2476', '2472', '灞桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2477', '2472', '未央区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2478', '2472', '雁塔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2479', '2472', '阎良区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2480', '2472', '临潼区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2481', '2472', '长安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2482', '2472', '蓝田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2483', '2472', '周至县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2484', '2472', '户县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2485', '2472', '高陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2486', '2471', '安康市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2487', '2486', '汉滨区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2488', '2486', '汉阴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2489', '2486', '石泉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2490', '2486', '宁陕县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2491', '2486', '紫阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2492', '2486', '岚皋县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2493', '2486', '平利县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2494', '2486', '镇坪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2495', '2486', '旬阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2496', '2486', '白河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2497', '2471', '宝鸡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2498', '2497', '渭滨区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2499', '2497', '金台区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2500', '2497', '陈仓区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2501', '2497', '凤翔县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2502', '2497', '岐山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2503', '2497', '扶风县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2504', '2497', '眉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2505', '2497', '陇县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2506', '2497', '千阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2507', '2497', '麟游县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2508', '2497', '凤县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2509', '2497', '太白县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2510', '2471', '汉中市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2511', '2510', '汉台区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2512', '2510', '南郑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2513', '2510', '城固县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2514', '2510', '洋县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2515', '2510', '西乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2516', '2510', '勉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2517', '2510', '宁强县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2518', '2510', '略阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2519', '2510', '镇巴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2520', '2510', '留坝县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2521', '2510', '佛坪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2522', '2471', '商洛市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2523', '2522', '商州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2524', '2522', '洛南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2525', '2522', '丹凤县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2526', '2522', '商南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2527', '2522', '山阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2528', '2522', '镇安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2529', '2522', '柞水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2530', '2471', '铜川市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2531', '2530', '王益区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2532', '2530', '印台区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2533', '2530', '耀州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2534', '2530', '宜君县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2535', '2471', '渭南市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2536', '2535', '临渭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2537', '2535', '华县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2538', '2535', '潼关县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2539', '2535', '大荔县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2540', '2535', '合阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2541', '2535', '澄城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2542', '2535', '蒲城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2543', '2535', '白水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2544', '2535', '富平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2545', '2535', '韩城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2546', '2535', '华阴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2547', '2471', '咸阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2548', '2547', '秦都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2549', '2547', '杨凌区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2550', '2547', '渭城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2551', '2547', '三原县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2552', '2547', '泾阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2553', '2547', '乾县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2554', '2547', '礼泉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2555', '2547', '永寿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2556', '2547', '彬县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2557', '2547', '长武县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2558', '2547', '旬邑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2559', '2547', '淳化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2560', '2547', '武功县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2561', '2547', '兴平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2562', '2471', '延安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2563', '2562', '宝塔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2564', '2562', '延长县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2565', '2562', '延川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2566', '2562', '子长县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2567', '2562', '安塞县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2568', '2562', '志丹县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2569', '2562', '吴旗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2570', '2562', '甘泉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2571', '2562', '富县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2572', '2562', '洛川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2573', '2562', '宜川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2574', '2562', '黄龙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2575', '2562', '黄陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2576', '2471', '榆林市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2577', '2576', '榆阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2578', '2576', '神木县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2579', '2576', '府谷县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2580', '2576', '横山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2581', '2576', '靖边县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2582', '2576', '定边县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2583', '2576', '绥德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2584', '2576', '米脂县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2585', '2576', '佳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2586', '2576', '吴堡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2587', '2576', '清涧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2588', '2576', '子洲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2589', '0', '四川', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2590', '2589', '成都市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2591', '2590', '锦江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2592', '2590', '青羊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2593', '2590', '金牛区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2594', '2590', '武侯区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2595', '2590', '成华区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2596', '2590', '龙泉驿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2597', '2590', '青白江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2598', '2590', '新都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2599', '2590', '温江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2600', '2590', '金堂县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2601', '2590', '双流县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2602', '2590', '郫县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2603', '2590', '大邑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2604', '2590', '蒲江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2605', '2590', '新津县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2606', '2590', '都江堰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2607', '2590', '彭州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2608', '2590', '邛崃市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2609', '2590', '崇州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2610', '2589', '阿坝藏族羌族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2611', '2610', '汶川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2612', '2610', '理县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2613', '2610', '茂县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2614', '2610', '松潘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2615', '2610', '九寨沟县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2616', '2610', '金川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2617', '2610', '小金县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2618', '2610', '黑水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2619', '2610', '马尔康县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2620', '2610', '壤塘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2621', '2610', '阿坝县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2622', '2610', '若尔盖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2623', '2610', '红原县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2624', '2589', '巴中市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2625', '2624', '巴州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2626', '2624', '通江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2627', '2624', '南江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2628', '2624', '平昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2629', '2589', '达州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2630', '2629', '通川区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2631', '2629', '达县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2632', '2629', '宣汉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2633', '2629', '开江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2634', '2629', '大竹县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2635', '2629', '渠县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2636', '2629', '万源市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2637', '2589', '德阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2638', '2637', '旌阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2639', '2637', '中江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2640', '2637', '罗江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2641', '2637', '广汉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2642', '2637', '什邡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2643', '2637', '绵竹市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2644', '2589', '甘孜藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2645', '2644', '康定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2646', '2644', '泸定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2647', '2644', '丹巴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2648', '2644', '九龙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2649', '2644', '雅江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2650', '2644', '道孚县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2651', '2644', '炉霍县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2652', '2644', '甘孜县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2653', '2644', '新龙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2654', '2644', '德格县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2655', '2644', '白玉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2656', '2644', '石渠县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2657', '2644', '色达县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2658', '2644', '理塘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2659', '2644', '巴塘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2660', '2644', '乡城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2661', '2644', '稻城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2662', '2644', '得荣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2663', '2589', '广安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2664', '2663', '广安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2665', '2663', '岳池县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2666', '2663', '武胜县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2667', '2663', '邻水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2668', '2663', '华莹市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2669', '2589', '广元市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2670', '2669', '市中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2671', '2669', '元坝区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2672', '2669', '朝天区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2673', '2669', '旺苍县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2674', '2669', '青川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2675', '2669', '剑阁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2676', '2669', '苍溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2677', '2589', '乐山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2678', '2677', '市中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2679', '2677', '沙湾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2680', '2677', '五通桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2681', '2677', '金口河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2682', '2677', '犍为县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2683', '2677', '井研县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2684', '2677', '夹江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2685', '2677', '沐川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2686', '2677', '峨边彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2687', '2677', '马边彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2688', '2677', '峨眉山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2689', '2589', '凉山彝族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2690', '2689', '西昌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2691', '2689', '木里藏族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2692', '2689', '盐源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2693', '2689', '德昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2694', '2689', '会理县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2695', '2689', '会东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2696', '2689', '宁南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2697', '2689', '普格县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2698', '2689', '布拖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2699', '2689', '金阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2700', '2689', '昭觉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2701', '2689', '喜德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2702', '2689', '冕宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2703', '2689', '越西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2704', '2689', '甘洛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2705', '2689', '美姑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2706', '2689', '雷波县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2707', '2589', '泸州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2708', '2707', '江阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2709', '2707', '纳溪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2710', '2707', '龙马潭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2711', '2707', '泸县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2712', '2707', '合江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2713', '2707', '叙永县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2714', '2707', '古蔺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2715', '2589', '眉山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2716', '2715', '东坡区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2717', '2715', '仁寿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2718', '2715', '彭山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2719', '2715', '洪雅县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2720', '2715', '丹棱县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2721', '2715', '青神县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2722', '2589', '绵阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2723', '2722', '涪城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2724', '2722', '游仙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2725', '2722', '三台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2726', '2722', '盐亭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2727', '2722', '安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2728', '2722', '梓潼县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2729', '2722', '北川羌族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2730', '2722', '平武县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2731', '2722', '江油市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2732', '2589', '内江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2733', '2732', '市中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2734', '2732', '东兴区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2735', '2732', '威远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2736', '2732', '资中县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2737', '2732', '隆昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2738', '2589', '南充市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2739', '2738', '顺庆区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2740', '2738', '高坪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2741', '2738', '嘉陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2742', '2738', '南部县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2743', '2738', '营山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2744', '2738', '蓬安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2745', '2738', '仪陇县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2746', '2738', '西充县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2747', '2738', '阆中市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2748', '2589', '攀枝花市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2749', '2748', '东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2750', '2748', '西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2751', '2748', '仁和区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2752', '2748', '米易县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2753', '2748', '盐边县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2754', '2589', '遂宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2755', '2754', '船山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2756', '2754', '安居区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2757', '2754', '蓬溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2758', '2754', '射洪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2759', '2754', '大英县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2760', '2589', '雅安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2761', '2760', '雨城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2762', '2760', '名山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2763', '2760', '荥经县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2764', '2760', '汉源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2765', '2760', '石棉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2766', '2760', '天全县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2767', '2760', '芦山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2768', '2760', '宝兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2769', '2589', '宜宾市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2770', '2769', '翠屏区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2771', '2769', '宜宾县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2772', '2769', '南溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2773', '2769', '江安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2774', '2769', '长宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2775', '2769', '高县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2776', '2769', '珙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2777', '2769', '筠连县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2778', '2769', '兴文县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2779', '2769', '屏山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2780', '2589', '资阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2781', '2780', '雁江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2782', '2780', '安岳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2783', '2780', '乐至县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2784', '2780', '简阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2785', '2589', '自贡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2786', '2785', '自流井区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2787', '2785', '贡井区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2788', '2785', '大安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2789', '2785', '沿滩区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2790', '2785', '荣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2791', '2785', '富顺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2792', '0', '西藏', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2793', '2792', '拉萨市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2794', '2793', '城关区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2795', '2793', '林周县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2796', '2793', '当雄县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2797', '2793', '尼木县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2798', '2793', '曲水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2799', '2793', '堆龙德庆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2800', '2793', '达孜县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2801', '2793', '墨竹工卡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2802', '2792', '阿里地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2803', '2802', '普兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2804', '2802', '札达县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2805', '2802', '噶尔县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2806', '2802', '日土县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2807', '2802', '革吉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2808', '2802', '改则县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2809', '2802', '措勤县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2810', '2792', '昌都地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2811', '2810', '昌都县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2812', '2810', '江达县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2813', '2810', '贡觉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2814', '2810', '类乌齐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2815', '2810', '丁青县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2816', '2810', '察雅县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2817', '2810', '八宿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2818', '2810', '左贡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2819', '2810', '芒康县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2820', '2810', '洛隆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2821', '2810', '边坝县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2822', '2792', '林芝地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2823', '2822', '林芝县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2824', '2822', '工布江达县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2825', '2822', '米林县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2826', '2822', '墨脱县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2827', '2822', '波密县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2828', '2822', '察隅县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2829', '2822', '朗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2830', '2792', '那曲地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2831', '2830', '那曲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2832', '2830', '嘉黎县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2833', '2830', '比如县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2834', '2830', '聂荣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2835', '2830', '安多县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2836', '2830', '申扎县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2837', '2830', '索县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2838', '2830', '班戈县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2839', '2830', '巴青县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2840', '2830', '尼玛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2841', '2792', '日喀则地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2842', '2841', '日喀则市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2843', '2841', '南木林县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2844', '2841', '江孜县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2845', '2841', '定日县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2846', '2841', '萨迦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2847', '2841', '拉孜县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2848', '2841', '昂仁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2849', '2841', '谢通门县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2850', '2841', '白朗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2851', '2841', '仁布县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2852', '2841', '康马县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2853', '2841', '定结县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2854', '2841', '仲巴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2855', '2841', '亚东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2856', '2841', '吉隆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2857', '2841', '聂拉木县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2858', '2841', '萨嘎县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2859', '2841', '岗巴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2860', '2792', '山南地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2861', '2860', '乃东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2862', '2860', '扎囊县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2863', '2860', '贡嘎县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2864', '2860', '桑日县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2865', '2860', '琼结县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2866', '2860', '曲松县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2867', '2860', '措美县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2868', '2860', '洛扎县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2869', '2860', '加查县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2870', '2860', '隆子县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2871', '2860', '错那县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2872', '2860', '浪卡子县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2873', '0', '新疆', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2874', '2873', '乌鲁木齐市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2875', '2874', '天山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2876', '2874', '沙依巴克区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2877', '2874', '新市区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2878', '2874', '水磨沟区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2879', '2874', '头屯河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2880', '2874', '达坂城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2881', '2874', '东山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2882', '2874', '乌鲁木齐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2883', '2873', '阿克苏地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2884', '2883', '阿克苏市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2885', '2883', '温宿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2886', '2883', '库车县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2887', '2883', '沙雅县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2888', '2883', '新和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2889', '2883', '拜城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2890', '2883', '乌什县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2891', '2883', '阿瓦提县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2892', '2883', '柯坪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2893', '2873', '阿拉尔市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2894', '2873', '阿勒泰地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2895', '2894', '阿勒泰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2896', '2894', '布尔津县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2897', '2894', '富蕴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2898', '2894', '福海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2899', '2894', '哈巴河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2900', '2894', '青河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2901', '2894', '吉木乃县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2902', '2873', '巴音郭楞蒙古自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2903', '2902', '库尔勒市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2904', '2902', '轮台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2905', '2902', '尉犁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2906', '2902', '若羌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2907', '2902', '且末县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2908', '2902', '焉耆回族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2909', '2902', '和静县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2910', '2902', '和硕县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2911', '2902', '博湖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2912', '2873', '博尔塔拉蒙古自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2913', '2912', '博乐市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2914', '2912', '精河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2915', '2912', '温泉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2916', '2873', '昌吉回族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2917', '2916', '昌吉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2918', '2916', '阜康市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2919', '2916', '米泉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2920', '2916', '呼图壁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2921', '2916', '玛纳斯县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2922', '2916', '奇台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2923', '2916', '吉木萨尔县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2924', '2916', '木垒哈萨克自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2925', '2873', '哈密地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2926', '2925', '哈密市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2927', '2925', '巴里坤哈萨克自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2928', '2925', '伊吾县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2929', '2873', '和田地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2930', '2929', '和田市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2931', '2929', '和田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2932', '2929', '墨玉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2933', '2929', '皮山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2934', '2929', '洛浦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2935', '2929', '策勒县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2936', '2929', '于田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2937', '2929', '民丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2938', '2873', '喀什地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2939', '2938', '喀什市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2940', '2938', '疏附县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2941', '2938', '疏勒县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2942', '2938', '英吉沙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2943', '2938', '泽普县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2944', '2938', '莎车县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2945', '2938', '叶城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2946', '2938', '麦盖提县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2947', '2938', '岳普湖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2948', '2938', '伽师县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2949', '2938', '巴楚县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2950', '2938', '塔什库尔干塔吉克自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2951', '2873', '克拉玛依市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2952', '2951', '独山子区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2953', '2951', '克拉玛依区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2954', '2951', '白碱滩区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2955', '2951', '乌尔禾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2956', '2873', '克孜勒苏柯尔克孜自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2957', '2956', '阿图什市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2958', '2956', '阿克陶县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2959', '2956', '阿合奇县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2960', '2956', '乌恰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2961', '2873', '石河子市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2962', '2873', '塔城地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2963', '2962', '塔城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2964', '2962', '乌苏市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2965', '2962', '额敏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2966', '2962', '沙湾县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2967', '2962', '托里县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2968', '2962', '裕民县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2969', '2962', '和布克赛尔蒙古自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2970', '2873', '图木舒克市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2971', '2873', '吐鲁番地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2972', '2971', '吐鲁番市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2973', '2971', '鄯善县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2974', '2971', '托克逊县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2975', '2873', '五家渠市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2976', '2873', '伊犁哈萨克自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2977', '2976', '伊宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2978', '2976', '奎屯市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2979', '2976', '伊宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2980', '2976', '察布查尔锡伯自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2981', '2976', '霍城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2982', '2976', '巩留县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2983', '2976', '新源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2984', '2976', '昭苏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2985', '2976', '特克斯县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2986', '2976', '尼勒克县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2987', '0', '云南', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2988', '2987', '昆明市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2989', '2988', '五华区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2990', '2988', '盘龙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2991', '2988', '官渡区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2992', '2988', '西山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2993', '2988', '东川区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2994', '2988', '呈贡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2995', '2988', '晋宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2996', '2988', '富民县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2997', '2988', '宜良县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2998', '2988', '石林彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('2999', '2988', '嵩明县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3000', '2988', '禄劝彝族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3001', '2988', '寻甸回族彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3002', '2988', '安宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3003', '2987', '保山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3004', '3003', '隆阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3005', '3003', '施甸县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3006', '3003', '腾冲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3007', '3003', '龙陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3008', '3003', '昌宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3009', '2987', '楚雄彝族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3010', '3009', '楚雄市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3011', '3009', '双柏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3012', '3009', '牟定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3013', '3009', '南华县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3014', '3009', '姚安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3015', '3009', '大姚县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3016', '3009', '永仁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3017', '3009', '元谋县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3018', '3009', '武定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3019', '3009', '禄丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3020', '2987', '大理白族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3021', '3020', '大理市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3022', '3020', '漾濞彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3023', '3020', '祥云县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3024', '3020', '宾川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3025', '3020', '弥渡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3026', '3020', '南涧彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3027', '3020', '巍山彝族回族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3028', '3020', '永平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3029', '3020', '云龙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3030', '3020', '洱源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3031', '3020', '剑川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3032', '3020', '鹤庆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3033', '2987', '德宏傣族景颇族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3034', '3033', '瑞丽市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3035', '3033', '潞西市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3036', '3033', '梁河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3037', '3033', '盈江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3038', '3033', '陇川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3039', '2987', '迪庆藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3040', '3039', '香格里拉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3041', '3039', '德钦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3042', '3039', '维西傈僳族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3043', '2987', '红河哈尼族彝族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3044', '3043', '个旧市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3045', '3043', '开远市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3046', '3043', '蒙自县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3047', '3043', '屏边苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3048', '3043', '建水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3049', '3043', '石屏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3050', '3043', '弥勒县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3051', '3043', '泸西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3052', '3043', '元阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3053', '3043', '红河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3054', '3043', '金平苗族瑶族傣族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3055', '3043', '绿春县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3056', '3043', '河口瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3057', '2987', '丽江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3058', '3057', '古城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3059', '3057', '玉龙纳西族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3060', '3057', '永胜县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3061', '3057', '华坪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3062', '3057', '宁蒗彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3063', '2987', '临沧市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3064', '3063', '临翔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3065', '3063', '凤庆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3066', '3063', '云县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3067', '3063', '永德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3068', '3063', '镇康县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3069', '3063', '双江拉祜族佤族布朗族傣族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3070', '3063', '耿马傣族佤族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3071', '3063', '沧源佤族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3072', '2987', '怒江傈僳族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3073', '3072', '泸水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3074', '3072', '福贡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3075', '3072', '贡山独龙族怒族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3076', '3072', '兰坪白族普米族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3077', '2987', '曲靖市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3078', '3077', '麒麟区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3079', '3077', '马龙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3080', '3077', '陆良县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3081', '3077', '师宗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3082', '3077', '罗平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3083', '3077', '富源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3084', '3077', '会泽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3085', '3077', '沾益县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3086', '3077', '宣威市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3087', '2987', '思茅市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3088', '3087', '翠云区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3089', '3087', '普洱哈尼族彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3090', '3087', '墨江哈尼族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3091', '3087', '景东彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3092', '3087', '景谷傣族彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3093', '3087', '镇沅彝族哈尼族拉祜族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3094', '3087', '江城哈尼族彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3095', '3087', '孟连傣族拉祜族佤族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3096', '3087', '澜沧拉祜族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3097', '3087', '西盟佤族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3098', '2987', '文山壮族苗族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3099', '3098', '文山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3100', '3098', '砚山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3101', '3098', '西畴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3102', '3098', '麻栗坡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3103', '3098', '马关县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3104', '3098', '丘北县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3105', '3098', '广南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3106', '3098', '富宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3107', '2987', '西双版纳傣族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3108', '3107', '景洪市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3109', '3107', '勐海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3110', '3107', '勐腊县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3111', '2987', '玉溪市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3112', '3111', '红塔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3113', '3111', '江川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3114', '3111', '澄江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3115', '3111', '通海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3116', '3111', '华宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3117', '3111', '易门县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3118', '3111', '峨山彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3119', '3111', '新平彝族傣族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3120', '3111', '元江哈尼族彝族傣族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3121', '2987', '昭通市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3122', '3121', '昭阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3123', '3121', '鲁甸县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3124', '3121', '巧家县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3125', '3121', '盐津县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3126', '3121', '大关县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3127', '3121', '永善县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3128', '3121', '绥江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3129', '3121', '镇雄县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3130', '3121', '彝良县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3131', '3121', '威信县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3132', '3121', '水富县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3133', '0', '浙江', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3134', '3133', '杭州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3135', '3134', '上城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3136', '3134', '下城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3137', '3134', '江干区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3138', '3134', '拱墅区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3139', '3134', '西湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3140', '3134', '滨江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3141', '3134', '萧山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3142', '3134', '余杭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3143', '3134', '桐庐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3144', '3134', '淳安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3145', '3134', '建德市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3146', '3134', '富阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3147', '3134', '临安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3148', '3133', '湖州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3149', '3148', '吴兴区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3150', '3148', '南浔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3151', '3148', '德清县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3152', '3148', '长兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3153', '3148', '安吉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3154', '3133', '嘉兴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3155', '3154', '秀城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3156', '3154', '秀洲区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3157', '3154', '嘉善县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3158', '3154', '海盐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3159', '3154', '海宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3160', '3154', '平湖市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3161', '3154', '桐乡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3162', '3133', '金华市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3163', '3162', '婺城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3164', '3162', '金东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3165', '3162', '武义县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3166', '3162', '浦江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3167', '3162', '磐安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3168', '3162', '兰溪市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3169', '3162', '义乌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3170', '3162', '东阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3171', '3162', '永康市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3172', '3133', '丽水市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3173', '3172', '莲都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3174', '3172', '青田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3175', '3172', '缙云县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3176', '3172', '遂昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3177', '3172', '松阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
-INSERT INTO `yiyi_area` VALUES ('3178', '3172', '云和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3179', '3172', '庆元县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3180', '3172', '景宁畲族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3181', '3172', '龙泉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3182', '3133', '宁波市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3183', '3182', '海曙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3184', '3182', '江东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3185', '3182', '江北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3186', '3182', '北仑区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3187', '3182', '镇海区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3188', '3182', '鄞州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3189', '3182', '象山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3190', '3182', '宁海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3191', '3182', '余姚市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3192', '3182', '慈溪市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3193', '3182', '奉化市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3194', '3133', '衢州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3195', '3194', '柯城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3196', '3194', '衢江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3197', '3194', '常山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3198', '3194', '开化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3199', '3194', '龙游县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3200', '3194', '江山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3201', '3133', '绍兴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3202', '3201', '越城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3203', '3201', '绍兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3204', '3201', '新昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3205', '3201', '诸暨市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3206', '3201', '上虞市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3207', '3201', '嵊州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3208', '3133', '台州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3209', '3208', '椒江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3210', '3208', '黄岩区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3211', '3208', '路桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3212', '3208', '玉环县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3213', '3208', '三门县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3214', '3208', '天台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3215', '3208', '仙居县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3216', '3208', '温岭市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3217', '3208', '临海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3218', '3133', '温州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3219', '3218', '鹿城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3220', '3218', '龙湾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3221', '3218', '瓯海区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3222', '3218', '洞头县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3223', '3218', '永嘉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3224', '3218', '平阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3225', '3218', '苍南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3226', '3218', '文成县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3227', '3218', '泰顺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3228', '3218', '瑞安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3229', '3218', '乐清市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3230', '3133', '舟山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3231', '3230', '定海区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3232', '3230', '普陀区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3233', '3230', '岱山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3234', '3230', '嵊泗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3235', '0', '香港', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3236', '3235', '九龙', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3237', '3235', '香港岛', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3238', '3235', '新界', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3239', '0', '澳门', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3240', '3239', '澳门半岛', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3241', '3239', '离岛', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3242', '0', '台湾', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3243', '3242', '台北市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3244', '3242', '高雄市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3245', '3242', '高雄县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3246', '3242', '花莲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3247', '3242', '基隆市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3248', '3242', '嘉义市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3249', '3242', '嘉义县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3250', '3242', '金门县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3251', '3242', '苗栗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3252', '3242', '南投县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3253', '3242', '澎湖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3254', '3242', '屏东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3255', '3242', '台北县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3256', '3242', '台东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3257', '3242', '台南市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3258', '3242', '台南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3259', '3242', '台中市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3260', '3242', '台中县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3261', '3242', '桃园县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3262', '3242', '新竹市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3263', '3242', '新竹县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3264', '3242', '宜兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3265', '3242', '云林县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false'), ('3266', '3242', '彰化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
-COMMIT;
+INSERT INTO `yiyi_area` VALUES ('1', '0', '北京', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2', '1', '北京市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3', '2', '东城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('4', '2', '西城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('5', '2', '崇文区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('6', '2', '宣武区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('7', '2', '朝阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('8', '2', '丰台区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('9', '2', '石景山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('10', '2', '海淀区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('11', '2', '门头沟区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('12', '2', '房山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('13', '2', '通州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('14', '2', '顺义区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('15', '2', '昌平区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('16', '2', '大兴区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('17', '2', '怀柔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('18', '2', '平谷区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('19', '2', '密云县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('20', '2', '延庆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('21', '0', '上海', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('22', '21', '上海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('23', '22', '黄浦区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('24', '22', '卢湾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('25', '22', '徐汇区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('26', '22', '长宁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('27', '22', '静安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('28', '22', '普陀区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('29', '22', '闸北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('30', '22', '虹口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('31', '22', '杨浦区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('32', '22', '闵行区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('33', '22', '宝山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('34', '22', '嘉定区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('35', '22', '浦东新区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('36', '22', '金山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('37', '22', '松江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('38', '22', '青浦区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('39', '22', '南汇区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('40', '22', '奉贤区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('41', '22', '崇明县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('42', '0', '天津', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('43', '42', '天津市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('44', '43', '和平区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('45', '43', '河东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('46', '43', '河西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('47', '43', '南开区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('48', '43', '河北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('49', '43', '红桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('50', '43', '塘沽区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('51', '43', '汉沽区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('52', '43', '大港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('53', '43', '东丽区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('54', '43', '西青区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('55', '43', '津南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('56', '43', '北辰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('57', '43', '武清区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('58', '43', '宝坻区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('59', '43', '宁河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('60', '43', '静海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('61', '43', '蓟县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('62', '0', '重庆', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('63', '62', '重庆市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('64', '63', '万州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('65', '63', '涪陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('66', '63', '渝中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('67', '63', '大渡口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('68', '63', '江北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('69', '63', '沙坪坝区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('70', '63', '九龙坡区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('71', '63', '南岸区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('72', '63', '北碚区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('73', '63', '万盛区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('74', '63', '双桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('75', '63', '渝北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('76', '63', '巴南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('77', '63', '黔江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('78', '63', '长寿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('79', '63', '綦江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('80', '63', '潼南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('81', '63', '铜梁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('82', '63', '大足县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('83', '63', '荣昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('84', '63', '璧山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('85', '63', '梁平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('86', '63', '城口县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('87', '63', '丰都县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('88', '63', '垫江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('89', '63', '武隆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('90', '63', '忠县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('91', '63', '开县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('92', '63', '云阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('93', '63', '奉节县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('94', '63', '巫山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('95', '63', '巫溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('96', '63', '石柱土家族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('97', '63', '秀山土家族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('98', '63', '酉阳土家族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('99', '63', '彭水苗族土家族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('100', '63', '江津市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('101', '63', '合川市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('102', '63', '永川市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('103', '63', '南川市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('104', '0', '安徽', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('105', '104', '合肥市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('106', '105', '瑶海区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('107', '105', '庐阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('108', '105', '蜀山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('109', '105', '包河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('110', '105', '长丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('111', '105', '肥东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('112', '105', '肥西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('113', '104', '安庆市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('114', '113', '迎江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('115', '113', '大观区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('116', '113', '郊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('117', '113', '怀宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('118', '113', '枞阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('119', '113', '潜山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('120', '113', '太湖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('121', '113', '宿松县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('122', '113', '望江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('123', '113', '岳西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('124', '113', '桐城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('125', '104', '蚌埠市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('126', '125', '龙子湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('127', '125', '蚌山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('128', '125', '禹会区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('129', '125', '淮上区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('130', '125', '怀远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('131', '125', '五河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('132', '125', '固镇县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('133', '104', '亳州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('134', '133', '谯城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('135', '133', '涡阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('136', '133', '蒙城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('137', '133', '利辛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('138', '104', '巢湖市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('139', '138', '居巢区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('140', '138', '庐江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('141', '138', '无为县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('142', '138', '含山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('143', '138', '和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('144', '104', '池州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('145', '144', '贵池区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('146', '144', '东至县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('147', '144', '石台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('148', '144', '青阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('149', '104', '滁州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('150', '149', '琅琊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('151', '149', '南谯区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('152', '149', '来安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('153', '149', '全椒县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('154', '149', '定远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('155', '149', '凤阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('156', '149', '天长市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('157', '149', '明光市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('158', '104', '阜阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('159', '158', '颍州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('160', '158', '颍东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('161', '158', '颍泉区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('162', '158', '临泉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('163', '158', '太和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('164', '158', '阜南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('165', '158', '颍上县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('166', '158', '界首市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('167', '104', '淮北市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('168', '167', '杜集区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('169', '167', '相山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('170', '167', '烈山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('171', '167', '濉溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('172', '104', '淮南市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('173', '172', '大通区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('174', '172', '田家庵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('175', '172', '谢家集区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('176', '172', '八公山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('177', '172', '潘集区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('178', '172', '凤台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('179', '104', '黄山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('180', '179', '屯溪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('181', '179', '黄山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('182', '179', '徽州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('183', '179', '歙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('184', '179', '休宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('185', '179', '黟县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('186', '179', '祁门县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('187', '104', '六安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('188', '187', '金安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('189', '187', '裕安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('190', '187', '寿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('191', '187', '霍邱县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('192', '187', '舒城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('193', '187', '金寨县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('194', '187', '霍山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('195', '104', '马鞍山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('196', '195', '金家庄区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('197', '195', '花山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('198', '195', '雨山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('199', '195', '当涂县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('200', '104', '宿州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('201', '200', '墉桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('202', '200', '砀山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('203', '200', '萧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('204', '200', '灵璧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('205', '200', '泗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('206', '104', '铜陵市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('207', '206', '铜官山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('208', '206', '狮子山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('209', '206', '郊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('210', '206', '铜陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('211', '104', '芜湖市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('212', '211', '镜湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('213', '211', '马塘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('214', '211', '新芜区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('215', '211', '鸠江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('216', '211', '芜湖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('217', '211', '繁昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('218', '211', '南陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('219', '104', '宣城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('220', '219', '宣州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('221', '219', '郎溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('222', '219', '广德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('223', '219', '泾县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('224', '219', '绩溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('225', '219', '旌德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('226', '219', '宁国市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('227', '0', '福建', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('228', '227', '福州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('229', '228', '鼓楼区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('230', '228', '台江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('231', '228', '仓山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('232', '228', '马尾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('233', '228', '晋安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('234', '228', '闽侯县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('235', '228', '连江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('236', '228', '罗源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('237', '228', '闽清县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('238', '228', '永泰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('239', '228', '平潭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('240', '228', '福清市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('241', '228', '长乐市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('242', '227', '龙岩市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('243', '242', '新罗区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('244', '242', '长汀县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('245', '242', '永定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('246', '242', '上杭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('247', '242', '武平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('248', '242', '连城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('249', '242', '漳平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('250', '227', '南平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('251', '250', '延平区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('252', '250', '顺昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('253', '250', '浦城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('254', '250', '光泽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('255', '250', '松溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('256', '250', '政和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('257', '250', '邵武市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('258', '250', '武夷山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('259', '250', '建瓯市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('260', '250', '建阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('261', '227', '宁德市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('262', '261', '蕉城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('263', '261', '霞浦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('264', '261', '古田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('265', '261', '屏南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('266', '261', '寿宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('267', '261', '周宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('268', '261', '柘荣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('269', '261', '福安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('270', '261', '福鼎市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('271', '227', '莆田市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('272', '271', '城厢区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('273', '271', '涵江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('274', '271', '荔城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('275', '271', '秀屿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('276', '271', '仙游县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('277', '227', '泉州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('278', '277', '鲤城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('279', '277', '丰泽区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('280', '277', '洛江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('281', '277', '泉港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('282', '277', '惠安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('283', '277', '安溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('284', '277', '永春县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('285', '277', '德化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('286', '277', '金门县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('287', '277', '石狮市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('288', '277', '晋江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('289', '277', '南安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('290', '227', '三明市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('291', '290', '梅列区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('292', '290', '三元区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('293', '290', '明溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('294', '290', '清流县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('295', '290', '宁化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('296', '290', '大田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('297', '290', '尤溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('298', '290', '沙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('299', '290', '将乐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('300', '290', '泰宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('301', '290', '建宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('302', '290', '永安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('303', '227', '厦门市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('304', '303', '思明区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('305', '303', '海沧区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('306', '303', '湖里区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('307', '303', '集美区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('308', '303', '同安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('309', '303', '翔安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('310', '227', '漳州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('311', '310', '芗城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('312', '310', '龙文区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('313', '310', '云霄县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('314', '310', '漳浦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('315', '310', '诏安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('316', '310', '长泰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('317', '310', '东山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('318', '310', '南靖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('319', '310', '平和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('320', '310', '华安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('321', '310', '龙海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('322', '0', '甘肃', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('323', '322', '兰州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('324', '323', '城关区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('325', '323', '七里河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('326', '323', '西固区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('327', '323', '安宁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('328', '323', '红古区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('329', '323', '永登县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('330', '323', '皋兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('331', '323', '榆中县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('332', '322', '白银市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('333', '332', '白银区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('334', '332', '平川区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('335', '332', '靖远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('336', '332', '会宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('337', '332', '景泰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('338', '322', '定西市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('339', '338', '安定区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('340', '338', '通渭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('341', '338', '陇西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('342', '338', '渭源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('343', '338', '临洮县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('344', '338', '漳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('345', '338', '岷县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('346', '322', '甘南藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('347', '346', '合作市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('348', '346', '临潭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('349', '346', '卓尼县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('350', '346', '舟曲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('351', '346', '迭部县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('352', '346', '玛曲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('353', '346', '碌曲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('354', '346', '夏河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('355', '322', '嘉峪关市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('356', '322', '金昌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('357', '356', '金川区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('358', '356', '永昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('359', '322', '酒泉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('360', '359', '肃州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('361', '359', '金塔县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('362', '359', '安西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('363', '359', '肃北蒙古族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('364', '359', '阿克塞哈萨克族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('365', '359', '玉门市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('366', '359', '敦煌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('367', '322', '临夏回族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('368', '367', '临夏市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('369', '367', '临夏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('370', '367', '康乐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('371', '367', '永靖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('372', '367', '广河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('373', '367', '和政县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('374', '367', '东乡族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('375', '367', '积石山保安族东乡族撒拉族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('376', '322', '陇南市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('377', '376', '武都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('378', '376', '成县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('379', '376', '文县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('380', '376', '宕昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('381', '376', '康县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('382', '376', '西和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('383', '376', '礼县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('384', '376', '徽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('385', '376', '两当县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('386', '322', '平凉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('387', '386', '崆峒区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('388', '386', '泾川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('389', '386', '灵台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('390', '386', '崇信县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('391', '386', '华亭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('392', '386', '庄浪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('393', '386', '静宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('394', '322', '庆阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('395', '394', '西峰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('396', '394', '庆城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('397', '394', '环县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('398', '394', '华池县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('399', '394', '合水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('400', '394', '正宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('401', '394', '宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('402', '394', '镇原县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('403', '322', '天水市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('404', '403', '秦城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('405', '403', '北道区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('406', '403', '清水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('407', '403', '秦安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('408', '403', '甘谷县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('409', '403', '武山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('410', '403', '张家川回族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('411', '322', '武威市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('412', '411', '凉州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('413', '411', '民勤县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('414', '411', '古浪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('415', '411', '天祝藏族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('416', '322', '张掖市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('417', '416', '甘州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('418', '416', '肃南裕固族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('419', '416', '民乐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('420', '416', '临泽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('421', '416', '高台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('422', '416', '山丹县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('423', '0', '广东', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('424', '423', '广州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('425', '424', '东山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('426', '424', '荔湾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('427', '424', '越秀区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('428', '424', '海珠区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('429', '424', '天河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('430', '424', '芳村区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('431', '424', '白云区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('432', '424', '黄埔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('433', '424', '番禺区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('434', '424', '花都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('435', '424', '增城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('436', '424', '从化市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('437', '423', '潮州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('438', '437', '湘桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('439', '437', '潮安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('440', '437', '饶平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('441', '423', '东莞市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('442', '423', '佛山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('443', '442', '禅城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('444', '442', '南海区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('445', '442', '顺德区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('446', '442', '三水区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('447', '442', '高明区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('448', '423', '河源市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('449', '448', '源城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('450', '448', '紫金县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('451', '448', '龙川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('452', '448', '连平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('453', '448', '和平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('454', '448', '东源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('455', '423', '惠州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('456', '455', '惠城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('457', '455', '惠阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('458', '455', '博罗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('459', '455', '惠东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('460', '455', '龙门县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('461', '423', '江门市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('462', '461', '蓬江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('463', '461', '江海区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('464', '461', '新会区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('465', '461', '台山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('466', '461', '开平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('467', '461', '鹤山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('468', '461', '恩平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('469', '423', '揭阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('470', '469', '榕城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('471', '469', '揭东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('472', '469', '揭西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('473', '469', '惠来县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('474', '469', '普宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('475', '423', '茂名市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('476', '475', '茂南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('477', '475', '茂港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('478', '475', '电白县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('479', '475', '高州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('480', '475', '化州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('481', '475', '信宜市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('482', '423', '梅江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('483', '423', '梅州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('484', '483', '梅县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('485', '483', '大埔县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('486', '483', '丰顺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('487', '483', '五华县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('488', '483', '平远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('489', '483', '蕉岭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('490', '483', '兴宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('491', '423', '清远市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('492', '491', '清城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('493', '491', '佛冈县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('494', '491', '阳山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('495', '491', '连山壮族瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('496', '491', '连南瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('497', '491', '清新县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('498', '491', '英德市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('499', '491', '连州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('500', '423', '汕头市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('501', '500', '龙湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('502', '500', '金平区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('503', '500', '濠江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('504', '500', '潮阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('505', '500', '潮南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('506', '500', '澄海区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('507', '500', '南澳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('508', '423', '汕尾市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('509', '508', '城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('510', '508', '海丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('511', '508', '陆河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('512', '508', '陆丰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('513', '423', '韶关市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('514', '513', '武江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('515', '513', '浈江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('516', '513', '曲江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('517', '513', '始兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('518', '513', '仁化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('519', '513', '翁源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('520', '513', '乳源瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('521', '513', '新丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('522', '513', '乐昌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('523', '513', '南雄市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('524', '423', '深圳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('525', '524', '罗湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('526', '524', '福田区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('527', '524', '南山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('528', '524', '宝安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('529', '524', '龙岗区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('530', '524', '盐田区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('531', '423', '阳江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('532', '531', '江城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('533', '531', '阳西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('534', '531', '阳东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('535', '531', '阳春市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('536', '423', '云浮市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('537', '536', '云城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('538', '536', '新兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('539', '536', '郁南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('540', '536', '云安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('541', '536', '罗定市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('542', '423', '湛江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('543', '542', '赤坎区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('544', '542', '霞山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('545', '542', '坡头区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('546', '542', '麻章区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('547', '542', '遂溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('548', '542', '徐闻县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('549', '542', '廉江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('550', '542', '雷州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('551', '542', '吴川市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('552', '423', '肇庆市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('553', '552', '端州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('554', '552', '鼎湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('555', '552', '广宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('556', '552', '怀集县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('557', '552', '封开县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('558', '552', '德庆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('559', '552', '高要市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('560', '552', '四会市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('561', '423', '中山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('562', '423', '珠海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('563', '562', '香洲区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('564', '562', '斗门区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('565', '562', '金湾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('566', '0', '广西', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('567', '566', '南宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('568', '567', '兴宁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('569', '567', '青秀区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('570', '567', '江南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('571', '567', '西乡塘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('572', '567', '良庆区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('573', '567', '邕宁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('574', '567', '武鸣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('575', '567', '隆安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('576', '567', '马山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('577', '567', '上林县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('578', '567', '宾阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('579', '567', '横县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('580', '566', '百色市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('581', '580', '右江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('582', '580', '田阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('583', '580', '田东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('584', '580', '平果县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('585', '580', '德保县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('586', '580', '靖西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('587', '580', '那坡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('588', '580', '凌云县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('589', '580', '乐业县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('590', '580', '田林县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('591', '580', '西林县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('592', '580', '隆林各族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('593', '566', '北海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('594', '593', '海城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('595', '593', '银海区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('596', '593', '铁山港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('597', '593', '合浦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('598', '566', '崇左市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('599', '598', '江洲区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('600', '598', '扶绥县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('601', '598', '宁明县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('602', '598', '龙州县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('603', '598', '大新县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('604', '598', '天等县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('605', '598', '凭祥市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('606', '566', '防城港市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('607', '606', '港口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('608', '606', '防城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('609', '606', '上思县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('610', '606', '东兴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('611', '566', '贵港市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('612', '611', '港北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('613', '611', '港南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('614', '611', '覃塘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('615', '611', '平南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('616', '611', '桂平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('617', '566', '桂林市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('618', '617', '秀峰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('619', '617', '叠彩区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('620', '617', '象山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('621', '617', '七星区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('622', '617', '雁山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('623', '617', '阳朔县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('624', '617', '临桂县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('625', '617', '灵川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('626', '617', '全州县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('627', '617', '兴安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('628', '617', '永福县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('629', '617', '灌阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('630', '617', '龙胜各族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('631', '617', '资源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('632', '617', '平乐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('633', '617', '荔蒲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('634', '617', '恭城瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('635', '566', '河池市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('636', '635', '金城江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('637', '635', '南丹县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('638', '635', '天峨县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('639', '635', '凤山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('640', '635', '东兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('641', '635', '罗城仫佬族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('642', '635', '环江毛南族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('643', '635', '巴马瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('644', '635', '都安瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('645', '635', '大化瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('646', '635', '宜州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('647', '566', '贺州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('648', '647', '八步区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('649', '647', '昭平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('650', '647', '钟山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('651', '647', '富川瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('652', '566', '来宾市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('653', '652', '兴宾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('654', '652', '忻城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('655', '652', '象州县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('656', '652', '武宣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('657', '652', '金秀瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('658', '652', '合山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('659', '566', '柳州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('660', '659', '城中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('661', '659', '鱼峰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('662', '659', '柳南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('663', '659', '柳北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('664', '659', '柳江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('665', '659', '柳城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('666', '659', '鹿寨县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('667', '659', '融安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('668', '659', '融水苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('669', '659', '三江侗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('670', '566', '钦州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('671', '670', '钦南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('672', '670', '钦北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('673', '670', '灵山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('674', '670', '浦北县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('675', '566', '梧州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('676', '675', '万秀区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('677', '675', '蝶山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('678', '675', '长洲区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('679', '675', '苍梧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('680', '675', '藤县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('681', '675', '蒙山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('682', '675', '岑溪市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('683', '566', '玉林市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('684', '683', '玉州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('685', '683', '容县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('686', '683', '陆川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('687', '683', '博白县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('688', '683', '兴业县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('689', '683', '北流市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('690', '0', '贵州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('691', '690', '贵阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('692', '691', '南明区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('693', '691', '云岩区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('694', '691', '花溪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('695', '691', '乌当区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('696', '691', '白云区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('697', '691', '小河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('698', '691', '开阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('699', '691', '息烽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('700', '691', '修文县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('701', '691', '清镇市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('702', '690', '安顺市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('703', '702', '西秀区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('704', '702', '平坝县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('705', '702', '普定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('706', '702', '镇宁布依族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('707', '702', '关岭布依族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('708', '702', '紫云苗族布依族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('709', '690', '毕节地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('710', '709', '毕节市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('711', '709', '大方县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('712', '709', '黔西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('713', '709', '金沙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('714', '709', '织金县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('715', '709', '纳雍县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('716', '709', '威宁彝族回族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('717', '709', '赫章县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('718', '690', '六盘水市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('719', '718', '钟山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('720', '718', '六枝特区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('721', '718', '水城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('722', '718', '盘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('723', '690', '黔东南苗族侗族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('724', '723', '凯里市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('725', '723', '黄平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('726', '723', '施秉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('727', '723', '三穗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('728', '723', '镇远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('729', '723', '岑巩县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('730', '723', '天柱县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('731', '723', '锦屏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('732', '723', '剑河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('733', '723', '台江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('734', '723', '黎平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('735', '723', '榕江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('736', '723', '从江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('737', '723', '雷山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('738', '723', '麻江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('739', '723', '丹寨县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('740', '690', '黔南布依族苗族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('741', '740', '都匀市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('742', '740', '福泉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('743', '740', '荔波县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('744', '740', '贵定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('745', '740', '瓮安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('746', '740', '独山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('747', '740', '平塘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('748', '740', '罗甸县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('749', '740', '长顺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('750', '740', '龙里县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('751', '740', '惠水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('752', '740', '三都水族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('753', '690', '黔西南布依族苗族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('754', '753', '兴义市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('755', '753', '兴仁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('756', '753', '普安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('757', '753', '晴隆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('758', '753', '贞丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('759', '753', '望谟县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('760', '753', '册亨县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('761', '753', '安龙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('762', '690', '铜仁地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('763', '762', '铜仁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('764', '762', '江口县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('765', '762', '玉屏侗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('766', '762', '石阡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('767', '762', '思南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('768', '762', '印江土家族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('769', '762', '德江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('770', '762', '沿河土家族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('771', '762', '松桃苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('772', '762', '万山特区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('773', '690', '遵义市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('774', '773', '红花岗区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('775', '773', '汇川区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('776', '773', '遵义县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('777', '773', '桐梓县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('778', '773', '绥阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('779', '773', '正安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('780', '773', '道真仡佬族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('781', '773', '务川仡佬族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('782', '773', '凤冈县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('783', '773', '湄潭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('784', '773', '余庆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('785', '773', '习水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('786', '773', '赤水市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('787', '773', '仁怀市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('788', '0', '海南', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('789', '788', '海口市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('790', '789', '秀英区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('791', '789', '龙华区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('792', '789', '琼山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('793', '789', '美兰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('794', '788', '白沙黎族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('795', '788', '保亭黎族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('796', '788', '昌江黎族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('797', '788', '澄迈县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('798', '788', '儋州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('799', '788', '定安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('800', '788', '东方市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('801', '788', '乐东黎族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('802', '788', '临高县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('803', '788', '陵水黎族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('804', '788', '南沙群岛', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('805', '788', '琼海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('806', '788', '琼中黎族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('807', '788', '三亚市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('808', '788', '屯昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('809', '788', '万宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('810', '788', '文昌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('811', '788', '五指山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('812', '788', '西沙群岛', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('813', '788', '中沙群岛的岛礁及其海域', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('814', '0', '河北', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('815', '814', '石家庄市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('816', '815', '长安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('817', '815', '桥东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('818', '815', '桥西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('819', '815', '新华区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('820', '815', '井陉矿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('821', '815', '裕华区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('822', '815', '井陉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('823', '815', '正定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('824', '815', '栾城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('825', '815', '行唐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('826', '815', '灵寿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('827', '815', '高邑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('828', '815', '深泽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('829', '815', '赞皇县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('830', '815', '无极县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('831', '815', '平山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('832', '815', '元氏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('833', '815', '赵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('834', '815', '辛集市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('835', '815', '藁城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('836', '815', '晋州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('837', '815', '新乐市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('838', '815', '鹿泉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('839', '814', '保定市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('840', '839', '新市区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('841', '839', '北市区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('842', '839', '南市区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('843', '839', '满城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('844', '839', '清苑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('845', '839', '涞水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('846', '839', '阜平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('847', '839', '徐水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('848', '839', '定兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('849', '839', '唐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('850', '839', '高阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('851', '839', '容城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('852', '839', '涞源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('853', '839', '望都县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('854', '839', '安新县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('855', '839', '易县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('856', '839', '曲阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('857', '839', '蠡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('858', '839', '顺平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('859', '839', '博野县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('860', '839', '雄县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('861', '839', '涿州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('862', '839', '定州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('863', '839', '安国市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('864', '839', '高碑店市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('865', '814', '沧州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('866', '865', '新华区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('867', '865', '运河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('868', '865', '沧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('869', '865', '青县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('870', '865', '东光县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('871', '865', '海兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('872', '865', '盐山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('873', '865', '肃宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('874', '865', '南皮县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('875', '865', '吴桥县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('876', '865', '献县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('877', '865', '孟村回族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('878', '865', '泊头市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('879', '865', '任丘市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('880', '865', '黄骅市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('881', '865', '河间市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('882', '814', '承德市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('883', '882', '双桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('884', '882', '双滦区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('885', '882', '鹰手营子矿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('886', '882', '承德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('887', '882', '兴隆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('888', '882', '平泉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('889', '882', '滦平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('890', '882', '隆化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('891', '882', '丰宁满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('892', '882', '宽城满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('893', '882', '围场满族蒙古族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('894', '814', '邯郸市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('895', '894', '邯山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('896', '894', '丛台区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('897', '894', '复兴区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('898', '894', '峰峰矿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('899', '894', '邯郸县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('900', '894', '临漳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('901', '894', '成安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('902', '894', '大名县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('903', '894', '涉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('904', '894', '磁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('905', '894', '肥乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('906', '894', '永年县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('907', '894', '邱县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('908', '894', '鸡泽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('909', '894', '广平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('910', '894', '馆陶县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('911', '894', '魏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('912', '894', '曲周县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('913', '894', '武安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('914', '814', '衡水市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('915', '914', '桃城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('916', '914', '枣强县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('917', '914', '武邑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('918', '914', '武强县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('919', '914', '饶阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('920', '914', '安平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('921', '914', '故城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('922', '914', '景县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('923', '914', '阜城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('924', '914', '冀州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('925', '914', '深州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('926', '814', '廊坊市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('927', '926', '安次区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('928', '926', '广阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('929', '926', '固安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('930', '926', '永清县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('931', '926', '香河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('932', '926', '大城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('933', '926', '文安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('934', '926', '大厂回族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('935', '926', '霸州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('936', '926', '三河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('937', '814', '秦皇岛市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('938', '937', '海港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('939', '937', '山海关区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('940', '937', '北戴河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('941', '937', '青龙满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('942', '937', '昌黎县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('943', '937', '抚宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('944', '937', '卢龙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('945', '814', '唐山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('946', '945', '路南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('947', '945', '路北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('948', '945', '古冶区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('949', '945', '开平区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('950', '945', '丰南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('951', '945', '丰润区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('952', '945', '滦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('953', '945', '滦南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('954', '945', '乐亭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('955', '945', '迁西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('956', '945', '玉田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('957', '945', '唐海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('958', '945', '遵化市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('959', '945', '迁安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('960', '814', '邢台市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('961', '960', '桥东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('962', '960', '桥西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('963', '960', '邢台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('964', '960', '临城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('965', '960', '内丘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('966', '960', '柏乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('967', '960', '隆尧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('968', '960', '任县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('969', '960', '南和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('970', '960', '宁晋县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('971', '960', '巨鹿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('972', '960', '新河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('973', '960', '广宗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('974', '960', '平乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('975', '960', '威县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('976', '960', '清河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('977', '960', '临西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('978', '960', '南宫市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('979', '960', '沙河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('980', '814', '张家口市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('981', '980', '桥东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('982', '980', '桥西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('983', '980', '宣化区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('984', '980', '下花园区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('985', '980', '宣化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('986', '980', '张北县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('987', '980', '康保县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('988', '980', '沽源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('989', '980', '尚义县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('990', '980', '蔚县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('991', '980', '阳原县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('992', '980', '怀安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('993', '980', '万全县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('994', '980', '怀来县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('995', '980', '涿鹿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('996', '980', '赤城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('997', '980', '崇礼县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('998', '0', '河南', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('999', '998', '郑州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1000', '999', '中原区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1001', '999', '二七区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1002', '999', '管城回族区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1003', '999', '金水区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1004', '999', '上街区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1005', '999', '邙山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1006', '999', '中牟县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1007', '999', '巩义市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1008', '999', '荥阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1009', '999', '新密市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1010', '999', '新郑市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1011', '999', '登封市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1012', '998', '安阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1013', '1012', '文峰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1014', '1012', '北关区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1015', '1012', '殷都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1016', '1012', '龙安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1017', '1012', '安阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1018', '1012', '汤阴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1019', '1012', '滑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1020', '1012', '内黄县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1021', '1012', '林州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1022', '998', '鹤壁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1023', '1022', '鹤山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1024', '1022', '山城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1025', '1022', '淇滨区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1026', '1022', '浚县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1027', '1022', '淇县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1028', '998', '济源市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1029', '998', '焦作市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1030', '1029', '解放区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1031', '1029', '中站区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1032', '1029', '马村区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1033', '1029', '山阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1034', '1029', '修武县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1035', '1029', '博爱县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1036', '1029', '武陟县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1037', '1029', '温县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1038', '1029', '济源市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1039', '1029', '沁阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1040', '1029', '孟州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1041', '998', '开封市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1042', '1041', '龙亭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1043', '1041', '顺河回族区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1044', '1041', '鼓楼区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1045', '1041', '南关区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1046', '1041', '郊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1047', '1041', '杞县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1048', '1041', '通许县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1049', '1041', '尉氏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1050', '1041', '开封县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1051', '1041', '兰考县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1052', '998', '洛阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1053', '1052', '老城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1054', '1052', '西工区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1055', '1052', '廛河回族区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1056', '1052', '涧西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1057', '1052', '吉利区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1058', '1052', '洛龙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1059', '1052', '孟津县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1060', '1052', '新安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1061', '1052', '栾川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1062', '1052', '嵩县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1063', '1052', '汝阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1064', '1052', '宜阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1065', '1052', '洛宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1066', '1052', '伊川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1067', '1052', '偃师市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1068', '998', '漯河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1069', '1068', '源汇区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1070', '1068', '郾城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1071', '1068', '召陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1072', '1068', '舞阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1073', '1068', '临颍县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1074', '998', '南阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1075', '1074', '宛城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1076', '1074', '卧龙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1077', '1074', '南召县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1078', '1074', '方城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1079', '1074', '西峡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1080', '1074', '镇平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1081', '1074', '内乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1082', '1074', '淅川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1083', '1074', '社旗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1084', '1074', '唐河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1085', '1074', '新野县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1086', '1074', '桐柏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1087', '1074', '邓州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1088', '998', '平顶山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1089', '1088', '新华区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1090', '1088', '卫东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1091', '1088', '石龙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1092', '1088', '湛河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1093', '1088', '宝丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1094', '1088', '叶县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1095', '1088', '鲁山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1096', '1088', '郏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1097', '1088', '舞钢市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1098', '1088', '汝州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1099', '998', '濮阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1100', '1099', '华龙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1101', '1099', '清丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1102', '1099', '南乐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1103', '1099', '范县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1104', '1099', '台前县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1105', '1099', '濮阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1106', '998', '三门峡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1107', '1106', '湖滨区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1108', '1106', '渑池县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1109', '1106', '陕县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1110', '1106', '卢氏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1111', '1106', '义马市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1112', '1106', '灵宝市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1113', '998', '商丘市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1114', '1113', '梁园区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1115', '1113', '睢阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1116', '1113', '民权县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1117', '1113', '睢县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1118', '1113', '宁陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1119', '1113', '柘城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1120', '1113', '虞城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1121', '1113', '夏邑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1122', '1113', '永城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1123', '998', '新乡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1124', '1123', '红旗区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1125', '1123', '卫滨区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1126', '1123', '凤泉区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1127', '1123', '牧野区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1128', '1123', '新乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1129', '1123', '获嘉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1130', '1123', '原阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1131', '1123', '延津县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1132', '1123', '封丘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1133', '1123', '长垣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1134', '1123', '卫辉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1135', '1123', '辉县市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1136', '998', '信阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1137', '1136', '师河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1138', '1136', '平桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1139', '1136', '罗山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1140', '1136', '光山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1141', '1136', '新县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1142', '1136', '商城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1143', '1136', '固始县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1144', '1136', '潢川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1145', '1136', '淮滨县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1146', '1136', '息县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1147', '998', '许昌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1148', '1147', '魏都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1149', '1147', '许昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1150', '1147', '鄢陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1151', '1147', '襄城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1152', '1147', '禹州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1153', '1147', '长葛市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1154', '998', '周口市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1155', '1154', '川汇区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1156', '1154', '扶沟县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1157', '1154', '西华县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1158', '1154', '商水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1159', '1154', '沈丘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1160', '1154', '郸城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1161', '1154', '淮阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1162', '1154', '太康县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1163', '1154', '鹿邑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1164', '1154', '项城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1165', '998', '驻马店市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1166', '1165', '驿城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1167', '1165', '西平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1168', '1165', '上蔡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1169', '1165', '平舆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1170', '1165', '正阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1171', '1165', '确山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1172', '1165', '泌阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1173', '1165', '汝南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1174', '1165', '遂平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1175', '1165', '新蔡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1176', '0', '黑龙江', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1177', '1176', '哈尔滨市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1178', '1177', '道里区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1179', '1177', '南岗区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1180', '1177', '道外区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1181', '1177', '香坊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1182', '1177', '动力区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1183', '1177', '平房区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1184', '1177', '松北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1185', '1177', '呼兰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1186', '1177', '依兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1187', '1177', '方正县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1188', '1177', '宾县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1189', '1177', '巴彦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1190', '1177', '木兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1191', '1177', '通河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1192', '1177', '延寿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1193', '1177', '阿城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1194', '1177', '双城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1195', '1177', '尚志市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1196', '1177', '五常市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1197', '1176', '大庆市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1198', '1197', '萨尔图区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1199', '1197', '龙凤区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1200', '1197', '让胡路区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1201', '1197', '红岗区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1202', '1197', '大同区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1203', '1197', '肇州县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1204', '1197', '肇源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1205', '1197', '林甸县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1206', '1197', '杜尔伯特蒙古族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1207', '1176', '大兴安岭地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1208', '1207', '呼玛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1209', '1207', '塔河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1210', '1207', '漠河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1211', '1176', '鹤岗市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1212', '1211', '向阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1213', '1211', '工农区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1214', '1211', '南山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1215', '1211', '兴安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1216', '1211', '东山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1217', '1211', '兴山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1218', '1211', '萝北县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1219', '1211', '绥滨县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1220', '1176', '黑河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1221', '1220', '爱辉区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1222', '1220', '嫩江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1223', '1220', '逊克县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1224', '1220', '孙吴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1225', '1220', '北安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1226', '1220', '五大连池市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1227', '1176', '鸡西市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1228', '1227', '鸡冠区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1229', '1227', '恒山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1230', '1227', '滴道区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1231', '1227', '梨树区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1232', '1227', '城子河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1233', '1227', '麻山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1234', '1227', '鸡东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1235', '1227', '虎林市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1236', '1227', '密山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1237', '1176', '佳木斯市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1238', '1237', '永红区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1239', '1237', '向阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1240', '1237', '前进区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1241', '1237', '东风区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1242', '1237', '郊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1243', '1237', '桦南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1244', '1237', '桦川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1245', '1237', '汤原县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1246', '1237', '抚远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1247', '1237', '同江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1248', '1237', '富锦市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1249', '1176', '牡丹江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1250', '1249', '东安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1251', '1249', '阳明区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1252', '1249', '爱民区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1253', '1249', '西安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1254', '1249', '东宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1255', '1249', '林口县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1256', '1249', '绥芬河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1257', '1249', '海林市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1258', '1249', '宁安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1259', '1249', '穆棱市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1260', '1176', '七台河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1261', '1260', '新兴区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1262', '1260', '桃山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1263', '1260', '茄子河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1264', '1260', '勃利县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1265', '1176', '齐齐哈尔市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1266', '1265', '龙沙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1267', '1265', '建华区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1268', '1265', '铁锋区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1269', '1265', '昂昂溪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1270', '1265', '富拉尔基区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1271', '1265', '碾子山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1272', '1265', '梅里斯达斡尔族区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1273', '1265', '龙江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1274', '1265', '依安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1275', '1265', '泰来县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1276', '1265', '甘南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1277', '1265', '富裕县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1278', '1265', '克山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1279', '1265', '克东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1280', '1265', '拜泉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1281', '1265', '讷河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1282', '1176', '双鸭山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1283', '1282', '尖山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1284', '1282', '岭东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1285', '1282', '四方台区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1286', '1282', '宝山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1287', '1282', '集贤县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1288', '1282', '友谊县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1289', '1282', '宝清县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1290', '1282', '饶河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1291', '1176', '绥化市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1292', '1291', '北林区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1293', '1291', '望奎县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1294', '1291', '兰西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1295', '1291', '青冈县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1296', '1291', '庆安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1297', '1291', '明水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1298', '1291', '绥棱县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1299', '1291', '安达市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1300', '1291', '肇东市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1301', '1291', '海伦市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1302', '1176', '伊春市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1303', '1302', '伊春区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1304', '1302', '南岔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1305', '1302', '友好区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1306', '1302', '西林区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1307', '1302', '翠峦区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1308', '1302', '新青区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1309', '1302', '美溪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1310', '1302', '金山屯区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1311', '1302', '五营区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1312', '1302', '乌马河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1313', '1302', '汤旺河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1314', '1302', '带岭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1315', '1302', '乌伊岭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1316', '1302', '红星区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1317', '1302', '上甘岭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1318', '1302', '嘉荫县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1319', '1302', '铁力市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1320', '0', '湖北', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1321', '1320', '武汉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1322', '1321', '江岸区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1323', '1321', '江汉区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1324', '1321', '乔口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1325', '1321', '汉阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1326', '1321', '武昌区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1327', '1321', '青山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1328', '1321', '洪山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1329', '1321', '东西湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1330', '1321', '汉南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1331', '1321', '蔡甸区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1332', '1321', '江夏区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1333', '1321', '黄陂区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1334', '1321', '新洲区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1335', '1320', '鄂州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1336', '1335', '梁子湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1337', '1335', '华容区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1338', '1335', '鄂城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1339', '1320', '恩施土家族苗族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1340', '1339', '恩施市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1341', '1339', '利川市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1342', '1339', '建始县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1343', '1339', '巴东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1344', '1339', '宣恩县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1345', '1339', '咸丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1346', '1339', '来凤县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1347', '1339', '鹤峰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1348', '1320', '黄冈市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1349', '1348', '黄州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1350', '1348', '团风县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1351', '1348', '红安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1352', '1348', '罗田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1353', '1348', '英山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1354', '1348', '浠水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1355', '1348', '蕲春县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1356', '1348', '黄梅县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1357', '1348', '麻城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1358', '1348', '武穴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1359', '1320', '黄石市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1360', '1359', '黄石港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1361', '1359', '西塞山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1362', '1359', '下陆区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1363', '1359', '铁山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1364', '1359', '阳新县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1365', '1359', '大冶市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1366', '1320', '荆门市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1367', '1366', '东宝区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1368', '1366', '掇刀区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1369', '1366', '京山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1370', '1366', '沙洋县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1371', '1366', '钟祥市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1372', '1320', '荆州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1373', '1372', '沙市区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1374', '1372', '荆州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1375', '1372', '公安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1376', '1372', '监利县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1377', '1372', '江陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1378', '1372', '石首市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1379', '1372', '洪湖市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1380', '1372', '松滋市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1381', '1320', '潜江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1382', '1320', '神农架林区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1383', '1320', '十堰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1384', '1383', '茅箭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1385', '1383', '张湾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1386', '1383', '郧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1387', '1383', '郧西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1388', '1383', '竹山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1389', '1383', '竹溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1390', '1383', '房县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1391', '1383', '丹江口市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1392', '1320', '随州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1393', '1392', '曾都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1394', '1392', '广水市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1395', '1320', '天门市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1396', '1320', '仙桃市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1397', '1320', '咸宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1398', '1397', '咸安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1399', '1397', '嘉鱼县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1400', '1397', '通城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1401', '1397', '崇阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1402', '1397', '通山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1403', '1397', '赤壁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1404', '1320', '襄樊市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1405', '1404', '襄城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1406', '1404', '樊城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1407', '1404', '襄阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1408', '1404', '南漳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1409', '1404', '谷城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1410', '1404', '保康县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1411', '1404', '老河口市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1412', '1404', '枣阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1413', '1404', '宜城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1414', '1320', '孝感市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1415', '1414', '孝南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1416', '1414', '孝昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1417', '1414', '大悟县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1418', '1414', '云梦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1419', '1414', '应城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1420', '1414', '安陆市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1421', '1414', '汉川市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1422', '1320', '宜昌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1423', '1422', '西陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1424', '1422', '伍家岗区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1425', '1422', '点军区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1426', '1422', '猇亭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1427', '1422', '夷陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1428', '1422', '远安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1429', '1422', '兴山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1430', '1422', '秭归县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1431', '1422', '长阳土家族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1432', '1422', '五峰土家族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1433', '1422', '宜都市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1434', '1422', '当阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1435', '1422', '枝江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1436', '0', '湖南', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1437', '1436', '长沙市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1438', '1437', '芙蓉区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1439', '1437', '天心区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1440', '1437', '岳麓区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1441', '1437', '开福区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1442', '1437', '雨花区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1443', '1437', '长沙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1444', '1437', '望城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1445', '1437', '宁乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1446', '1437', '浏阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1447', '1436', '常德市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1448', '1447', '武陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1449', '1447', '鼎城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1450', '1447', '安乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1451', '1447', '汉寿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1452', '1447', '澧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1453', '1447', '临澧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1454', '1447', '桃源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1455', '1447', '石门县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1456', '1447', '津市市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1457', '1436', '郴州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1458', '1457', '北湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1459', '1457', '苏仙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1460', '1457', '桂阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1461', '1457', '宜章县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1462', '1457', '永兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1463', '1457', '嘉禾县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1464', '1457', '临武县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1465', '1457', '汝城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1466', '1457', '桂东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1467', '1457', '安仁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1468', '1457', '资兴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1469', '1436', '衡阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1470', '1469', '珠晖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1471', '1469', '雁峰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1472', '1469', '石鼓区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1473', '1469', '蒸湘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1474', '1469', '南岳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1475', '1469', '衡阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1476', '1469', '衡南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1477', '1469', '衡山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1478', '1469', '衡东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1479', '1469', '祁东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1480', '1469', '耒阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1481', '1469', '常宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1482', '1436', '怀化市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1483', '1482', '鹤城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1484', '1482', '中方县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1485', '1482', '沅陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1486', '1482', '辰溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1487', '1482', '溆浦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1488', '1482', '会同县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1489', '1482', '麻阳苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1490', '1482', '新晃侗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1491', '1482', '芷江侗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1492', '1482', '靖州苗族侗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1493', '1482', '通道侗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1494', '1482', '洪江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1495', '1436', '娄底市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1496', '1495', '娄星区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1497', '1495', '双峰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1498', '1495', '新化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1499', '1495', '冷水江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1500', '1495', '涟源市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1501', '1436', '邵阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1502', '1501', '双清区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1503', '1501', '大祥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1504', '1501', '北塔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1505', '1501', '邵东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1506', '1501', '新邵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1507', '1501', '邵阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1508', '1501', '隆回县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1509', '1501', '洞口县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1510', '1501', '绥宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1511', '1501', '新宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1512', '1501', '城步苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1513', '1501', '武冈市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1514', '1436', '湘潭市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1515', '1514', '雨湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1516', '1514', '岳塘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1517', '1514', '湘潭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1518', '1514', '湘乡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1519', '1514', '韶山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1520', '1436', '湘西土家族苗族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1521', '1520', '吉首市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1522', '1520', '泸溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1523', '1520', '凤凰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1524', '1520', '花垣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1525', '1520', '保靖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1526', '1520', '古丈县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1527', '1520', '永顺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1528', '1520', '龙山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1529', '1436', '益阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1530', '1529', '资阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1531', '1529', '赫山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1532', '1529', '南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1533', '1529', '桃江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1534', '1529', '安化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1535', '1529', '沅江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1536', '1436', '永州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1537', '1536', '芝山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1538', '1536', '冷水滩区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1539', '1536', '祁阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1540', '1536', '东安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1541', '1536', '双牌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1542', '1536', '道县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1543', '1536', '江永县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1544', '1536', '宁远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1545', '1536', '蓝山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1546', '1536', '新田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1547', '1536', '江华瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1548', '1436', '岳阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1549', '1548', '岳阳楼区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1550', '1548', '云溪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1551', '1548', '君山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1552', '1548', '岳阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1553', '1548', '华容县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1554', '1548', '湘阴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1555', '1548', '平江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1556', '1548', '汨罗市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1557', '1548', '临湘市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1558', '1436', '张家界市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1559', '1558', '永定区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1560', '1558', '武陵源区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1561', '1558', '慈利县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1562', '1558', '桑植县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1563', '1436', '株洲市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1564', '1563', '荷塘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1565', '1563', '芦淞区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1566', '1563', '石峰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1567', '1563', '天元区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1568', '1563', '株洲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1569', '1563', '攸县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1570', '1563', '茶陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1571', '1563', '炎陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1572', '1563', '醴陵市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1573', '0', '吉林', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1574', '1573', '长春市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1575', '1574', '南关区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1576', '1574', '宽城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1577', '1574', '朝阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1578', '1574', '二道区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1579', '1574', '绿园区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1580', '1574', '双阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1581', '1574', '农安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1582', '1574', '九台市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1583', '1574', '榆树市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1584', '1574', '德惠市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1585', '1573', '白城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1586', '1585', '洮北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1587', '1585', '镇赉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1588', '1585', '通榆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1589', '1585', '洮南市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1590', '1585', '大安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1591', '1573', '白山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1592', '1591', '八道江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1593', '1591', '抚松县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1594', '1591', '靖宇县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1595', '1591', '长白朝鲜族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1596', '1591', '江源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1597', '1591', '临江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1598', '1573', '吉林市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1599', '1598', '昌邑区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1600', '1598', '龙潭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1601', '1598', '船营区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1602', '1598', '丰满区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1603', '1598', '永吉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1604', '1598', '蛟河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1605', '1598', '桦甸市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1606', '1598', '舒兰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1607', '1598', '磐石市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1608', '1573', '辽源市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1609', '1608', '龙山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1610', '1608', '西安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1611', '1608', '东丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1612', '1608', '东辽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1613', '1573', '四平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1614', '1613', '铁西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1615', '1613', '铁东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1616', '1613', '梨树县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1617', '1613', '伊通满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1618', '1613', '公主岭市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1619', '1613', '双辽市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1620', '1573', '松原市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1621', '1620', '宁江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1622', '1620', '前郭尔罗斯蒙古族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1623', '1620', '长岭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1624', '1620', '乾安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1625', '1620', '扶余县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1626', '1573', '通化市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1627', '1626', '东昌区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1628', '1626', '二道江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1629', '1626', '通化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1630', '1626', '辉南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1631', '1626', '柳河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1632', '1626', '梅河口市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1633', '1626', '集安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1634', '1573', '延边朝鲜族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1635', '1634', '延吉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1636', '1634', '图们市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1637', '1634', '敦化市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1638', '1634', '珲春市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1639', '1634', '龙井市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1640', '1634', '和龙市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1641', '1634', '汪清县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1642', '1634', '安图县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1643', '0', '江苏', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1644', '1643', '南京市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1645', '1644', '玄武区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1646', '1644', '白下区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1647', '1644', '秦淮区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1648', '1644', '建邺区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1649', '1644', '鼓楼区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1650', '1644', '下关区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1651', '1644', '浦口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1652', '1644', '栖霞区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1653', '1644', '雨花台区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1654', '1644', '江宁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1655', '1644', '六合区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1656', '1644', '溧水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1657', '1644', '高淳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1658', '1643', '常州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1659', '1658', '天宁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1660', '1658', '钟楼区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1661', '1658', '戚墅堰区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1662', '1658', '新北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1663', '1658', '武进区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1664', '1658', '溧阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1665', '1658', '金坛市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1666', '1643', '淮安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1667', '1666', '清河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1668', '1666', '楚州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1669', '1666', '淮阴区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1670', '1666', '清浦区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1671', '1666', '涟水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1672', '1666', '洪泽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1673', '1666', '盱眙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1674', '1666', '金湖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1675', '1643', '连云港市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1676', '1675', '连云区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1677', '1675', '新浦区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1678', '1675', '海州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1679', '1675', '赣榆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1680', '1675', '东海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1681', '1675', '灌云县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1682', '1675', '灌南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1683', '1643', '南通市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1684', '1683', '崇川区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1685', '1683', '港闸区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1686', '1683', '海安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1687', '1683', '如东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1688', '1683', '启东市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1689', '1683', '如皋市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1690', '1683', '通州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1691', '1683', '海门市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1692', '1643', '苏州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1693', '1692', '沧浪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1694', '1692', '平江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1695', '1692', '金阊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1696', '1692', '虎丘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1697', '1692', '吴中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1698', '1692', '相城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1699', '1692', '常熟市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1700', '1692', '张家港市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1701', '1692', '昆山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1702', '1692', '吴江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1703', '1692', '太仓市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1704', '1643', '宿迁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1705', '1704', '宿城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1706', '1704', '宿豫区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1707', '1704', '沭阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1708', '1704', '泗阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1709', '1704', '泗洪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1710', '1643', '泰州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1711', '1710', '海陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1712', '1710', '高港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1713', '1710', '兴化市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1714', '1710', '靖江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1715', '1710', '泰兴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1716', '1710', '姜堰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1717', '1643', '无锡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1718', '1717', '崇安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1719', '1717', '南长区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1720', '1717', '北塘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1721', '1717', '锡山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1722', '1717', '惠山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1723', '1717', '滨湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1724', '1717', '江阴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1725', '1717', '宜兴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1726', '1643', '徐州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1727', '1726', '鼓楼区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1728', '1726', '云龙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1729', '1726', '九里区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1730', '1726', '贾汪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1731', '1726', '泉山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1732', '1726', '丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1733', '1726', '沛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1734', '1726', '铜山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1735', '1726', '睢宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1736', '1726', '新沂市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1737', '1726', '邳州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1738', '1643', '盐城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1739', '1738', '亭湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1740', '1738', '盐都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1741', '1738', '响水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1742', '1738', '滨海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1743', '1738', '阜宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1744', '1738', '射阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1745', '1738', '建湖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1746', '1738', '东台市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1747', '1738', '大丰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1748', '1643', '扬州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1749', '1748', '广陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1750', '1748', '邗江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1751', '1748', '郊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1752', '1748', '宝应县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1753', '1748', '仪征市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1754', '1748', '高邮市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1755', '1748', '江都市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1756', '1643', '镇江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1757', '1756', '京口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1758', '1756', '润州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1759', '1756', '丹徒区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1760', '1756', '丹阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1761', '1756', '扬中市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1762', '1756', '句容市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1763', '0', '江西', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1764', '1763', '南昌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1765', '1764', '东湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1766', '1764', '西湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1767', '1764', '青云谱区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1768', '1764', '湾里区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1769', '1764', '青山湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1770', '1764', '南昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1771', '1764', '新建县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1772', '1764', '安义县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1773', '1764', '进贤县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1774', '1763', '抚州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1775', '1774', '临川区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1776', '1774', '南城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1777', '1774', '黎川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1778', '1774', '南丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1779', '1774', '崇仁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1780', '1774', '乐安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1781', '1774', '宜黄县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1782', '1774', '金溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1783', '1774', '资溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1784', '1774', '东乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1785', '1774', '广昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1786', '1763', '赣州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1787', '1786', '章贡区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1788', '1786', '赣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1789', '1786', '信丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1790', '1786', '大余县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1791', '1786', '上犹县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1792', '1786', '崇义县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1793', '1786', '安远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1794', '1786', '龙南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1795', '1786', '定南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1796', '1786', '全南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1797', '1786', '宁都县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1798', '1786', '于都县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1799', '1786', '兴国县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1800', '1786', '会昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1801', '1786', '寻乌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1802', '1786', '石城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1803', '1786', '瑞金市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1804', '1786', '南康市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1805', '1763', '吉安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1806', '1805', '吉州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1807', '1805', '青原区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1808', '1805', '吉安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1809', '1805', '吉水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1810', '1805', '峡江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1811', '1805', '新干县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1812', '1805', '永丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1813', '1805', '泰和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1814', '1805', '遂川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1815', '1805', '万安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1816', '1805', '安福县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1817', '1805', '永新县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1818', '1805', '井冈山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1819', '1763', '景德镇市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1820', '1819', '昌江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1821', '1819', '珠山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1822', '1819', '浮梁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1823', '1819', '乐平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1824', '1763', '九江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1825', '1824', '庐山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1826', '1824', '浔阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1827', '1824', '九江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1828', '1824', '武宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1829', '1824', '修水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1830', '1824', '永修县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1831', '1824', '德安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1832', '1824', '星子县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1833', '1824', '都昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1834', '1824', '湖口县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1835', '1824', '彭泽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1836', '1824', '瑞昌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1837', '1763', '萍乡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1838', '1837', '安源区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1839', '1837', '湘东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1840', '1837', '莲花县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1841', '1837', '上栗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1842', '1837', '芦溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1843', '1763', '上饶市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1844', '1843', '信州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1845', '1843', '上饶县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1846', '1843', '广丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1847', '1843', '玉山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1848', '1843', '铅山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1849', '1843', '横峰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1850', '1843', '弋阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1851', '1843', '余干县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1852', '1843', '鄱阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1853', '1843', '万年县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1854', '1843', '婺源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1855', '1843', '德兴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1856', '1763', '新余市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1857', '1856', '渝水区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1858', '1856', '分宜县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1859', '1763', '宜春市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1860', '1859', '袁州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1861', '1859', '奉新县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1862', '1859', '万载县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1863', '1859', '上高县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1864', '1859', '宜丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1865', '1859', '靖安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1866', '1859', '铜鼓县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1867', '1859', '丰城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1868', '1859', '樟树市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1869', '1859', '高安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1870', '1763', '鹰潭市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1871', '1870', '月湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1872', '1870', '余江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1873', '1870', '贵溪市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1874', '0', '辽宁', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1875', '1874', '沈阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1876', '1875', '和平区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1877', '1875', '沈河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1878', '1875', '大东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1879', '1875', '皇姑区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1880', '1875', '铁西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1881', '1875', '苏家屯区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1882', '1875', '东陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1883', '1875', '新城子区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1884', '1875', '于洪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1885', '1875', '辽中县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1886', '1875', '康平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1887', '1875', '法库县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1888', '1875', '新民市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1889', '1874', '鞍山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1890', '1889', '铁东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1891', '1889', '铁西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1892', '1889', '立山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1893', '1889', '千山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1894', '1889', '台安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1895', '1889', '岫岩满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1896', '1889', '海城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1897', '1874', '本溪市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1898', '1897', '平山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1899', '1897', '溪湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1900', '1897', '明山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1901', '1897', '南芬区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1902', '1897', '本溪满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1903', '1897', '桓仁满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1904', '1874', '朝阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1905', '1904', '双塔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1906', '1904', '龙城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1907', '1904', '朝阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1908', '1904', '建平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1909', '1904', '喀喇沁左翼蒙古族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1910', '1904', '北票市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1911', '1904', '凌源市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1912', '1874', '大连市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1913', '1912', '中山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1914', '1912', '西岗区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1915', '1912', '沙河口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1916', '1912', '甘井子区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1917', '1912', '旅顺口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1918', '1912', '金州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1919', '1912', '长海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1920', '1912', '瓦房店市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1921', '1912', '普兰店市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1922', '1912', '庄河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1923', '1874', '丹东市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1924', '1923', '元宝区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1925', '1923', '振兴区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1926', '1923', '振安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1927', '1923', '宽甸满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1928', '1923', '东港市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1929', '1923', '凤城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1930', '1874', '抚顺市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1931', '1930', '新抚区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1932', '1930', '东洲区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1933', '1930', '望花区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1934', '1930', '顺城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1935', '1930', '抚顺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1936', '1930', '新宾满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1937', '1930', '清原满族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1938', '1874', '阜新市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1939', '1938', '海州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1940', '1938', '新邱区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1941', '1938', '太平区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1942', '1938', '清河门区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1943', '1938', '细河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1944', '1938', '阜新蒙古族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1945', '1938', '彰武县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1946', '1874', '葫芦岛市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1947', '1946', '连山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1948', '1946', '龙港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1949', '1946', '南票区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1950', '1946', '绥中县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1951', '1946', '建昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1952', '1946', '兴城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1953', '1874', '锦州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1954', '1953', '古塔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1955', '1953', '凌河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1956', '1953', '太和区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1957', '1953', '黑山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1958', '1953', '义县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1959', '1953', '凌海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1960', '1953', '北宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1961', '1874', '辽阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1962', '1961', '白塔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1963', '1961', '文圣区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1964', '1961', '宏伟区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1965', '1961', '弓长岭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1966', '1961', '太子河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1967', '1961', '辽阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1968', '1961', '灯塔市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1969', '1874', '盘锦市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1970', '1969', '双台子区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1971', '1969', '兴隆台区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1972', '1969', '大洼县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1973', '1969', '盘山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1974', '1874', '铁岭市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1975', '1974', '银州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1976', '1974', '清河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1977', '1974', '铁岭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1978', '1974', '西丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1979', '1974', '昌图县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1980', '1974', '调兵山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1981', '1974', '开原市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1982', '1874', '营口市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1983', '1982', '站前区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1984', '1982', '西市区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1985', '1982', '鲅鱼圈区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1986', '1982', '老边区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1987', '1982', '盖州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1988', '1982', '大石桥市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1989', '0', '内蒙古', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1990', '1989', '呼和浩特市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1991', '1990', '新城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1992', '1990', '回民区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1993', '1990', '玉泉区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1994', '1990', '赛罕区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1995', '1990', '土默特左旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1996', '1990', '托克托县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1997', '1990', '和林格尔县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1998', '1990', '清水河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('1999', '1990', '武川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2000', '1989', '阿拉善盟', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2001', '2000', '阿拉善左旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2002', '2000', '阿拉善右旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2003', '2000', '额济纳旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2004', '1989', '巴彦淖尔市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2005', '2004', '临河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2006', '2004', '五原县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2007', '2004', '磴口县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2008', '2004', '乌拉特前旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2009', '2004', '乌拉特中旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2010', '2004', '乌拉特后旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2011', '2004', '杭锦后旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2012', '1989', '包头市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2013', '2012', '东河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2014', '2012', '昆都仑区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2015', '2012', '青山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2016', '2012', '石拐区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2017', '2012', '白云矿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2018', '2012', '九原区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2019', '2012', '土默特右旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2020', '2012', '固阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2021', '2012', '达尔罕茂明安联合旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2022', '1989', '赤峰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2023', '2022', '红山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2024', '2022', '元宝山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2025', '2022', '松山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2026', '2022', '阿鲁科尔沁旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2027', '2022', '巴林左旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2028', '2022', '巴林右旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2029', '2022', '林西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2030', '2022', '克什克腾旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2031', '2022', '翁牛特旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2032', '2022', '喀喇沁旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2033', '2022', '宁城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2034', '2022', '敖汉旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2035', '1989', '鄂尔多斯市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2036', '2035', '东胜区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2037', '2035', '达拉特旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2038', '2035', '准格尔旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2039', '2035', '鄂托克前旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2040', '2035', '鄂托克旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2041', '2035', '杭锦旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2042', '2035', '乌审旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2043', '2035', '伊金霍洛旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2044', '1989', '呼伦贝尔市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2045', '2044', '海拉尔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2046', '2044', '阿荣旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2047', '2044', '莫力达瓦达斡尔族自治旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2048', '2044', '鄂伦春自治旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2049', '2044', '鄂温克族自治旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2050', '2044', '陈巴尔虎旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2051', '2044', '新巴尔虎左旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2052', '2044', '新巴尔虎右旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2053', '2044', '满洲里市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2054', '2044', '牙克石市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2055', '2044', '扎兰屯市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2056', '2044', '额尔古纳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2057', '2044', '根河市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2058', '1989', '通辽市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2059', '2058', '科尔沁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2060', '2058', '科尔沁左翼中旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2061', '2058', '科尔沁左翼后旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2062', '2058', '开鲁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2063', '2058', '库伦旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2064', '2058', '奈曼旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2065', '2058', '扎鲁特旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2066', '2058', '霍林郭勒市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2067', '1989', '乌海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2068', '2067', '海勃湾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2069', '2067', '海南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2070', '2067', '乌达区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2071', '1989', '乌兰察布市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2072', '2071', '集宁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2073', '2071', '卓资县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2074', '2071', '化德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2075', '2071', '商都县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2076', '2071', '兴和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2077', '2071', '凉城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2078', '2071', '察哈尔右翼前旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2079', '2071', '察哈尔右翼中旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2080', '2071', '察哈尔右翼后旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2081', '2071', '四子王旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2082', '2071', '丰镇市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2083', '1989', '锡林郭勒盟', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2084', '2083', '二连浩特市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2085', '2083', '锡林浩特市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2086', '2083', '阿巴嘎旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2087', '2083', '苏尼特左旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2088', '2083', '苏尼特右旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2089', '2083', '东乌珠穆沁旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2090', '2083', '西乌珠穆沁旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2091', '2083', '太仆寺旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2092', '2083', '镶黄旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2093', '2083', '正镶白旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2094', '2083', '正蓝旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2095', '2083', '多伦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2096', '1989', '兴安盟', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2097', '2096', '乌兰浩特市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2098', '2096', '阿尔山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2099', '2096', '科尔沁右翼前旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2100', '2096', '科尔沁右翼中旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2101', '2096', '扎赉特旗', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2102', '2096', '突泉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2103', '0', '宁夏', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2104', '2103', '银川市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2105', '2104', '兴庆区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2106', '2104', '西夏区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2107', '2104', '金凤区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2108', '2104', '永宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2109', '2104', '贺兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2110', '2104', '灵武市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2111', '2103', '固原市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2112', '2111', '原州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2113', '2111', '西吉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2114', '2111', '隆德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2115', '2111', '泾源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2116', '2111', '彭阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2117', '2103', '石嘴山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2118', '2117', '大武口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2119', '2117', '惠农区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2120', '2117', '平罗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2121', '2103', '吴忠市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2122', '2121', '利通区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2123', '2121', '盐池县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2124', '2121', '同心县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2125', '2121', '青铜峡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2126', '2103', '中卫市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2127', '2126', '沙坡头区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2128', '2126', '中宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2129', '2126', '海原县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2130', '0', '青海', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2131', '2130', '西宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2132', '2131', '城东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2133', '2131', '城中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2134', '2131', '城西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2135', '2131', '城北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2136', '2131', '大通回族土族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2137', '2131', '湟中县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2138', '2131', '湟源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2139', '2130', '果洛藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2140', '2139', '玛沁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2141', '2139', '班玛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2142', '2139', '甘德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2143', '2139', '达日县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2144', '2139', '久治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2145', '2139', '玛多县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2146', '2130', '海北藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2147', '2146', '门源回族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2148', '2146', '祁连县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2149', '2146', '海晏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2150', '2146', '刚察县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2151', '2130', '海东地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2152', '2151', '平安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2153', '2151', '民和回族土族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2154', '2151', '乐都县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2155', '2151', '互助土族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2156', '2151', '化隆回族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2157', '2151', '循化撒拉族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2158', '2130', '海南藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2159', '2158', '共和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2160', '2158', '同德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2161', '2158', '贵德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2162', '2158', '兴海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2163', '2158', '贵南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2164', '2130', '海西蒙古族藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2165', '2164', '格尔木市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2166', '2164', '德令哈市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2167', '2164', '乌兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2168', '2164', '都兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2169', '2164', '天峻县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2170', '2130', '黄南藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2171', '2170', '同仁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2172', '2170', '尖扎县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2173', '2170', '泽库县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2174', '2170', '河南蒙古族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2175', '2130', '玉树藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2176', '2175', '玉树县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2177', '2175', '杂多县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2178', '2175', '称多县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2179', '2175', '治多县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2180', '2175', '囊谦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2181', '2175', '曲麻莱县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2182', '0', '山东', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2183', '2182', '济南市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2184', '2183', '历下区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2185', '2183', '市中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2186', '2183', '槐荫区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2187', '2183', '天桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2188', '2183', '历城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2189', '2183', '长清区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2190', '2183', '平阴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2191', '2183', '济阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2192', '2183', '商河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2193', '2183', '章丘市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2194', '2182', '滨州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2195', '2194', '滨城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2196', '2194', '惠民县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2197', '2194', '阳信县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2198', '2194', '无棣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2199', '2194', '沾化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2200', '2194', '博兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2201', '2194', '邹平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2202', '2182', '德州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2203', '2202', '德城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2204', '2202', '陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2205', '2202', '宁津县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2206', '2202', '庆云县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2207', '2202', '临邑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2208', '2202', '齐河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2209', '2202', '平原县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2210', '2202', '夏津县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2211', '2202', '武城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2212', '2202', '乐陵市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2213', '2202', '禹城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2214', '2182', '东营市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2215', '2214', '东营区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2216', '2214', '河口区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2217', '2214', '垦利县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2218', '2214', '利津县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2219', '2214', '广饶县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2220', '2182', '菏泽市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2221', '2220', '牡丹区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2222', '2220', '曹县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2223', '2220', '单县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2224', '2220', '成武县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2225', '2220', '巨野县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2226', '2220', '郓城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2227', '2220', '鄄城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2228', '2220', '定陶县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2229', '2220', '东明县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2230', '2182', '济宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2231', '2230', '市中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2232', '2230', '任城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2233', '2230', '微山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2234', '2230', '鱼台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2235', '2230', '金乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2236', '2230', '嘉祥县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2237', '2230', '汶上县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2238', '2230', '泗水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2239', '2230', '梁山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2240', '2230', '曲阜市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2241', '2230', '兖州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2242', '2230', '邹城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2243', '2182', '莱芜市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2244', '2243', '莱城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2245', '2243', '钢城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2246', '2182', '聊城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2247', '2246', '东昌府区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2248', '2246', '阳谷县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2249', '2246', '莘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2250', '2246', '茌平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2251', '2246', '东阿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2252', '2246', '冠县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2253', '2246', '高唐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2254', '2246', '临清市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2255', '2182', '临沂市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2256', '2255', '兰山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2257', '2255', '罗庄区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2258', '2255', '河东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2259', '2255', '沂南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2260', '2255', '郯城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2261', '2255', '沂水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2262', '2255', '苍山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2263', '2255', '费县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2264', '2255', '平邑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2265', '2255', '莒南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2266', '2255', '蒙阴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2267', '2255', '临沭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2268', '2182', '青岛市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2269', '2268', '市南区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2270', '2268', '市北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2271', '2268', '四方区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2272', '2268', '黄岛区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2273', '2268', '崂山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2274', '2268', '李沧区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2275', '2268', '城阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2276', '2268', '胶州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2277', '2268', '即墨市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2278', '2268', '平度市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2279', '2268', '胶南市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2280', '2268', '莱西市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2281', '2182', '日照市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2282', '2281', '东港区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2283', '2281', '岚山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2284', '2281', '五莲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2285', '2281', '莒县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2286', '2182', '泰安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2287', '2286', '泰山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2288', '2286', '岱岳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2289', '2286', '宁阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2290', '2286', '东平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2291', '2286', '新泰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2292', '2286', '肥城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2293', '2182', '威海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2294', '2293', '环翠区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2295', '2293', '文登市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2296', '2293', '荣成市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2297', '2293', '乳山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2298', '2182', '潍坊市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2299', '2298', '潍城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2300', '2298', '寒亭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2301', '2298', '坊子区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2302', '2298', '奎文区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2303', '2298', '临朐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2304', '2298', '昌乐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2305', '2298', '青州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2306', '2298', '诸城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2307', '2298', '寿光市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2308', '2298', '安丘市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2309', '2298', '高密市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2310', '2298', '昌邑市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2311', '2182', '烟台市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2312', '2311', '芝罘区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2313', '2311', '福山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2314', '2311', '牟平区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2315', '2311', '莱山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2316', '2311', '长岛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2317', '2311', '龙口市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2318', '2311', '莱阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2319', '2311', '莱州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2320', '2311', '蓬莱市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2321', '2311', '招远市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2322', '2311', '栖霞市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2323', '2311', '海阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2324', '2182', '枣庄市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2325', '2324', '市中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2326', '2324', '薛城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2327', '2324', '峄城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2328', '2324', '台儿庄区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2329', '2324', '山亭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2330', '2324', '滕州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2331', '2182', '淄博市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2332', '2331', '淄川区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2333', '2331', '张店区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2334', '2331', '博山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2335', '2331', '临淄区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2336', '2331', '周村区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2337', '2331', '桓台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2338', '2331', '高青县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2339', '2331', '沂源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2340', '0', '山西', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2341', '2340', '太原市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2342', '2341', '小店区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2343', '2341', '迎泽区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2344', '2341', '杏花岭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2345', '2341', '尖草坪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2346', '2341', '万柏林区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2347', '2341', '晋源区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2348', '2341', '清徐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2349', '2341', '阳曲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2350', '2341', '娄烦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2351', '2341', '古交市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2352', '2340', '长治市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2353', '2352', '城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2354', '2352', '郊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2355', '2352', '长治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2356', '2352', '襄垣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2357', '2352', '屯留县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2358', '2352', '平顺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2359', '2352', '黎城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2360', '2352', '壶关县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2361', '2352', '长子县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2362', '2352', '武乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2363', '2352', '沁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2364', '2352', '沁源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2365', '2352', '潞城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2366', '2340', '大同市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2367', '2366', '城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2368', '2366', '矿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2369', '2366', '南郊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2370', '2366', '新荣区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2371', '2366', '阳高县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2372', '2366', '天镇县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2373', '2366', '广灵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2374', '2366', '灵丘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2375', '2366', '浑源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2376', '2366', '左云县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2377', '2366', '大同县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2378', '2340', '晋城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2379', '2378', '城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2380', '2378', '沁水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2381', '2378', '阳城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2382', '2378', '陵川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2383', '2378', '泽州县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2384', '2378', '高平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2385', '2340', '晋中市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2386', '2385', '榆次区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2387', '2385', '榆社县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2388', '2385', '左权县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2389', '2385', '和顺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2390', '2385', '昔阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2391', '2385', '寿阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2392', '2385', '太谷县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2393', '2385', '祁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2394', '2385', '平遥县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2395', '2385', '灵石县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2396', '2385', '介休市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2397', '2340', '临汾市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2398', '2397', '尧都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2399', '2397', '曲沃县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2400', '2397', '翼城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2401', '2397', '襄汾县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2402', '2397', '洪洞县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2403', '2397', '古县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2404', '2397', '安泽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2405', '2397', '浮山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2406', '2397', '吉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2407', '2397', '乡宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2408', '2397', '大宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2409', '2397', '隰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2410', '2397', '永和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2411', '2397', '蒲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2412', '2397', '汾西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2413', '2397', '侯马市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2414', '2397', '霍州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2415', '2340', '吕梁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2416', '2415', '离石区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2417', '2415', '文水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2418', '2415', '交城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2419', '2415', '兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2420', '2415', '临县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2421', '2415', '柳林县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2422', '2415', '石楼县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2423', '2415', '岚县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2424', '2415', '方山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2425', '2415', '中阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2426', '2415', '交口县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2427', '2415', '孝义市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2428', '2415', '汾阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2429', '2340', '朔州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2430', '2429', '朔城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2431', '2429', '平鲁区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2432', '2429', '山阴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2433', '2429', '应县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2434', '2429', '右玉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2435', '2429', '怀仁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2436', '2340', '忻州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2437', '2436', '忻府区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2438', '2436', '定襄县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2439', '2436', '五台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2440', '2436', '代县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2441', '2436', '繁峙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2442', '2436', '宁武县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2443', '2436', '静乐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2444', '2436', '神池县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2445', '2436', '五寨县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2446', '2436', '岢岚县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2447', '2436', '河曲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2448', '2436', '保德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2449', '2436', '偏关县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2450', '2436', '原平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2451', '2340', '阳泉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2452', '2451', '城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2453', '2451', '矿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2454', '2451', '郊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2455', '2451', '平定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2456', '2451', '盂县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2457', '2340', '运城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2458', '2457', '盐湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2459', '2457', '临猗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2460', '2457', '万荣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2461', '2457', '闻喜县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2462', '2457', '稷山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2463', '2457', '新绛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2464', '2457', '绛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2465', '2457', '垣曲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2466', '2457', '夏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2467', '2457', '平陆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2468', '2457', '芮城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2469', '2457', '永济市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2470', '2457', '河津市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2471', '0', '陕西', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2472', '2471', '西安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2473', '2472', '新城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2474', '2472', '碑林区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2475', '2472', '莲湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2476', '2472', '灞桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2477', '2472', '未央区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2478', '2472', '雁塔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2479', '2472', '阎良区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2480', '2472', '临潼区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2481', '2472', '长安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2482', '2472', '蓝田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2483', '2472', '周至县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2484', '2472', '户县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2485', '2472', '高陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2486', '2471', '安康市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2487', '2486', '汉滨区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2488', '2486', '汉阴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2489', '2486', '石泉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2490', '2486', '宁陕县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2491', '2486', '紫阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2492', '2486', '岚皋县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2493', '2486', '平利县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2494', '2486', '镇坪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2495', '2486', '旬阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2496', '2486', '白河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2497', '2471', '宝鸡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2498', '2497', '渭滨区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2499', '2497', '金台区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2500', '2497', '陈仓区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2501', '2497', '凤翔县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2502', '2497', '岐山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2503', '2497', '扶风县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2504', '2497', '眉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2505', '2497', '陇县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2506', '2497', '千阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2507', '2497', '麟游县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2508', '2497', '凤县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2509', '2497', '太白县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2510', '2471', '汉中市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2511', '2510', '汉台区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2512', '2510', '南郑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2513', '2510', '城固县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2514', '2510', '洋县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2515', '2510', '西乡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2516', '2510', '勉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2517', '2510', '宁强县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2518', '2510', '略阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2519', '2510', '镇巴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2520', '2510', '留坝县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2521', '2510', '佛坪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2522', '2471', '商洛市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2523', '2522', '商州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2524', '2522', '洛南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2525', '2522', '丹凤县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2526', '2522', '商南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2527', '2522', '山阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2528', '2522', '镇安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2529', '2522', '柞水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2530', '2471', '铜川市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2531', '2530', '王益区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2532', '2530', '印台区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2533', '2530', '耀州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2534', '2530', '宜君县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2535', '2471', '渭南市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2536', '2535', '临渭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2537', '2535', '华县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2538', '2535', '潼关县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2539', '2535', '大荔县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2540', '2535', '合阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2541', '2535', '澄城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2542', '2535', '蒲城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2543', '2535', '白水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2544', '2535', '富平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2545', '2535', '韩城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2546', '2535', '华阴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2547', '2471', '咸阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2548', '2547', '秦都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2549', '2547', '杨凌区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2550', '2547', '渭城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2551', '2547', '三原县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2552', '2547', '泾阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2553', '2547', '乾县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2554', '2547', '礼泉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2555', '2547', '永寿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2556', '2547', '彬县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2557', '2547', '长武县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2558', '2547', '旬邑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2559', '2547', '淳化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2560', '2547', '武功县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2561', '2547', '兴平市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2562', '2471', '延安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2563', '2562', '宝塔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2564', '2562', '延长县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2565', '2562', '延川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2566', '2562', '子长县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2567', '2562', '安塞县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2568', '2562', '志丹县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2569', '2562', '吴旗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2570', '2562', '甘泉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2571', '2562', '富县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2572', '2562', '洛川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2573', '2562', '宜川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2574', '2562', '黄龙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2575', '2562', '黄陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2576', '2471', '榆林市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2577', '2576', '榆阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2578', '2576', '神木县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2579', '2576', '府谷县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2580', '2576', '横山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2581', '2576', '靖边县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2582', '2576', '定边县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2583', '2576', '绥德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2584', '2576', '米脂县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2585', '2576', '佳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2586', '2576', '吴堡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2587', '2576', '清涧县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2588', '2576', '子洲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2589', '0', '四川', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2590', '2589', '成都市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2591', '2590', '锦江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2592', '2590', '青羊区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2593', '2590', '金牛区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2594', '2590', '武侯区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2595', '2590', '成华区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2596', '2590', '龙泉驿区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2597', '2590', '青白江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2598', '2590', '新都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2599', '2590', '温江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2600', '2590', '金堂县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2601', '2590', '双流县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2602', '2590', '郫县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2603', '2590', '大邑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2604', '2590', '蒲江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2605', '2590', '新津县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2606', '2590', '都江堰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2607', '2590', '彭州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2608', '2590', '邛崃市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2609', '2590', '崇州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2610', '2589', '阿坝藏族羌族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2611', '2610', '汶川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2612', '2610', '理县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2613', '2610', '茂县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2614', '2610', '松潘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2615', '2610', '九寨沟县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2616', '2610', '金川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2617', '2610', '小金县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2618', '2610', '黑水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2619', '2610', '马尔康县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2620', '2610', '壤塘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2621', '2610', '阿坝县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2622', '2610', '若尔盖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2623', '2610', '红原县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2624', '2589', '巴中市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2625', '2624', '巴州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2626', '2624', '通江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2627', '2624', '南江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2628', '2624', '平昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2629', '2589', '达州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2630', '2629', '通川区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2631', '2629', '达县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2632', '2629', '宣汉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2633', '2629', '开江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2634', '2629', '大竹县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2635', '2629', '渠县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2636', '2629', '万源市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2637', '2589', '德阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2638', '2637', '旌阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2639', '2637', '中江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2640', '2637', '罗江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2641', '2637', '广汉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2642', '2637', '什邡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2643', '2637', '绵竹市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2644', '2589', '甘孜藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2645', '2644', '康定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2646', '2644', '泸定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2647', '2644', '丹巴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2648', '2644', '九龙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2649', '2644', '雅江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2650', '2644', '道孚县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2651', '2644', '炉霍县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2652', '2644', '甘孜县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2653', '2644', '新龙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2654', '2644', '德格县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2655', '2644', '白玉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2656', '2644', '石渠县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2657', '2644', '色达县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2658', '2644', '理塘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2659', '2644', '巴塘县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2660', '2644', '乡城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2661', '2644', '稻城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2662', '2644', '得荣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2663', '2589', '广安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2664', '2663', '广安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2665', '2663', '岳池县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2666', '2663', '武胜县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2667', '2663', '邻水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2668', '2663', '华莹市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2669', '2589', '广元市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2670', '2669', '市中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2671', '2669', '元坝区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2672', '2669', '朝天区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2673', '2669', '旺苍县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2674', '2669', '青川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2675', '2669', '剑阁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2676', '2669', '苍溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2677', '2589', '乐山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2678', '2677', '市中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2679', '2677', '沙湾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2680', '2677', '五通桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2681', '2677', '金口河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2682', '2677', '犍为县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2683', '2677', '井研县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2684', '2677', '夹江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2685', '2677', '沐川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2686', '2677', '峨边彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2687', '2677', '马边彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2688', '2677', '峨眉山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2689', '2589', '凉山彝族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2690', '2689', '西昌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2691', '2689', '木里藏族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2692', '2689', '盐源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2693', '2689', '德昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2694', '2689', '会理县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2695', '2689', '会东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2696', '2689', '宁南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2697', '2689', '普格县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2698', '2689', '布拖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2699', '2689', '金阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2700', '2689', '昭觉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2701', '2689', '喜德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2702', '2689', '冕宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2703', '2689', '越西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2704', '2689', '甘洛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2705', '2689', '美姑县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2706', '2689', '雷波县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2707', '2589', '泸州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2708', '2707', '江阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2709', '2707', '纳溪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2710', '2707', '龙马潭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2711', '2707', '泸县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2712', '2707', '合江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2713', '2707', '叙永县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2714', '2707', '古蔺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2715', '2589', '眉山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2716', '2715', '东坡区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2717', '2715', '仁寿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2718', '2715', '彭山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2719', '2715', '洪雅县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2720', '2715', '丹棱县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2721', '2715', '青神县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2722', '2589', '绵阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2723', '2722', '涪城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2724', '2722', '游仙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2725', '2722', '三台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2726', '2722', '盐亭县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2727', '2722', '安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2728', '2722', '梓潼县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2729', '2722', '北川羌族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2730', '2722', '平武县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2731', '2722', '江油市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2732', '2589', '内江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2733', '2732', '市中区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2734', '2732', '东兴区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2735', '2732', '威远县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2736', '2732', '资中县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2737', '2732', '隆昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2738', '2589', '南充市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2739', '2738', '顺庆区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2740', '2738', '高坪区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2741', '2738', '嘉陵区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2742', '2738', '南部县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2743', '2738', '营山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2744', '2738', '蓬安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2745', '2738', '仪陇县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2746', '2738', '西充县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2747', '2738', '阆中市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2748', '2589', '攀枝花市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2749', '2748', '东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2750', '2748', '西区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2751', '2748', '仁和区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2752', '2748', '米易县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2753', '2748', '盐边县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2754', '2589', '遂宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2755', '2754', '船山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2756', '2754', '安居区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2757', '2754', '蓬溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2758', '2754', '射洪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2759', '2754', '大英县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2760', '2589', '雅安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2761', '2760', '雨城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2762', '2760', '名山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2763', '2760', '荥经县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2764', '2760', '汉源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2765', '2760', '石棉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2766', '2760', '天全县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2767', '2760', '芦山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2768', '2760', '宝兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2769', '2589', '宜宾市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2770', '2769', '翠屏区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2771', '2769', '宜宾县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2772', '2769', '南溪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2773', '2769', '江安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2774', '2769', '长宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2775', '2769', '高县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2776', '2769', '珙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2777', '2769', '筠连县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2778', '2769', '兴文县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2779', '2769', '屏山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2780', '2589', '资阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2781', '2780', '雁江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2782', '2780', '安岳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2783', '2780', '乐至县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2784', '2780', '简阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2785', '2589', '自贡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2786', '2785', '自流井区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2787', '2785', '贡井区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2788', '2785', '大安区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2789', '2785', '沿滩区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2790', '2785', '荣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2791', '2785', '富顺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2792', '0', '西藏', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2793', '2792', '拉萨市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2794', '2793', '城关区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2795', '2793', '林周县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2796', '2793', '当雄县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2797', '2793', '尼木县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2798', '2793', '曲水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2799', '2793', '堆龙德庆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2800', '2793', '达孜县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2801', '2793', '墨竹工卡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2802', '2792', '阿里地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2803', '2802', '普兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2804', '2802', '札达县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2805', '2802', '噶尔县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2806', '2802', '日土县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2807', '2802', '革吉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2808', '2802', '改则县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2809', '2802', '措勤县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2810', '2792', '昌都地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2811', '2810', '昌都县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2812', '2810', '江达县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2813', '2810', '贡觉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2814', '2810', '类乌齐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2815', '2810', '丁青县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2816', '2810', '察雅县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2817', '2810', '八宿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2818', '2810', '左贡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2819', '2810', '芒康县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2820', '2810', '洛隆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2821', '2810', '边坝县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2822', '2792', '林芝地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2823', '2822', '林芝县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2824', '2822', '工布江达县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2825', '2822', '米林县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2826', '2822', '墨脱县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2827', '2822', '波密县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2828', '2822', '察隅县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2829', '2822', '朗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2830', '2792', '那曲地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2831', '2830', '那曲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2832', '2830', '嘉黎县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2833', '2830', '比如县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2834', '2830', '聂荣县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2835', '2830', '安多县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2836', '2830', '申扎县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2837', '2830', '索县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2838', '2830', '班戈县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2839', '2830', '巴青县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2840', '2830', '尼玛县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2841', '2792', '日喀则地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2842', '2841', '日喀则市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2843', '2841', '南木林县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2844', '2841', '江孜县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2845', '2841', '定日县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2846', '2841', '萨迦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2847', '2841', '拉孜县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2848', '2841', '昂仁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2849', '2841', '谢通门县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2850', '2841', '白朗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2851', '2841', '仁布县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2852', '2841', '康马县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2853', '2841', '定结县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2854', '2841', '仲巴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2855', '2841', '亚东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2856', '2841', '吉隆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2857', '2841', '聂拉木县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2858', '2841', '萨嘎县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2859', '2841', '岗巴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2860', '2792', '山南地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2861', '2860', '乃东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2862', '2860', '扎囊县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2863', '2860', '贡嘎县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2864', '2860', '桑日县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2865', '2860', '琼结县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2866', '2860', '曲松县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2867', '2860', '措美县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2868', '2860', '洛扎县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2869', '2860', '加查县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2870', '2860', '隆子县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2871', '2860', '错那县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2872', '2860', '浪卡子县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2873', '0', '新疆', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2874', '2873', '乌鲁木齐市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2875', '2874', '天山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2876', '2874', '沙依巴克区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2877', '2874', '新市区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2878', '2874', '水磨沟区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2879', '2874', '头屯河区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2880', '2874', '达坂城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2881', '2874', '东山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2882', '2874', '乌鲁木齐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2883', '2873', '阿克苏地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2884', '2883', '阿克苏市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2885', '2883', '温宿县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2886', '2883', '库车县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2887', '2883', '沙雅县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2888', '2883', '新和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2889', '2883', '拜城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2890', '2883', '乌什县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2891', '2883', '阿瓦提县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2892', '2883', '柯坪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2893', '2873', '阿拉尔市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2894', '2873', '阿勒泰地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2895', '2894', '阿勒泰市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2896', '2894', '布尔津县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2897', '2894', '富蕴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2898', '2894', '福海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2899', '2894', '哈巴河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2900', '2894', '青河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2901', '2894', '吉木乃县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2902', '2873', '巴音郭楞蒙古自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2903', '2902', '库尔勒市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2904', '2902', '轮台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2905', '2902', '尉犁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2906', '2902', '若羌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2907', '2902', '且末县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2908', '2902', '焉耆回族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2909', '2902', '和静县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2910', '2902', '和硕县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2911', '2902', '博湖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2912', '2873', '博尔塔拉蒙古自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2913', '2912', '博乐市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2914', '2912', '精河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2915', '2912', '温泉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2916', '2873', '昌吉回族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2917', '2916', '昌吉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2918', '2916', '阜康市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2919', '2916', '米泉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2920', '2916', '呼图壁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2921', '2916', '玛纳斯县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2922', '2916', '奇台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2923', '2916', '吉木萨尔县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2924', '2916', '木垒哈萨克自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2925', '2873', '哈密地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2926', '2925', '哈密市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2927', '2925', '巴里坤哈萨克自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2928', '2925', '伊吾县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2929', '2873', '和田地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2930', '2929', '和田市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2931', '2929', '和田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2932', '2929', '墨玉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2933', '2929', '皮山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2934', '2929', '洛浦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2935', '2929', '策勒县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2936', '2929', '于田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2937', '2929', '民丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2938', '2873', '喀什地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2939', '2938', '喀什市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2940', '2938', '疏附县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2941', '2938', '疏勒县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2942', '2938', '英吉沙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2943', '2938', '泽普县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2944', '2938', '莎车县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2945', '2938', '叶城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2946', '2938', '麦盖提县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2947', '2938', '岳普湖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2948', '2938', '伽师县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2949', '2938', '巴楚县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2950', '2938', '塔什库尔干塔吉克自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2951', '2873', '克拉玛依市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2952', '2951', '独山子区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2953', '2951', '克拉玛依区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2954', '2951', '白碱滩区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2955', '2951', '乌尔禾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2956', '2873', '克孜勒苏柯尔克孜自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2957', '2956', '阿图什市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2958', '2956', '阿克陶县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2959', '2956', '阿合奇县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2960', '2956', '乌恰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2961', '2873', '石河子市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2962', '2873', '塔城地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2963', '2962', '塔城市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2964', '2962', '乌苏市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2965', '2962', '额敏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2966', '2962', '沙湾县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2967', '2962', '托里县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2968', '2962', '裕民县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2969', '2962', '和布克赛尔蒙古自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2970', '2873', '图木舒克市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2971', '2873', '吐鲁番地区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2972', '2971', '吐鲁番市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2973', '2971', '鄯善县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2974', '2971', '托克逊县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2975', '2873', '五家渠市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2976', '2873', '伊犁哈萨克自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2977', '2976', '伊宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2978', '2976', '奎屯市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2979', '2976', '伊宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2980', '2976', '察布查尔锡伯自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2981', '2976', '霍城县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2982', '2976', '巩留县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2983', '2976', '新源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2984', '2976', '昭苏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2985', '2976', '特克斯县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2986', '2976', '尼勒克县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2987', '0', '云南', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2988', '2987', '昆明市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2989', '2988', '五华区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2990', '2988', '盘龙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2991', '2988', '官渡区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2992', '2988', '西山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2993', '2988', '东川区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2994', '2988', '呈贡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2995', '2988', '晋宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2996', '2988', '富民县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2997', '2988', '宜良县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2998', '2988', '石林彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('2999', '2988', '嵩明县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3000', '2988', '禄劝彝族苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3001', '2988', '寻甸回族彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3002', '2988', '安宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3003', '2987', '保山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3004', '3003', '隆阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3005', '3003', '施甸县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3006', '3003', '腾冲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3007', '3003', '龙陵县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3008', '3003', '昌宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3009', '2987', '楚雄彝族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3010', '3009', '楚雄市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3011', '3009', '双柏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3012', '3009', '牟定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3013', '3009', '南华县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3014', '3009', '姚安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3015', '3009', '大姚县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3016', '3009', '永仁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3017', '3009', '元谋县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3018', '3009', '武定县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3019', '3009', '禄丰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3020', '2987', '大理白族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3021', '3020', '大理市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3022', '3020', '漾濞彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3023', '3020', '祥云县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3024', '3020', '宾川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3025', '3020', '弥渡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3026', '3020', '南涧彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3027', '3020', '巍山彝族回族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3028', '3020', '永平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3029', '3020', '云龙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3030', '3020', '洱源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3031', '3020', '剑川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3032', '3020', '鹤庆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3033', '2987', '德宏傣族景颇族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3034', '3033', '瑞丽市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3035', '3033', '潞西市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3036', '3033', '梁河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3037', '3033', '盈江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3038', '3033', '陇川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3039', '2987', '迪庆藏族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3040', '3039', '香格里拉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3041', '3039', '德钦县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3042', '3039', '维西傈僳族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3043', '2987', '红河哈尼族彝族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3044', '3043', '个旧市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3045', '3043', '开远市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3046', '3043', '蒙自县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3047', '3043', '屏边苗族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3048', '3043', '建水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3049', '3043', '石屏县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3050', '3043', '弥勒县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3051', '3043', '泸西县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3052', '3043', '元阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3053', '3043', '红河县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3054', '3043', '金平苗族瑶族傣族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3055', '3043', '绿春县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3056', '3043', '河口瑶族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3057', '2987', '丽江市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3058', '3057', '古城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3059', '3057', '玉龙纳西族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3060', '3057', '永胜县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3061', '3057', '华坪县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3062', '3057', '宁蒗彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3063', '2987', '临沧市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3064', '3063', '临翔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3065', '3063', '凤庆县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3066', '3063', '云县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3067', '3063', '永德县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3068', '3063', '镇康县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3069', '3063', '双江拉祜族佤族布朗族傣族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3070', '3063', '耿马傣族佤族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3071', '3063', '沧源佤族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3072', '2987', '怒江傈僳族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3073', '3072', '泸水县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3074', '3072', '福贡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3075', '3072', '贡山独龙族怒族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3076', '3072', '兰坪白族普米族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3077', '2987', '曲靖市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3078', '3077', '麒麟区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3079', '3077', '马龙县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3080', '3077', '陆良县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3081', '3077', '师宗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3082', '3077', '罗平县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3083', '3077', '富源县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3084', '3077', '会泽县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3085', '3077', '沾益县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3086', '3077', '宣威市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3087', '2987', '思茅市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3088', '3087', '翠云区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3089', '3087', '普洱哈尼族彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3090', '3087', '墨江哈尼族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3091', '3087', '景东彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3092', '3087', '景谷傣族彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3093', '3087', '镇沅彝族哈尼族拉祜族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3094', '3087', '江城哈尼族彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3095', '3087', '孟连傣族拉祜族佤族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3096', '3087', '澜沧拉祜族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3097', '3087', '西盟佤族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3098', '2987', '文山壮族苗族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3099', '3098', '文山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3100', '3098', '砚山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3101', '3098', '西畴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3102', '3098', '麻栗坡县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3103', '3098', '马关县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3104', '3098', '丘北县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3105', '3098', '广南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3106', '3098', '富宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3107', '2987', '西双版纳傣族自治州', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3108', '3107', '景洪市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3109', '3107', '勐海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3110', '3107', '勐腊县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3111', '2987', '玉溪市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3112', '3111', '红塔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3113', '3111', '江川县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3114', '3111', '澄江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3115', '3111', '通海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3116', '3111', '华宁县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3117', '3111', '易门县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3118', '3111', '峨山彝族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3119', '3111', '新平彝族傣族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3120', '3111', '元江哈尼族彝族傣族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3121', '2987', '昭通市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3122', '3121', '昭阳区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3123', '3121', '鲁甸县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3124', '3121', '巧家县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3125', '3121', '盐津县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3126', '3121', '大关县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3127', '3121', '永善县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3128', '3121', '绥江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3129', '3121', '镇雄县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3130', '3121', '彝良县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3131', '3121', '威信县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3132', '3121', '水富县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3133', '0', '浙江', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3134', '3133', '杭州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3135', '3134', '上城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3136', '3134', '下城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3137', '3134', '江干区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3138', '3134', '拱墅区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3139', '3134', '西湖区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3140', '3134', '滨江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3141', '3134', '萧山区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3142', '3134', '余杭区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3143', '3134', '桐庐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3144', '3134', '淳安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3145', '3134', '建德市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3146', '3134', '富阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3147', '3134', '临安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3148', '3133', '湖州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3149', '3148', '吴兴区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3150', '3148', '南浔区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3151', '3148', '德清县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3152', '3148', '长兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3153', '3148', '安吉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3154', '3133', '嘉兴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3155', '3154', '秀城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3156', '3154', '秀洲区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3157', '3154', '嘉善县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3158', '3154', '海盐县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3159', '3154', '海宁市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3160', '3154', '平湖市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3161', '3154', '桐乡市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3162', '3133', '金华市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3163', '3162', '婺城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3164', '3162', '金东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3165', '3162', '武义县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3166', '3162', '浦江县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3167', '3162', '磐安县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3168', '3162', '兰溪市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3169', '3162', '义乌市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3170', '3162', '东阳市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3171', '3162', '永康市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3172', '3133', '丽水市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3173', '3172', '莲都区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3174', '3172', '青田县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3175', '3172', '缙云县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3176', '3172', '遂昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3177', '3172', '松阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3178', '3172', '云和县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3179', '3172', '庆元县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3180', '3172', '景宁畲族自治县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3181', '3172', '龙泉市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3182', '3133', '宁波市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3183', '3182', '海曙区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3184', '3182', '江东区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3185', '3182', '江北区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3186', '3182', '北仑区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3187', '3182', '镇海区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3188', '3182', '鄞州区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3189', '3182', '象山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3190', '3182', '宁海县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3191', '3182', '余姚市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3192', '3182', '慈溪市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3193', '3182', '奉化市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3194', '3133', '衢州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3195', '3194', '柯城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3196', '3194', '衢江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3197', '3194', '常山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3198', '3194', '开化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3199', '3194', '龙游县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3200', '3194', '江山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3201', '3133', '绍兴市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3202', '3201', '越城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3203', '3201', '绍兴县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3204', '3201', '新昌县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3205', '3201', '诸暨市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3206', '3201', '上虞市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3207', '3201', '嵊州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3208', '3133', '台州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3209', '3208', '椒江区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3210', '3208', '黄岩区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3211', '3208', '路桥区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3212', '3208', '玉环县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3213', '3208', '三门县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3214', '3208', '天台县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3215', '3208', '仙居县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3216', '3208', '温岭市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3217', '3208', '临海市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3218', '3133', '温州市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3219', '3218', '鹿城区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3220', '3218', '龙湾区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3221', '3218', '瓯海区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3222', '3218', '洞头县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3223', '3218', '永嘉县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3224', '3218', '平阳县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3225', '3218', '苍南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3226', '3218', '文成县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3227', '3218', '泰顺县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3228', '3218', '瑞安市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3229', '3218', '乐清市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3230', '3133', '舟山市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3231', '3230', '定海区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3232', '3230', '普陀区', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3233', '3230', '岱山县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3234', '3230', '嵊泗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3235', '0', '香港', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3236', '3235', '九龙', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3237', '3235', '香港岛', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3238', '3235', '新界', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3239', '0', '澳门', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3240', '3239', '澳门半岛', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3241', '3239', '离岛', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3242', '0', '台湾', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3243', '3242', '台北市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3244', '3242', '高雄市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3245', '3242', '高雄县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3246', '3242', '花莲县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3247', '3242', '基隆市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3248', '3242', '嘉义市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3249', '3242', '嘉义县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3250', '3242', '金门县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3251', '3242', '苗栗县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3252', '3242', '南投县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3253', '3242', '澎湖县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3254', '3242', '屏东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3255', '3242', '台北县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3256', '3242', '台东县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3257', '3242', '台南市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3258', '3242', '台南县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3259', '3242', '台中市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3260', '3242', '台中县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3261', '3242', '桃园县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3262', '3242', '新竹市', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3263', '3242', '新竹县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3264', '3242', '宜兰县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3265', '3242', '云林县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_area` VALUES ('3266', '3242', '彰化县', '0', 'true', '0', null, '0', '0', '0', '0', '0', 'false');
 
 -- ----------------------------
---  Table structure for `yiyi_column`
+-- Table structure for yiyi_column
 -- ----------------------------
 DROP TABLE IF EXISTS `yiyi_column`;
 CREATE TABLE `yiyi_column` (
@@ -255,17 +3529,20 @@ CREATE TABLE `yiyi_column` (
   `deladmin` int(10) unsigned NOT NULL,
   `sys` enum('true','false') NOT NULL DEFAULT 'false' COMMENT '系统默认  当为true时不能被开发组以外的组删除',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
---  Records of `yiyi_column`
+-- Records of yiyi_column
 -- ----------------------------
-BEGIN;
-INSERT INTO `yiyi_column` VALUES ('1', '1', '1', '0', '首页', '', 'index.php?mo=1', '', '', '', '', '', '0', '1', 'true', '1498204739', '3', '1516093742', '2', '0', '0', 'false'), ('2', '1', '1', '0', '关于我们', '', 'index.php?m=Home&c=CluCentre&a=index&cluinid=2', '', '', '', '', '北京积成航空科技有限公司于2017年08月21日成立。法定代表人柴利冰,公司经营范围包括：技术推广等。 北京积成航空科技有限公司于2017年08月21日成立。法定代表人柴利冰,公司经营范围包括：技术推广等。 北京积成航空科技有限公司于2017年08月21日成立。法定代表人柴利冰,公司经营范围包括：技术推广等。 北京积成航空科技有限公司于2017年08月21日成立。法定代表人柴利冰,公司经营范围包括：技术推广等。 北京积成航空科技有限公司于2017年08月21日成立。法定代表人柴利冰,公司经营范围包括：技术', '0', '1', 'true', '1498204754', '3', '1516093733', '2', '0', '0', 'false'), ('3', '1', '1', '0', '专栏文章', '', 'index.php?m=Home&c=CluCentre&a=index&cluinid=3', '', '', '', '', '', '0', ',1', 'true', '1498204765', '3', '1516094246', '2', '0', '0', 'false'), ('4', '1', '1', '0', '新闻中心', '', 'index.php?m=Home&c=CluCentre&a=index&cluinid=4', '', '', '', '', '', '0', '1', 'true', '1498204775', '3', '1516093751', '2', '0', '0', 'false'), ('5', '1', '1', '0', '产品展示', '', 'index.php?m=Home&c=CluCentre&a=product&cluinid=5', '', '', '', '', '', '0', '1', 'true', '1498204797', '3', '1516093761', '2', '0', '0', 'false'), ('6', '1', '1', '0', '联系我们', '', 'index.php?m=Home&c=CluCentre&a=index&cluinid=6', '', '', '', '', '', '0', '1', 'true', '1498204878', '3', '1516093979', '2', '0', '0', 'false'), ('7', '1', '1', '2', '公司简介', '&lt;strong&gt;&lt;span style=&quot;background-color:#E56600;&quot;&gt;asdfasdfasdf&lt;/span&gt;&lt;/strong&gt;&lt;strong&gt;&lt;/strong&gt;&lt;strong&gt;&lt;span style=&quot;background-color:#E56600;&quot;&gt; 啊a&lt;/span&gt;&lt;/strong&gt;&lt;br /&gt;', '', '', '', '', '', '', '0', '1', 'true', '1516069224', '2', '1517364375', '2', '0', '0', 'false'), ('8', '1', '1', '2', '企业文化', '', '', '', '', '', '', '', '0', '1', 'true', '1516069243', '2', '0', '0', '0', '0', 'false'), ('9', '1', '1', '2', '发展前景', '', '', '', '', '', '', '', '0', '1', 'true', '1516069263', '2', '0', '0', '0', '0', 'false'), ('10', '1', '1', '2', '社会责任', '', '', '', '', '', '', '', '0', '1', 'true', '1516069286', '2', '0', '0', '0', '0', 'false'), ('11', '1', '2', '4', '公司动态', '', '', '', '', '', '', '', '0', '1', 'true', '1516085504', '2', '1516167843', '2', '0', '0', 'false'), ('12', '1', '2', '4', '行业动态', '', '', '', '', '', '', '', '0', '1', 'true', '1516085524', '2', '0', '0', '0', '0', 'false'), ('13', '1', '2', '5', '放信息泄露产品', '', 'index.php?m=Home&c=CluCentre&a=product&cluinid=5&protypeid=1', '', '', '', '', '', '0', '1', 'true', '1516091303', '2', '1516173483', '2', '0', '0', 'false'), ('14', '1', '2', '5', '加固产品', '', '	index.php?m=Home&c=CluCentre&a=product&cluinid=5&protypeid=2', '', '', '', '', '', '0', '1', 'true', '1516091325', '2', '1516173492', '2', '0', '0', 'false'), ('15', '1', '2', '5', '主板产品', '', '	index.php?m=Home&c=CluCentre&a=product&cluinid=5&protypeid=3', '', '', '', '', '', '0', '1', 'true', '1516091344', '2', '1516173498', '2', '0', '0', 'false'), ('16', '1', '2', '5', '屏蔽材料', '', '	index.php?m=Home&c=CluCentre&a=product&cluinid=5&protypeid=4', '', '', '', '', '', '0', '1', 'true', '1516091365', '2', '1516173505', '2', '0', '0', 'false'), ('17', '1', '2', '5', '定制机箱', '', '	index.php?m=Home&c=CluCentre&a=product&cluinid=5&protypeid=5', '', '', '', '', '', '0', '1', 'true', '1516091382', '2', '1516173512', '2', '0', '0', 'false'), ('18', '1', '1', '6', '联系方式', '&lt;p&gt;\r\n	&lt;img src=&quot;http://api.map.baidu.com/staticimage?center=116.340667%2C39.968917&amp;zoom=19&amp;width=558&amp;height=360&amp;markers=116.340667%2C39.968917&amp;markerStyles=l%2CA&quot; alt=&quot;&quot; /&gt;\r\n&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;span style=&quot;color:#E53333;&quot;&gt;法师打发斯蒂芬&lt;/span&gt;\r\n&lt;/p&gt;', '', '', '', '', '', '', '0', '1', 'true', '1516093618', '2', '1517364285', '2', '0', '0', 'false'), ('19', '1', '2', '6', '招聘信息', '', 'index.php?m=Home&c=CluCentre&a=zhaopin&cluinid=6', '', '', '', '', '', '0', '1', 'true', '1516093640', '2', '1516153431', '2', '0', '0', 'false');
-COMMIT;
+INSERT INTO `yiyi_column` VALUES ('1', '1', '1', '0', '首页', '', '', '', '', '', '', '', '0', '', 'true', '1517468425', '2', '1517469343', '2', '0', '0', 'false');
+INSERT INTO `yiyi_column` VALUES ('2', '1', '1', '0', '关于我们', '', '', '/Public/upload/YiJiaYi/column/2018/20180201/20180201151040Ty.jpg', '', '', '', '', '0', '1,2', 'true', '1517468830', '2', '1517469045', '2', '0', '0', 'false');
+INSERT INTO `yiyi_column` VALUES ('3', '1', '1', '0', '榜上有名', '', '', '/Public/upload/YiJiaYi/column/2018/20180201/20180201152001rr.jpg', '', '', '', '', '0', '1,2', 'true', '1517468853', '2', '1517469603', '2', '0', '0', 'false');
+INSERT INTO `yiyi_column` VALUES ('4', '1', '1', '0', '培训课程', '', '', '/Public/upload/YiJiaYi/column/2018/20180201/20180201152024uC.jpg', '', '', '', '', '0', '1,2', 'true', '1517468871', '2', '1517469626', '2', '0', '0', 'false');
+INSERT INTO `yiyi_column` VALUES ('5', '1', '', '0', '双师课程.', '', '', '/Public/upload/YiJiaYi/column/2018/20180201/20180201152046eG.jpg', '', '', '', '', '0', '1,2', 'true', '1517468895', '2', '1517469648', '2', '0', '0', 'false');
+INSERT INTO `yiyi_column` VALUES ('6', '1', '1', '0', '名校规划', '', '', '/Public/upload/YiJiaYi/column/2018/20180201/20180201152058Pr.jpg', '', '', '', '', '0', '1,2', 'true', '1517468918', '2', '1517469660', '2', '0', '0', 'false');
 
 -- ----------------------------
---  Table structure for `yiyi_column_list`
+-- Table structure for yiyi_column_list
 -- ----------------------------
 DROP TABLE IF EXISTS `yiyi_column_list`;
 CREATE TABLE `yiyi_column_list` (
@@ -300,14 +3577,19 @@ CREATE TABLE `yiyi_column_list` (
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
---  Records of `yiyi_column_list`
+-- Records of yiyi_column_list
 -- ----------------------------
-BEGIN;
-INSERT INTO `yiyi_column_list` VALUES ('1', '1', '11', '测试一', '', '富盎得集团', '富盎得集团', '', '', '', '自己发破案四间房破is阿鸡排饭', '自己发破案四间房破is阿鸡排饭', '', '', '19', '1', '0', '0', 'true', '1516086269', '2', '1516086275', '2', '0', '0', 'false', '0'), ('2', '1', '11', '测试二', '', '积成航空科技', '积成航空科技', '', '', '', '积成航空科技', '积成航空科技', '', '', '11', '1', '0', '0', 'true', '1516169232', '2', '1516169237', '2', '0', '0', 'false', '0'), ('3', '1', '11', '测试三', '', '积成航空科技', '积成航空科技', '', '', '', '积成航空科技', '积成航空科技', '', '', '14', '1', '0', '0', 'true', '1516169279', '2', '0', '0', '0', '0', 'false', '0'), ('4', '1', '11', '测试四', '', '积成航空科技', '积成航空科技', '', '', '', '积成航空科技', '积成航空科技', '', '', '13', '1', '0', '0', 'true', '1516169331', '2', '0', '0', '0', '0', 'false', '0'), ('5', '1', '12', '测试一', '', '积成航空科技', '积成航空科技', '', '', '', '积成航空科技', '积成航空科技', '', '', '2', '1', '0', '0', 'true', '1516169386', '2', '1517306312', '2', '0', '0', 'false', '0'), ('6', '1', '12', '测试二', '', '积成航空科技', '积成航空科技', '', '', '', '积成航空科技', '积成航空科技', '', '', '5', '1', '0', '0', 'true', '1516169386', '2', '0', '0', '0', '0', 'false', '0'), ('7', '1', '12', '测试三', '', '积成航空科技', '积成航空科技', '', '', '', '积成航空科技', '积成航空科技', '', '', '1', '1', '0', '0', 'true', '1516169386', '2', '0', '0', '0', '0', 'false', '0'), ('8', '1', '12', '测试四', '', '积成航空科技', '积成航空科技', '', '', '', '积成航空科技', '积成航空科技', '', '', '0', '1', '0', '0', 'true', '1516169386', '2', '0', '0', '0', '0', 'false', '0');
-COMMIT;
+INSERT INTO `yiyi_column_list` VALUES ('1', '1', '11', '测试一', '', '富盎得集团', '富盎得集团', '', '', '', '自己发破案四间房破is阿鸡排饭', '自己发破案四间房破is阿鸡排饭', '', '', '19', '1', '0', '0', 'true', '1516086269', '2', '1516086275', '2', '0', '0', 'false', '0');
+INSERT INTO `yiyi_column_list` VALUES ('2', '1', '11', '测试二', '', '积成航空科技', '积成航空科技', '', '', '', '积成航空科技', '积成航空科技', '', '', '11', '1', '0', '0', 'true', '1516169232', '2', '1516169237', '2', '0', '0', 'false', '0');
+INSERT INTO `yiyi_column_list` VALUES ('3', '1', '11', '测试三', '', '积成航空科技', '积成航空科技', '', '', '', '积成航空科技', '积成航空科技', '', '', '14', '1', '0', '0', 'true', '1516169279', '2', '0', '0', '0', '0', 'false', '0');
+INSERT INTO `yiyi_column_list` VALUES ('4', '1', '11', '测试四', '', '积成航空科技', '积成航空科技', '', '', '', '积成航空科技', '积成航空科技', '', '', '13', '1', '0', '0', 'true', '1516169331', '2', '0', '0', '0', '0', 'false', '0');
+INSERT INTO `yiyi_column_list` VALUES ('5', '1', '12', '测试一', '', '积成航空科技', '积成航空科技', '', '', '', '积成航空科技', '积成航空科技', '', '', '2', '1', '0', '0', 'true', '1516169386', '2', '1517306312', '2', '0', '0', 'false', '0');
+INSERT INTO `yiyi_column_list` VALUES ('6', '1', '12', '测试二', '', '积成航空科技', '积成航空科技', '', '', '', '积成航空科技', '积成航空科技', '', '', '5', '1', '0', '0', 'true', '1516169386', '2', '0', '0', '0', '0', 'false', '0');
+INSERT INTO `yiyi_column_list` VALUES ('7', '1', '12', '测试三', '', '积成航空科技', '积成航空科技', '', '', '', '积成航空科技', '积成航空科技', '', '', '1', '1', '0', '0', 'true', '1516169386', '2', '0', '0', '0', '0', 'false', '0');
+INSERT INTO `yiyi_column_list` VALUES ('8', '1', '12', '测试四', '', '积成航空科技', '积成航空科技', '', '', '', '积成航空科技', '积成航空科技', '', '', '0', '1', '0', '0', 'true', '1516169386', '2', '0', '0', '0', '0', 'false', '0');
 
 -- ----------------------------
---  Table structure for `yiyi_config`
+-- Table structure for yiyi_config
 -- ----------------------------
 DROP TABLE IF EXISTS `yiyi_config`;
 CREATE TABLE `yiyi_config` (
@@ -326,14 +3608,19 @@ CREATE TABLE `yiyi_config` (
 ) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COMMENT='基本设置表';
 
 -- ----------------------------
---  Records of `yiyi_config`
+-- Records of yiyi_config
 -- ----------------------------
-BEGIN;
-INSERT INTO `yiyi_config` VALUES ('2', '1', 'web_title', '', '', '0', '', '北京积成航空科技有限公司', '0', 'true', 'false'), ('3', '1', 'web_address', '', '', '0', '', 'http://localhost/2018.01.13/index.php', '0', 'true', 'false'), ('4', '1', 'web_logo', '', '', '0', '', '/Public/upload/JCHK/logo/2018/20180115/logo.jpg', '0', 'true', 'false'), ('5', '1', 'web_keyworld', '', '', '0', '', '积成航空 积成', '0', 'true', 'false'), ('6', '1', 'web_description', '', '', '0', '', '北京积成航空科技有限公司', '0', 'true', 'false'), ('7', '1', 'web_tel', '', '', '0', '', '400-069-0696', '0', 'true', 'false'), ('8', '1', 'web_footinfo', '', '', '0', '', 'CopyRight @ 2016-2017 北京积成航空科技有限公司-www.integration.com All Rigths Reserved ', '0', 'true', 'false'), ('9', '1', 'web_link', '', '', '0', '', '', '0', 'true', 'false'), ('10', '1', 'web_img_url', '', '', '0', '', '', '0', 'true', 'false'), ('11', '1', 'web_beian', '', '', '0', '', '京ICP备150012854号-1', '0', 'true', 'false');
-COMMIT;
+INSERT INTO `yiyi_config` VALUES ('2', '1', 'web_title', '', '', '0', '', '壹加壹美术教育', '0', 'true', 'false');
+INSERT INTO `yiyi_config` VALUES ('3', '1', 'web_address', '', '', '0', '', 'index.php', '0', 'true', 'false');
+INSERT INTO `yiyi_config` VALUES ('4', '1', 'web_logo', '', '', '0', '', '/Public/upload/YiJiaYi/logo/2018/20180201/logo.png', '0', 'true', 'false');
+INSERT INTO `yiyi_config` VALUES ('5', '1', 'web_keyworld', '', '', '0', '', '壹加壹美术教育', '0', 'true', 'false');
+INSERT INTO `yiyi_config` VALUES ('6', '1', 'web_description', '', '', '0', '', '壹加壹美术教育', '0', 'true', 'false');
+INSERT INTO `yiyi_config` VALUES ('7', '1', 'web_tel', '', '', '0', '', '400-069-0696', '0', 'true', 'false');
+INSERT INTO `yiyi_config` VALUES ('8', '1', 'web_footinfo', '', '', '0', '', 'CopyRi版权所有 北京壹加壹卓越文化创意产业有限公司', '0', 'true', 'false');
+INSERT INTO `yiyi_config` VALUES ('11', '1', 'web_beian', '', '', '0', '', '京ICP备14045042号-1 ', '0', 'true', 'false');
 
 -- ----------------------------
---  Table structure for `yiyi_culture`
+-- Table structure for yiyi_culture
 -- ----------------------------
 DROP TABLE IF EXISTS `yiyi_culture`;
 CREATE TABLE `yiyi_culture` (
@@ -352,14 +3639,18 @@ CREATE TABLE `yiyi_culture` (
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='教育程度';
 
 -- ----------------------------
---  Records of `yiyi_culture`
+-- Records of yiyi_culture
 -- ----------------------------
-BEGIN;
-INSERT INTO `yiyi_culture` VALUES ('1', '小学', 'true', '0', '0', '0', '0', '0', '0', '0', 'false'), ('2', '初中', 'true', '0', '0', '0', '0', '0', '0', '0', 'false'), ('3', '中专', 'true', '0', '0', '0', '0', '0', '0', '0', 'false'), ('4', '高中', 'true', '0', '0', '0', '0', '0', '0', '0', 'false'), ('5', '大专', 'true', '0', '0', '0', '0', '0', '0', '0', 'false'), ('6', '本科', 'true', '0', '0', '0', '0', '0', '0', '0', 'false'), ('7', '研究生', 'true', '0', '0', '0', '0', '0', '0', '0', 'false');
-COMMIT;
+INSERT INTO `yiyi_culture` VALUES ('1', '小学', 'true', '0', '0', '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_culture` VALUES ('2', '初中', 'true', '0', '0', '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_culture` VALUES ('3', '中专', 'true', '0', '0', '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_culture` VALUES ('4', '高中', 'true', '0', '0', '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_culture` VALUES ('5', '大专', 'true', '0', '0', '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_culture` VALUES ('6', '本科', 'true', '0', '0', '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_culture` VALUES ('7', '研究生', 'true', '0', '0', '0', '0', '0', '0', '0', 'false');
 
 -- ----------------------------
---  Table structure for `yiyi_link`
+-- Table structure for yiyi_link
 -- ----------------------------
 DROP TABLE IF EXISTS `yiyi_link`;
 CREATE TABLE `yiyi_link` (
@@ -381,7 +3672,11 @@ CREATE TABLE `yiyi_link` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='友情链接';
 
 -- ----------------------------
---  Table structure for `yiyi_member`
+-- Records of yiyi_link
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for yiyi_member
 -- ----------------------------
 DROP TABLE IF EXISTS `yiyi_member`;
 CREATE TABLE `yiyi_member` (
@@ -412,14 +3707,13 @@ CREATE TABLE `yiyi_member` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='会员管理表';
 
 -- ----------------------------
---  Records of `yiyi_member`
+-- Records of yiyi_member
 -- ----------------------------
-BEGIN;
-INSERT INTO `yiyi_member` VALUES ('1', '0', '', '0', '张武', 'b5fd664ba7c28a798365d454d651b5ee', '1', '13871277496', '1517303148', '0.0.0.0', '1517305698', '0.0.0.0', '', 'true', '1517303148', '0', '1517305679', '2', '1517304053', '2', '0', 'false', 'false'), ('2', '0', '', '0', 'clb', 'f4159a760599928e642e30f31b0eae48', '1', '13120016572', '1517363178', '0.0.0.0', '1517363188', '0.0.0.0', '', 'true', '1517363178', '0', '0', '0', '0', '0', '0', 'false', 'false');
-COMMIT;
+INSERT INTO `yiyi_member` VALUES ('1', '0', '', '0', '张武', 'b5fd664ba7c28a798365d454d651b5ee', '1', '13871277496', '1517303148', '0.0.0.0', '1517305698', '0.0.0.0', '', 'true', '1517303148', '0', '1517305679', '2', '1517304053', '2', '0', 'false', 'false');
+INSERT INTO `yiyi_member` VALUES ('2', '0', '', '0', 'clb', 'f4159a760599928e642e30f31b0eae48', '1', '13120016572', '1517363178', '0.0.0.0', '1517363188', '0.0.0.0', '', 'true', '1517363178', '0', '0', '0', '0', '0', '0', 'false', 'false');
 
 -- ----------------------------
---  Table structure for `yiyi_message`
+-- Table structure for yiyi_message
 -- ----------------------------
 DROP TABLE IF EXISTS `yiyi_message`;
 CREATE TABLE `yiyi_message` (
@@ -456,40 +3750,11 @@ CREATE TABLE `yiyi_message` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='评论表';
 
 -- ----------------------------
---  Table structure for `yiyi_product`
+-- Records of yiyi_message
 -- ----------------------------
-DROP TABLE IF EXISTS `yiyi_product`;
-CREATE TABLE `yiyi_product` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `type` int(10) DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL,
-  `content` mediumtext NOT NULL COMMENT '详细内容',
-  `pic` varchar(100) NOT NULL COMMENT '缩略图片',
-  `pic_arr` text NOT NULL COMMENT '组图',
-  `hits` mediumint(8) unsigned NOT NULL COMMENT '点击次数',
-  `orderid` int(10) unsigned NOT NULL COMMENT '排列排序',
-  `ordertime` int(10) NOT NULL COMMENT '更新时间',
-  `switch` enum('true','false','del','delete') NOT NULL DEFAULT 'true',
-  `addtime` int(10) NOT NULL,
-  `addadmin` int(10) unsigned NOT NULL,
-  `uptime` int(10) NOT NULL,
-  `upadmin` int(10) unsigned NOT NULL,
-  `deltime` int(10) NOT NULL,
-  `deladmin` smallint(10) unsigned NOT NULL,
-  `sys` enum('true','false') NOT NULL DEFAULT 'false' COMMENT '系统默认  当为true时不能被开发组以外的组删除',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='产品列表';
 
 -- ----------------------------
---  Records of `yiyi_product`
--- ----------------------------
-BEGIN;
-INSERT INTO `yiyi_product` VALUES ('2', '1', '测试产品一', '测试产品一', '测试产品一', '/Public/upload/JCHK/Product/2018/20180117/20180117150135rK.jpg', '', '0', '0', '0', 'true', '1516172498', '2', '0', '0', '0', '0', 'false'), ('3', '1', '测试产品二', '测试产品二', '测试产品二', '/Public/upload/JCHK/Product/2018/20180117/20180117150157rh.jpg', '', '0', '0', '0', 'true', '1516172520', '2', '0', '0', '0', '0', 'false'), ('4', '4', '测试产品三', '测试产品三', '测试产品三', '/Public/upload/JCHK/Product/2018/20180117/20180117150218O5.jpg', '', '0', '0', '0', 'true', '1516172541', '2', '0', '0', '0', '0', 'false'), ('5', '1', '测试产品四', '测试产品四', '测试产品四', '/Public/upload/JCHK/Product/2018/20180117/201801171505097Y.jpg', '', '0', '0', '0', 'true', '1516172712', '2', '0', '0', '0', '0', 'false'), ('6', '1', '测试产品一', '测试产品五', '测试产品一', '/Public/upload/JCHK/Product/2018/20180117/20180117150135rK.jpg', '', '0', '0', '0', 'true', '1516172498', '2', '0', '0', '0', '0', 'false'), ('7', '1', '测试产品二', '测试产品六', '测试产品二', '/Public/upload/JCHK/Product/2018/20180117/20180117150157rh.jpg', '', '0', '0', '0', 'true', '1516172520', '2', '0', '0', '0', '0', 'false'), ('8', '1', '测试产品三', '测试产品七', '测试产品三', '/Public/upload/JCHK/Product/2018/20180117/20180117150218O5.jpg', '', '0', '0', '0', 'true', '1516172541', '2', '0', '0', '0', '0', 'false'), ('9', '1', '测试产品四', '测试产品八', '测试产品四', '/Public/upload/JCHK/Product/2018/20180117/201801171505097Y.jpg', '', '0', '0', '0', 'true', '1516172712', '2', '0', '0', '0', '0', 'false');
-COMMIT;
-
--- ----------------------------
---  Table structure for `yiyi_product_type`
+-- Table structure for yiyi_product_type
 -- ----------------------------
 DROP TABLE IF EXISTS `yiyi_product_type`;
 CREATE TABLE `yiyi_product_type` (
@@ -508,14 +3773,16 @@ CREATE TABLE `yiyi_product_type` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='产品类型';
 
 -- ----------------------------
---  Records of `yiyi_product_type`
+-- Records of yiyi_product_type
 -- ----------------------------
-BEGIN;
-INSERT INTO `yiyi_product_type` VALUES ('1', '放信息泄露产品', 'true', '1516172445', '0', '1516172445', '2', '0', '0', '0', 'false'), ('2', '加固产品', 'true', '1516172445', '0', '0', '0', '0', '0', '0', 'false'), ('3', '主板产品 ', 'true', '1516172445', '0', '0', '0', '0', '0', '0', 'false'), ('4', '屏蔽材料', 'true', '1516172445', '0', '0', '0', '0', '0', '0', 'false'), ('5', '定制机箱', 'true', '1516172445', '0', '0', '0', '0', '0', '0', 'false');
-COMMIT;
+INSERT INTO `yiyi_product_type` VALUES ('1', '放信息泄露产品', 'true', '1516172445', '0', '1516172445', '2', '0', '0', '0', 'false');
+INSERT INTO `yiyi_product_type` VALUES ('2', '加固产品', 'true', '1516172445', '0', '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_product_type` VALUES ('3', '主板产品 ', 'true', '1516172445', '0', '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_product_type` VALUES ('4', '屏蔽材料', 'true', '1516172445', '0', '0', '0', '0', '0', '0', 'false');
+INSERT INTO `yiyi_product_type` VALUES ('5', '定制机箱', 'true', '1516172445', '0', '0', '0', '0', '0', '0', 'false');
 
 -- ----------------------------
---  Table structure for `yiyi_site`
+-- Table structure for yiyi_site
 -- ----------------------------
 DROP TABLE IF EXISTS `yiyi_site`;
 CREATE TABLE `yiyi_site` (
@@ -525,14 +3792,42 @@ CREATE TABLE `yiyi_site` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='站点';
 
 -- ----------------------------
---  Records of `yiyi_site`
+-- Records of yiyi_site
 -- ----------------------------
-BEGIN;
-INSERT INTO `yiyi_site` VALUES ('1', '1'), ('2', '2');
-COMMIT;
+INSERT INTO `yiyi_site` VALUES ('1', '1');
+INSERT INTO `yiyi_site` VALUES ('2', '2');
 
 -- ----------------------------
---  Table structure for `yiyi_zhaopin`
+-- Table structure for yiyi_student
+-- ----------------------------
+DROP TABLE IF EXISTS `yiyi_student`;
+CREATE TABLE `yiyi_student` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `content` mediumtext NOT NULL COMMENT '详细内容',
+  `pic` varchar(100) NOT NULL COMMENT '缩略图片',
+  `pic_arr` text NOT NULL COMMENT '组图',
+  `hits` mediumint(8) unsigned NOT NULL COMMENT '点击次数',
+  `orderid` int(10) unsigned NOT NULL COMMENT '排列排序',
+  `ordertime` int(10) NOT NULL COMMENT '更新时间',
+  `switch` enum('true','false','del','delete') NOT NULL DEFAULT 'true',
+  `addtime` int(10) NOT NULL,
+  `addadmin` int(10) unsigned NOT NULL,
+  `uptime` int(10) NOT NULL,
+  `upadmin` int(10) unsigned NOT NULL,
+  `deltime` int(10) NOT NULL,
+  `deladmin` smallint(10) unsigned NOT NULL,
+  `sys` enum('true','false') NOT NULL DEFAULT 'false' COMMENT '系统默认  当为true时不能被开发组以外的组删除',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='产品列表';
+
+-- ----------------------------
+-- Records of yiyi_student
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for yiyi_zhaopin
 -- ----------------------------
 DROP TABLE IF EXISTS `yiyi_zhaopin`;
 CREATE TABLE `yiyi_zhaopin` (
@@ -557,10 +3852,318 @@ CREATE TABLE `yiyi_zhaopin` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='招聘信息列表';
 
 -- ----------------------------
---  Records of `yiyi_zhaopin`
+-- Records of yiyi_zhaopin
 -- ----------------------------
-BEGIN;
 INSERT INTO `yiyi_zhaopin` VALUES ('2', '项目经理', '研发类', '负责项目研发', '&lt;p&gt;\r\n	招聘要求：\r\n&lt;/p&gt;\r\n&lt;p&gt;\r\n	工作经历：大专以上\r\n&lt;/p&gt;', '1516167129', '0', '0', '0', 'true', '1516167158', '2', '0', '0', '0', '0', 'false');
-COMMIT;
 
-SET FOREIGN_KEY_CHECKS = 1;
+-- ----------------------------
+-- Table structure for yy_admin
+-- ----------------------------
+DROP TABLE IF EXISTS `yy_admin`;
+CREATE TABLE `yy_admin` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `username` varchar(100) NOT NULL COMMENT '账号',
+  `password` char(32) NOT NULL COMMENT '密码',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of yy_admin
+-- ----------------------------
+INSERT INTO `yy_admin` VALUES ('1', 'root', 'e10adc3949ba59abbe56e057f20f883e');
+INSERT INTO `yy_admin` VALUES ('10', 'lifeng', 'e10adc3949ba59abbe56e057f20f883e');
+INSERT INTO `yy_admin` VALUES ('11', 'lifeng2', 'e10adc3949ba59abbe56e057f20f883e');
+INSERT INTO `yy_admin` VALUES ('12', 'lifeng3', '14e1b600b1fd579f47433b88e8d85291');
+
+-- ----------------------------
+-- Table structure for yy_bed
+-- ----------------------------
+DROP TABLE IF EXISTS `yy_bed`;
+CREATE TABLE `yy_bed` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id编号',
+  `num` int(10) DEFAULT NULL COMMENT '床位数或名额数',
+  `switch` enum('del','false','true') DEFAULT 'true' COMMENT '状态  true启用，false禁用，del删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='床位、名额表';
+
+-- ----------------------------
+-- Records of yy_bed
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for yy_class
+-- ----------------------------
+DROP TABLE IF EXISTS `yy_class`;
+CREATE TABLE `yy_class` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id编号',
+  `name` varchar(255) DEFAULT NULL COMMENT '班级名称',
+  `desc` mediumtext COMMENT '介绍',
+  `pic` varchar(255) DEFAULT NULL COMMENT '图片',
+  `sm_pic` varchar(255) DEFAULT NULL COMMENT '缩略图',
+  `addadmin` varchar(255) DEFAULT NULL COMMENT '添加人',
+  `addtime` int(11) DEFAULT NULL COMMENT '添加时间',
+  `switch` enum('del','false','true') DEFAULT 'true' COMMENT '状态  true启用，false禁用，del删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='班级表';
+
+-- ----------------------------
+-- Records of yy_class
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for yy_class_subject
+-- ----------------------------
+DROP TABLE IF EXISTS `yy_class_subject`;
+CREATE TABLE `yy_class_subject` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id编号',
+  `class_id` int(10) DEFAULT NULL COMMENT '班级id',
+  `subject_id` int(10) DEFAULT NULL COMMENT '课程id',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='班级课程中间表';
+
+-- ----------------------------
+-- Records of yy_class_subject
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for yy_lecture
+-- ----------------------------
+DROP TABLE IF EXISTS `yy_lecture`;
+CREATE TABLE `yy_lecture` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id编号',
+  `name` varchar(255) DEFAULT NULL COMMENT '双师讲堂视频名称',
+  `desc` mediumtext,
+  `author` varchar(255) DEFAULT NULL COMMENT '作者',
+  `video` varchar(255) DEFAULT NULL COMMENT '视频地址',
+  `pic` varchar(255) DEFAULT NULL COMMENT '图片',
+  `sm_pic` varchar(255) DEFAULT NULL,
+  `addadmin` varchar(255) DEFAULT NULL COMMENT '添加人',
+  `addtime` int(11) DEFAULT NULL COMMENT '添加时间',
+  `switch` enum('del','false','true') DEFAULT 'true' COMMENT '状态  true启用，false禁用，del删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='双师讲堂表';
+
+-- ----------------------------
+-- Records of yy_lecture
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for yy_lunbo
+-- ----------------------------
+DROP TABLE IF EXISTS `yy_lunbo`;
+CREATE TABLE `yy_lunbo` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id编号',
+  `lunbo_name` varchar(255) DEFAULT NULL COMMENT '轮播图片名称',
+  `pic` varchar(255) DEFAULT NULL COMMENT '轮播图片图片',
+  `sm_pic` varchar(255) DEFAULT NULL COMMENT '轮播图片缩略图',
+  `addadmin` varchar(255) DEFAULT NULL COMMENT '添加人',
+  `addtime` int(11) DEFAULT NULL COMMENT '添加时间',
+  `switch` enum('del','false','true') DEFAULT 'true' COMMENT '状态  true启用，false禁用，del删除',
+  `order` int(11) DEFAULT NULL COMMENT '排序',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='轮播图表';
+
+-- ----------------------------
+-- Records of yy_lunbo
+-- ----------------------------
+INSERT INTO `yy_lunbo` VALUES ('9', '1', 'Lunbo/2017-12-20/5a3a88fd5c215.jpg', 'Lunbo/2017-12-20/sm_5a3a88fd5c215.jpg', '1', '1513785597', 'true', null);
+INSERT INTO `yy_lunbo` VALUES ('10', '20', 'Lunbo/2017-12-21/5a3bd683f13f9.jpg', 'Lunbo/2017-12-21/sm_5a3bd683f13f9.jpg', '1', '1513785605', 'false', null);
+INSERT INTO `yy_lunbo` VALUES ('11', '3', 'Lunbo/2017-12-21/5a3a890c0a0f4.jpg', 'Lunbo/2017-12-21/sm_5a3a890c0a0f4.jpg', '1', '1513785612', 'false', null);
+
+-- ----------------------------
+-- Table structure for yy_nav
+-- ----------------------------
+DROP TABLE IF EXISTS `yy_nav`;
+CREATE TABLE `yy_nav` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id编号',
+  `nav_name` varchar(255) DEFAULT NULL COMMENT '栏目名称',
+  `pic` varchar(255) DEFAULT NULL COMMENT '栏目图片',
+  `sm_pic` varchar(255) DEFAULT NULL COMMENT '栏目缩略图',
+  `addadmin` varchar(255) DEFAULT NULL COMMENT '添加人',
+  `addtime` int(11) DEFAULT NULL COMMENT '添加时间',
+  `switch` enum('del','false','true') DEFAULT 'true' COMMENT '状态  true启用，false禁用，del删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 COMMENT='导航表';
+
+-- ----------------------------
+-- Records of yy_nav
+-- ----------------------------
+INSERT INTO `yy_nav` VALUES ('26', '1', null, null, '1', '1513774815', 'true');
+INSERT INTO `yy_nav` VALUES ('27', '2', null, null, '1', '1513774999', 'true');
+INSERT INTO `yy_nav` VALUES ('28', '3', null, null, '1', '1513775003', 'true');
+INSERT INTO `yy_nav` VALUES ('29', '4', null, null, '1', '1513775007', 'true');
+INSERT INTO `yy_nav` VALUES ('34', '5', null, null, '1', '1513780626', 'true');
+
+-- ----------------------------
+-- Table structure for yy_online
+-- ----------------------------
+DROP TABLE IF EXISTS `yy_online`;
+CREATE TABLE `yy_online` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id编号',
+  `sm_num` int(10) DEFAULT NULL COMMENT '最少咨询人数',
+  `bg_num` int(10) DEFAULT NULL COMMENT '最大咨询人数',
+  `switch` enum('del','false','true') DEFAULT 'true' COMMENT '状态  true启用，false禁用，del删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='在线咨询表';
+
+-- ----------------------------
+-- Records of yy_online
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for yy_shenqing
+-- ----------------------------
+DROP TABLE IF EXISTS `yy_shenqing`;
+CREATE TABLE `yy_shenqing` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id编号',
+  `name` varchar(255) DEFAULT NULL COMMENT '姓名',
+  `tell` varchar(255) DEFAULT NULL COMMENT '手机',
+  `addtime` int(11) DEFAULT NULL COMMENT '添加时间',
+  `switch` varchar(255) DEFAULT NULL COMMENT '状态  1true启用，2false禁用，del删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='学生申请表';
+
+-- ----------------------------
+-- Records of yy_shenqing
+-- ----------------------------
+INSERT INTO `yy_shenqing` VALUES ('5', '2', '2', null, '2');
+
+-- ----------------------------
+-- Table structure for yy_student
+-- ----------------------------
+DROP TABLE IF EXISTS `yy_student`;
+CREATE TABLE `yy_student` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id编号',
+  `name` varchar(255) DEFAULT NULL COMMENT '姓名',
+  `pic` varchar(255) DEFAULT NULL COMMENT '图片',
+  `sm_pic` varchar(255) DEFAULT NULL COMMENT '缩略图',
+  `honor` mediumtext COMMENT '荣誉',
+  `address` varchar(255) DEFAULT NULL COMMENT '地址',
+  `tag` int(10) DEFAULT NULL COMMENT '标签 1“榜样” 2 “状元”',
+  `class` varchar(255) DEFAULT NULL COMMENT '班级',
+  `saying` varchar(255) DEFAULT NULL COMMENT '名言',
+  `desc` varchar(255) DEFAULT NULL COMMENT '学生简介',
+  `card` varchar(255) DEFAULT NULL COMMENT '证件照片',
+  `sm_card` varchar(255) DEFAULT NULL COMMENT '证件缩略图',
+  `content` mediumtext COMMENT '内容',
+  `addadmin` varchar(255) DEFAULT NULL COMMENT '添加人',
+  `addtime` int(11) DEFAULT NULL COMMENT '添加时间',
+  `switch` enum('del','false','true') DEFAULT 'true' COMMENT '状态  true启用，false禁用，del删除',
+  `order` int(11) DEFAULT NULL COMMENT '排序',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='学生表';
+
+-- ----------------------------
+-- Records of yy_student
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for yy_subject
+-- ----------------------------
+DROP TABLE IF EXISTS `yy_subject`;
+CREATE TABLE `yy_subject` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id编号',
+  `name` varchar(255) DEFAULT NULL COMMENT '课程',
+  `desc` mediumtext COMMENT '介绍',
+  `pic` varchar(255) DEFAULT NULL COMMENT '图片',
+  `sm_pic` varchar(255) DEFAULT NULL COMMENT '缩略图',
+  `addadmin` varchar(255) DEFAULT NULL COMMENT '添加人',
+  `addtime` int(11) DEFAULT NULL COMMENT '添加时间',
+  `switch` enum('del','false','true') DEFAULT 'true' COMMENT '状态  true启用，false禁用，del删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='课程表';
+
+-- ----------------------------
+-- Records of yy_subject
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for yy_teacher
+-- ----------------------------
+DROP TABLE IF EXISTS `yy_teacher`;
+CREATE TABLE `yy_teacher` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id编号',
+  `name` varchar(255) DEFAULT NULL COMMENT '姓名',
+  `pic` varchar(255) DEFAULT NULL COMMENT '图片',
+  `sm_pic` varchar(255) DEFAULT NULL COMMENT '缩略图',
+  `zhiwu` varchar(255) NOT NULL COMMENT '职务',
+  `address` varchar(255) DEFAULT NULL COMMENT '地址',
+  `wechat` varchar(255) DEFAULT NULL COMMENT '微信号',
+  `two_code` varchar(255) DEFAULT NULL COMMENT '二维码',
+  `sm_two_code` varchar(225) CHARACTER SET utf32 DEFAULT NULL COMMENT '二维码缩略图',
+  `desc` varchar(255) DEFAULT NULL COMMENT '学生简介',
+  `content` mediumtext COMMENT '内容',
+  `addadmin` varchar(255) DEFAULT NULL COMMENT '添加人',
+  `addtime` int(11) DEFAULT NULL COMMENT '添加时间',
+  `switch` enum('del','false','true') DEFAULT 'true' COMMENT '状态  true启用，false禁用，del删除',
+  `order` int(11) DEFAULT NULL COMMENT '排序',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='教师表';
+
+-- ----------------------------
+-- Records of yy_teacher
+-- ----------------------------
+INSERT INTO `yy_teacher` VALUES ('12', '抓那个', 'teacher/2017-12-20/5a3a7222aac28.jpg', 'teacher/2017-12-20/sm_5a3a7222aac28.jpg', '啊的方法', '爱抚撒个花', '啊啊发的', 'teacher/2017-12-20/5a3a7222a94b8.jpg', 'teacher/2017-12-20/sm_5a3a7222a94b8.jpg', null, '而国土规划既然他已经', '1', '1513779746', 'true', null);
+INSERT INTO `yy_teacher` VALUES ('14', '温柔顺天应人', 'teacher/2017-12-20/5a3a72ae2e3e2.jpg', 'teacher/2017-12-20/sm_5a3a72ae2e3e2.jpg', '发生过说过', '是否感受感受', '人受到干扰', 'teacher/2017-12-20/5a3a72ae2c0ba.jpg', 'teacher/2017-12-20/sm_5a3a72ae2c0ba.jpg', null, '热爱es67rytduy', '1', '1513779886', 'true', null);
+INSERT INTO `yy_teacher` VALUES ('15', '色人认同', 'teacher/2017-12-20/5a3a733c4d47b.jpg', 'teacher/2017-12-20/sm_5a3a733c4d47b.jpg', '啊速度发发', '啊速度发发', '手机打了放假了', 'teacher/2017-12-20/5a3a733c4bd0b.jpg', 'teacher/2017-12-20/sm_5a3a733c4bd0b.jpg', null, '修复成功V加快了', '1', '1513780028', 'true', null);
+INSERT INTO `yy_teacher` VALUES ('16', '大水法', 'teacher/2017-12-20/5a3a73639d6b5.jpg', 'teacher/2017-12-20/sm_5a3a73639d6b5.jpg', '啊短发', '啊的说法', '发撒旦法', 'teacher/2017-12-20/5a3a73639b774.jpg', 'teacher/2017-12-20/sm_5a3a73639b774.jpg', null, '阿什顿飞当时发生的发顺丰', '1', '1513780067', 'true', null);
+INSERT INTO `yy_teacher` VALUES ('17', '啊时代发生地方', 'teacher/2017-12-20/5a3a7381c719b.jpg', 'teacher/2017-12-20/sm_5a3a7381c719b.jpg', '爱的沙发上地方', '啊但是方法', '爱的发放', 'teacher/2017-12-20/5a3a7381c4e72.jpg', 'teacher/2017-12-20/sm_5a3a7381c4e72.jpg', null, '当时发生的反反复复', '1', '1513780097', 'true', null);
+INSERT INTO `yy_teacher` VALUES ('18', '法的规定发生过', 'teacher/2017-12-20/5a3a73a4e32db.jpg', 'teacher/2017-12-20/sm_5a3a73a4e32db.jpg', '的方式哥哥', '山东分公司的歌', '谁的风格', 'teacher/2017-12-20/5a3a73a4e1783.jpg', 'teacher/2017-12-20/sm_5a3a73a4e1783.jpg', null, '东风公司公司的风格个', '1', '1513780132', 'true', null);
+INSERT INTO `yy_teacher` VALUES ('19', '对分公司的风格', 'teacher/2017-12-20/5a3a73be73b80.jpg', 'teacher/2017-12-20/sm_5a3a73be73b80.jpg', '的方式公司股东', '速度发广告', '是否该公司', 'teacher/2017-12-20/5a3a73be72410.jpg', 'teacher/2017-12-20/sm_5a3a73be72410.jpg', null, '山东分公司公司打工', '1', '1513780158', 'true', null);
+INSERT INTO `yy_teacher` VALUES ('21', '1', 'teacher/2017-12-21/5a3bd6cb855c6.jpg', 'teacher/2017-12-21/sm_5a3bd6cb855c6.jpg', '1', '1', '1', 'teacher/2017-12-21/5a3bd6cb84a0e.jpg', 'teacher/2017-12-21/sm_5a3bd6cb84a0e.jpg', null, '1', '1', '1513871051', 'true', null);
+
+-- ----------------------------
+-- Table structure for yy_type
+-- ----------------------------
+DROP TABLE IF EXISTS `yy_type`;
+CREATE TABLE `yy_type` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id编号',
+  `name` int(10) DEFAULT NULL COMMENT '类型名称',
+  `addadmin` varchar(255) DEFAULT NULL COMMENT '添加人',
+  `addtime` int(11) DEFAULT NULL COMMENT '添加时间',
+  `switch` enum('del','false','true') DEFAULT 'true' COMMENT '状态  true启用，false禁用，del删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='类型表';
+
+-- ----------------------------
+-- Records of yy_type
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for yy_video
+-- ----------------------------
+DROP TABLE IF EXISTS `yy_video`;
+CREATE TABLE `yy_video` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id编号',
+  `name` varchar(255) DEFAULT NULL COMMENT '视频名称',
+  `video` varchar(255) DEFAULT NULL COMMENT '视频地址',
+  `pic` varchar(255) DEFAULT NULL COMMENT '图片',
+  `addadmin` varchar(255) DEFAULT NULL COMMENT '添加人',
+  `addtime` int(11) DEFAULT NULL COMMENT '添加时间',
+  `switch` enum('del','false','true') DEFAULT 'true' COMMENT '状态  true启用，false禁用，del删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='视频表';
+
+-- ----------------------------
+-- Records of yy_video
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for yy_works
+-- ----------------------------
+DROP TABLE IF EXISTS `yy_works`;
+CREATE TABLE `yy_works` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id编号',
+  `name` varchar(255) DEFAULT NULL COMMENT '作品名称',
+  `pic` varchar(255) DEFAULT NULL COMMENT '图片',
+  `sm_pic` varchar(255) DEFAULT NULL COMMENT '缩略图',
+  `type` int(11) DEFAULT NULL COMMENT '类型id',
+  `addadmin` varchar(255) DEFAULT NULL COMMENT '添加人',
+  `addtime` int(11) DEFAULT NULL COMMENT '添加时间',
+  `switch` enum('del','false','true') DEFAULT 'true' COMMENT '状态  true启用，false禁用，del删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='作品表';
+
+-- ----------------------------
+-- Records of yy_works
+-- ----------------------------

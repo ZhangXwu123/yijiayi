@@ -45,16 +45,6 @@
                                                  <input name="web_tel" type="text" value="<?php echo $web_tel; ?>" placeholder="多个号码用英文&quot;,&quot;号隔开" />
                                             </li>
 
-                                            <li> 
-                                                <span class="t001">认 证 链 接：</span>
-                                                <input name="web_link" type="text" placeholder="多个号码用英文&quot;,&quot;号隔开" value="<?php echo $web_link; ?>"/>
-                                            </li>
-
-                                            <li> 
-                                                <span class="t001">前 端 图 片：</span>
-                                                <input name="web_img_url" type="text" placeholder="前端图片远程地址.." value="<?php echo $web_img_url; ?>"/>
-                                            </li>
-                                            
                                              <li> 
                                                  <span class="t001">页 脚 信 息：</span>
                                                  <input name="web_footinfo" type="text" value="<?php echo $web_footinfo; ?>" placeholder="" />

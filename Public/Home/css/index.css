@@ -1,0 +1,448 @@
+.btn-red{
+    padding-left: 80px;
+    padding-right: 80px;
+}
+.main-content{
+    margin: 0 auto;
+}
+/*轮播banner*/
+
+.carousel-banner{
+    position: relative;
+}
+.ad-box{
+    width: 1080px ;
+    height: 740px ;
+    overflow: hidden;
+}
+.ad-img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.ad-tabs{
+   overflow:hidden;
+    position:absolute;
+    z-index: 100;
+    width: 100%;
+    min-height: 30px;
+    bottom:10px;
+    top:92% ;
+    left:50%;
+    transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    text-align: center;
+}
+
+.ad-tabs span{
+    width: 64px;
+    height: 8px;
+    border-radius: 4px;
+    background-color:#FFFFFF;
+    display: inline-block;
+    margin:0px 16px;
+
+}
+
+.ad-tabs span.on{
+    background-color: #ff0454;
+}
+
+/*轮播banner结束*/
+
+/*固定导航按钮*/
+.nav-button ul{
+    padding-top: 50px;
+}
+.nav-button ul li{
+    float: left;
+    width: 20%;
+    height: 200px;
+    text-align: center;
+}
+.nav-button ul li img{
+    display: block;
+    width: 108px;
+    height: 108px;
+    margin: 0 auto;
+}
+.nav-button ul li span{
+    display: inline-block;
+    font-size:30px ;
+    line-height: 2;
+    color: #000000;
+    vertical-align: middle;
+}
+/*固定导航按钮结束*/
+/*优秀榜样*/
+
+/*.index .title{*/
+    /*min-height: 250px;*/
+    /*padding-bottom: 15px;*/
+    /*color: rgb(65, 63, 63);*/
+    /*text-align: center;*/
+    /*line-height: 1.2;*/
+/*}*/
+/*.index .title .main_title{*/
+    /*padding-top: 75px;*/
+/*}*/
+/*.index .title b {*/
+    /*font-weight: normal;*/
+/*}*/
+/*.index .title span{*/
+    /*font-size: 12px;*/
+/*}*/
+.goodExample .exampleList{
+    height:522px;
+    overflow: hidden;
+    position: relative;
+}
+.goodExample .exampleList li{
+    float:left;
+    border: 1px solid #efefef;
+    width: 50%;
+    padding: 20px 5px;
+    box-shadow: 5px 5px 10px #efefef ;
+}
+.goodExample .exampleList li img{
+    display: inline-block;
+    width: 125px;
+    height: 125px;
+    margin-right: 25px;
+}
+.goodExample .exampleList .exampleInfo{
+    width: 348px;
+    font-size: 26px;
+    line-height: 2;
+    color: #000;
+}
+.goodExample .exampleList .exampleInfo .exampleName{
+    /*display: inline-block;*/
+    max-width: 100px;
+    font-size: 28px;
+    padding:2px 10px;
+    /*background: #e5004f;*/
+    color:#f85959;
+}
+.goodExample .exampleList .exampleInfo .example_rank{
+    font-size: 38px;
+}
+.goodExample .end{
+    text-align: center;
+    line-height:1;
+    color: #a6a6a6;
+}
+.goodExample .btn{
+    line-height: 70px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+}
+/*优秀榜样结束*/
+/*状元说*/
+.champion_slide{
+    height: 500px;
+    margin:0  103px;
+    overflow: hidden;
+    padding-top: 5px;
+}
+.championList {
+    /*width:5000px;*/
+
+}
+.championList li{
+    float:left;
+    width:365px;
+    height:500px;
+    padding: 45px 0;
+    text-align: center;
+    box-shadow: 5px -5px 10px #efefef;
+    margin-right:103px  ;
+}
+.championList li .img-info img{
+    width: 295px;
+    height: 295px;
+}
+.championList li .text-info{
+    color: #000000;
+    line-height: 2.2;
+}
+.championList li .text-info p{
+    line-height: 1.5;
+    color: #f85959;
+}
+.champion .page-info{
+    padding :40px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.champion .page-info span{
+    display: inline-block;
+    width: 50px;
+    height: 5px;
+    background: #777777;
+    margin: 0 20px;
+}
+.champion .page-info span.on{
+    background: #f85959;
+}
+/*状元说*/
+/*床位*/
+.chuangwei {
+    padding: 70px 50px;
+    background: #747474;
+    min-height: 300px;
+}
+.chuangwei_num .item{
+    width: 480px;
+    height: 206px;
+    font-size: 0;
+    padding: 0 20px 0 30px ;
+}
+.chuangwei_num .item1{
+    background: url("../images/chuangwei1.png") no-repeat center center;
+}
+.chuangwei_num .item2{
+    background: url("../images/chuangwei02.png") no-repeat center center;
+}
+.chuangwei_num .item span{
+    display: inline-block;
+    width: 62px ;
+    height:124px;
+    line-height: 124px;
+    text-align: center;
+    font-size: 100px;
+    background: #ffffff;
+    color: #e5004f;
+    margin-top: 42px;
+    margin-right: 10px;
+}
+.chuangwei_info{
+    padding: 40px 0;
+}
+.chuangwei_info p{
+    text-align: center;
+    color: #ffffff;
+}
+.chuangwei_info p span{
+    color: #e5004f;
+}
+.chuangwei_form{
+    background: #ffffff;
+    padding: 30px;
+    line-height: 75px;
+    margin-bottom: 25px;
+}
+.chuangwei_form input{
+    border: none;
+    outline: none;
+    font-size: 36px;
+    width: 700px;
+    height: 75px;
+
+}
+.chuangwei .btn{
+
+    line-height: 1.8;
+    margin-bottom: 45px;
+}
+.chuangwei_end{
+    font-size: 32px;
+    text-align: center;
+    color: #ffffff;
+    background: #4b4b4b;
+    height: 80px;
+    line-height: 80px;
+}
+/*床位*/
+/*定向*/
+.custom_detail {
+    display:box;
+display:-webkit-box;  /* iOS 6-, Safari 3.1-6 */
+    display:-webkit-flex; /* Chrome */
+    display:-moz-box;     /* Firefox 19 */
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    -ms-justify-content: space-around;
+    -o-justify-content: space-around;
+    justify-content: space-around;
+}
+.custom_detail .custom_detail_item{
+   width: 303px;
+}
+.custom_detail .custom_detail_item p{
+    font-size: 40px ;
+    line-height: 2;
+}
+.custom_content .btn{
+    line-height: 70px;
+}
+/*定向*/
+/*壹加壹班级*/
+.oneClass_content{
+    display:box;
+    display:-webkit-box;  /* iOS 6-, Safari 3.1-6 */
+    display:-webkit-flex; /* Chrome */
+    display:-moz-box;     /* Firefox 19 */
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    -ms-justify-content: space-around;
+    -o-justify-content: space-around;
+    justify-content: space-around;
+}
+.oneClass_item{
+    width: 321px;
+    background: #f2f2f2;
+}
+.oneClass_content .item_info{
+    text-align: center;
+    padding: 0 12px 20px;
+}
+.oneClass_content .item_info span{
+    font-size: 27px;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+}
+.oneClass_content .item_info hr{
+    width: 90%;
+    margin:0 auto;
+}
+.oneClass_content .item_info ul{
+    padding: 20px 0;
+    font-size: 0;
+}
+.oneClass_content .item_info li{
+    display: inline-block;
+    width: 124px;
+    font-size: 20px;
+    line-height: 40px;
+}
+.oneClass_content .item_info .btn{
+    font-size: 26px ;
+    color: #000000;
+    line-height: 36px;
+    border: 2px solid #f85959;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding:  0  20px;
+}
+.oneClass_btn{
+    padding: 50px 80px;
+}
+.oneClass_btn .btn{
+    line-height: 70px;
+}
+/*壹加壹班级*/
+/*视频*/
+.video-box{
+    width:100%;
+    height: 580px;
+    background: #000000;
+}
+.video-box video{
+    width: 100%;
+    height: 580px;
+}
+/*视频*/
+/*师资*/
+.teach_content{
+    width: 976px;
+    margin: 0 auto;
+}
+.teach_content .teach_btn{
+    padding: 50px ;
+}
+.teach_content .teach_btn .btn{
+    line-height: 70px;
+}
+.teach_team1{
+    margin-bottom: 27px;
+}
+.teach_team2{
+    display:box;
+    display:-webkit-box;  /* iOS 6-, Safari 3.1-6 */
+    display:-webkit-flex; /* Chrome */
+    display:-moz-box;     /* Firefox 19 */
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between;
+}
+.teach_content .teach{
+    width: 303px;
+}
+.teach_content .teach_info{
+    padding: 0 30px 30px;
+    border :1px solid #e1e1e1;
+}
+.teach_content .teach_info .teach_name{
+    line-height: 70px;
+}
+.teach_content .teach_info hr{
+    margin-bottom: 18px;
+}
+.teach_content .teach_info p{
+    height: 62px;
+    line-height: 1.2;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+.teach_content .teach_info .btn{
+    font-size: 26px ;
+    color: #000000;
+    line-height: 36px;
+    border: 2px solid #e1e1e1;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+/*师资*/
+/*双师讲堂*/
+.double_content{
+    padding-top: 80px;
+}
+/*双师讲堂*/
+/*环境*/
+.environment img{
+    display: inline-block;
+    width: 497px;
+    height: 330px;
+    margin-bottom: 20px;
+}
+/*环境*/
+/*作品*/
+.works_content{
+    display:box;
+    display:-webkit-box;  /* iOS 6-, Safari 3.1-6 */
+    display:-webkit-flex; /* Chrome */
+    display:-moz-box;     /* Firefox 19 */
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between;
+}
+.works_content img{
+    width: 250px;
+    margin-bottom: 13px;
+}
+.works_btn{
+    padding: 50px 0;
+}
+.works_btn .btn{
+    line-height: 70px;
+}
+/*作品*/

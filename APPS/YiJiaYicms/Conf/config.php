@@ -15,9 +15,9 @@ return array(
         'TMPL_TEMPLATE_SUFFIX'=>'.php',//模板后缀
         'SHOW_PAGE_TRACE' =>FALSE,
         'TMPL_PARSE_STRING'=>array(
-            'Css'=> '__PUBLIC__/JiCheng/css',
-            'Javascript'=> '__PUBLIC__/JiCheng/javascript',
-            'Images'=> '__PUBLIC__/JiCheng/images',
-            'Tool'=> '__PUBLIC__/JiCheng/tool'
+            'Css'=> '__PUBLIC__/YiJiaYi/css',
+            'Javascript'=> '__PUBLIC__/YiJiaYi/javascript',
+            'Images'=> '__PUBLIC__/YiJiaYi/images',
+            'Tool'=> '__PUBLIC__/YiJiaYi/tool'
         )
 );

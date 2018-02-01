@@ -4,23 +4,21 @@ use Think\Controller;
 class IndexController extends CommonController{
     public function __construct() {
         parent::__construct();
+        $this->indexNav();
     }
 
     public function index(){
         //幻灯一
         $slide = $this->query("select * from `".PR."ad` where ".sql_true." and siteid=".site." and colunmid=1 and type=1 order by orderid asc ");
         foreach ($slide as $key=>$v){
-            $hide = 'hide';
-            $mo   = "";
-            if(empty($slideStr)){
-                $hide="";
-                $mo   = "mo";
-            }
-                
-            $slideStr .='<img class="'.$hide.'" src="'.tupain.$v["pic"].'" />';
-            $listSlidSpan .='<span class="span-box '.$mo.' "></span>';
+            $slideStr .=' <li class="swiper-slide"><img src="'.tupain.$v["pic"].'"/></li>';
         }
-        $this->assign(array('slideStr'=>$slideStr,'listSlidSpan'=>$listSlidSpan));
+        $this->assign(array('slideStr'=>$slideStr));
+        
+        //榜上有名
+        
+        
+        
         
         
         
@@ -127,4 +125,14 @@ class IndexController extends CommonController{
         
         $this->veiws("Index","index");
     }
+    
+    public function indexNav(){
+            $navArr = $this->query("select * from `".PR."column` where ".sql_true." and siteid=".site." and pid=0 and show_weizhi like '%1%' order by orderid asc ");
+            $nav_str = "";
+            foreach ($navArr as $key=>$v){
+                    $nav_str .= '<li><a href="'.$v["url"].'"><img src="'.tupain.$v["pic"].'" alt=""><span>'.$v["title"].'</span></a></li>';
+            }
+            $this->assign("index_nav",$nav_str);
+    }
+    
 }

@@ -24,7 +24,7 @@
                                             <li>
                                                  <span class="t001">网 站 logo： </span>
                                                  <input type="hidden" id="web_logo" name="web_logo" value="<?php echo $web_logo; ?>"/>
-                                                 <img class="web_logo" src="/yijiayi<?php echo $web_logo; ?>" id="logoimg" style="width: 220px;height: 80px; overflow-x: hidden;"/>
+                                                 <img class="web_logo" src="/yijiyi<?php echo $web_logo; ?>" id="logoimg" style="width: 220px;height: 80px; overflow-x: hidden;"/>
                                                  <span id="uploadify-button" style="border: 1px solid #CCC; padding: 3px 5px; cursor: pointer;" class="upload-txt">上传logo</span>
                                             </li>
 
@@ -45,16 +45,6 @@
                                                  <input name="web_tel" type="text" value="<?php echo $web_tel; ?>" placeholder="多个号码用英文&quot;,&quot;号隔开" />
                                             </li>
 
-                                            <li> 
-                                                <span class="t001">认 证 链 接：</span>
-                                                <input name="web_link" type="text" placeholder="多个号码用英文&quot;,&quot;号隔开" value="<?php echo $web_link; ?>"/>
-                                            </li>
-
-                                            <li> 
-                                                <span class="t001">前 端 图 片：</span>
-                                                <input name="web_img_url" type="text" placeholder="前端图片远程地址.." value="<?php echo $web_img_url; ?>"/>
-                                            </li>
-                                            
                                              <li> 
                                                  <span class="t001">页 脚 信 息：</span>
                                                  <input name="web_footinfo" type="text" value="<?php echo $web_footinfo; ?>" placeholder="" />
@@ -83,7 +73,7 @@
 <div class="cl"></div>
 </div>
 
-<script type="text/javascript" src="__PUBLIC__/JiCheng/javascript/jquery.form.js"></script>
+<script type="text/javascript" src="__PUBLIC__/YiJiaYi/javascript/jquery.form.js"></script>
 <script>
     $('#uploadify-button').on("click", function() {
         $('#upfile').click();
@@ -112,7 +102,7 @@
                                          $("#ts").hide();
                                          var str = data.picurl;
                                          str.replace(/\./g,'_thumb.');
-                                         var img_str ='/yijiayi'+data.picurl+"?"+(Math.random()*100);
+                                         var img_str ='/yijiyi'+data.picurl+"?"+(Math.random()*100);
                                          $(".web_logo").attr("src",img_str);
                                          $("#web_logo").val(data.picurl);
                                        }

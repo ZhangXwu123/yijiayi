@@ -1,0 +1,61 @@
+/*标题样式*/
+.headline{
+  background-color: #eeeeee;
+  width: 100%;
+  height: 64px;
+  padding-left: 43px;
+  padding-top: 15px;
+  font-size: 28px;
+  margin-bottom: 60px;
+}
+.headline span{
+  display: inline-block;
+}
+.headline .red{
+  color: #e5004f;
+  border-right: 1px solid #494949;
+  padding-right: 10px;
+  height: 40px;
+}
+.headline .english{
+  margin-left: 10px;
+}
+/*容器样式*/
+.vessel{
+  padding: 0 48px 83px 48px;
+}
+/*图片样式*/
+.vessel ul{
+  width: 987px;
+}
+.vessel ul li{
+  width: 480px;
+  height: 365px;
+  text-align: center;
+  margin-bottom: 28px;
+  display: inline-block;
+}
+.vessel ul li:nth-child(odd){
+  margin-right: 19px;
+}
+.vessel ul li div:first-child{
+  width: 480px;
+  height: 320px;
+  margin-bottom: 20px;
+}
+.vessel ul li div:last-child{
+  font-size: 28px;
+}
+/*公司名称*/
+.company_name img{
+  display: inline-block;
+  margin-top: 91px;
+  margin-bottom: 64px;
+}
+/*公司简介文字样式*/
+.text{
+  width: 100%;
+  height: 585px;
+  padding: 0 48px 54px 48px;
+}
+

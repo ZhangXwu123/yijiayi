@@ -1,0 +1,44 @@
+.student_list .item{
+    padding-top:80px;
+    padding-bottom: 60px;
+    color: #4d4d4d;
+   font-size: 35px;
+}
+.student_list .item .img{
+    text-align: center;
+}
+.student_list .item img{
+    width: 250px;
+    height: 250px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    border: 1px solid #bebebe;
+}
+.student_list .item .student_name{
+    height: 70px;
+    margin: 60px 0 40px;
+    padding: 0 70px;
+}
+.student_list .item .student_name .name{
+    height:70px;
+    line-height: 70px ;
+}
+.student_list .item .student_name a{
+    display: inline-block;
+    text-align: center;
+    font-size: 35px ;
+    line-height: 2;
+    background: #f85959;
+    color: #ffffff;
+    border-radius: 35px;
+    width: 240px;
+    height: 70px;
+    vertical-align: top;
+}
+.student_list .item .student_introduce{
+    padding: 40px 20px;
+    font-size: 30px;
+    border-bottom: 3px solid #bebebe;
+    border-top: 3px solid #bebebe;
+}

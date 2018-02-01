@@ -1,0 +1,24 @@
+.distribution{
+    background: #f2f2f2;
+}
+.content_fx{
+    padding: 30px 20px;
+}
+.content_fx img{
+    width: 100%;
+    margin-bottom: 50px;
+}
+.content_info {
+    text-align: left;
+    font-size: 50px;
+    color: #818181;
+    padding: 20px;
+}
+.info_title .name{
+    color: #e5004f;
+}
+.info_detail{
+    font-size: 30px;
+    color: rgb(58, 58, 58);
+    line-height: 1.2;
+}

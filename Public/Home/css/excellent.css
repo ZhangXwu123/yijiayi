@@ -1,0 +1,31 @@
+.headline{
+    padding: 45px 0;
+    text-align: center;
+}
+.headline h3{
+    display: inline-block;
+    font-size: 35px ;
+    line-height: 2;
+    background: #f85959;
+    color: #ffffff;
+    border-radius: 35px;
+    width: 240px;
+    height: 70px;
+}
+.content{
+    border-top: 6px solid #bebebe;
+    border-bottom: 6px solid #bebebe;
+    background: #f6f6f6;
+    padding: 50px 24px 10px;
+    font-size: 0;
+}
+.content img{
+    margin: 0 20px 40px;
+}
+.content img.vertical{
+    width: 476px;
+    height: 690px;
+}
+.content img.horizontal{
+    width: 992px;
+}

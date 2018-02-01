@@ -23,7 +23,7 @@ class ConfigController extends CommonController {
                             $this->addup();
                 }
                 if ($upload == 1 && !empty($_FILES)) { //上传
-                            $result = $this->uplodes($_FILES, "logo",0, 220, 80, 'JCHK/logo');
+                            $result = $this->uplodes($_FILES, "logo",0, 220, 80, 'YiJiaYi/logo');
                             if ($result[0] > 0) {
                                     exit(json_encode(array("error" => 1, "errortxt" => $result[1])));
                             }

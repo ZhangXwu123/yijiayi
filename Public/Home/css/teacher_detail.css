@@ -1,0 +1,89 @@
+/*图片*/
+.team{
+  width: 1080px;
+  height: 420px;
+}
+/*文字介绍*/
+.text{
+  margin-top: 95px;
+  margin-bottom: 102px;
+}
+.text .name{
+  font-size: 65px;
+}
+.text .introduce{
+  font-size: 30px;
+}
+/*----------------------*/
+/*老师介绍*/
+  /*老师头像*/
+  .teacher{
+    margin-top: 83px;
+  }
+  .teacher .pic{
+     width: 246px;
+     height: 246px;
+     margin: 0 auto;
+   }
+  /*名称*/
+  .teacher .name{
+    width: 940px;
+    margin: 0 auto;
+    margin-top: 84px;
+    text-align: center;
+  }
+  .teacher .name .teacher_name{
+    font-size: 40px;
+    margin-bottom: 65px;
+  }
+  .teacher .name .btn.btn-red.border35,.works_show .btn.btn-red.border35,.advisory_teacher .btn.btn-red.border35{
+    width: 235px;
+    height: 83px;
+    line-height: 70px;
+    font-size: 35px;
+  }
+  /*介绍*/
+.teacher .teacher_introduce{
+  width: 100%;
+  background-color: #f6f6f6;
+  padding: 53px 19px;
+  font-size: 30px;
+  margin-top: 80px;
+  border-bottom: 1px solid #bebebe;
+  border-top: 1px solid #bebebe;
+}
+
+  /*作品展示*/
+.works_show{
+  text-align: center;
+  margin-bottom: 111px;
+}
+.works_show .btn{
+  margin-top: 64px;
+  margin-bottom: 90px;
+}
+.works_show img{
+  width: 700px;
+  height:1020px ;
+  display: block;
+  margin: 0 auto;
+}
+.works_show img:nth-child(3){
+  margin: 43px auto;
+}
+  /*咨询老师*/
+.advisory_teacher {
+  text-align: center;
+}
+ .advisory_teacher .btn{
+   margin-bottom: 55px;
+ }
+.advisory_teacher .num,.advisory_teacher div:last-child{
+  font-size: 35px;
+}
+.advisory_teacher img{
+  margin-top: 35px;
+  margin-bottom: 27px;
+  width: 414px;
+  height: 414px;
+}

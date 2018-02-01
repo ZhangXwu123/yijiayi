@@ -26,7 +26,7 @@
                         <tr>
                             <td bgcolor="#e1e1e1" style="text-align: left; padding: 15px;"><strong>广告缩略图</strong></td>
                             <td bgcolor="#e1e1e1" style="text-align: left; padding: 15px;"><strong>广告分类</strong></td>
-                            <td bgcolor="#e1e1e1"><strong>广告标识</strong></td>
+                            <td bgcolor="#e1e1e1" style="text-align: left; padding: 15px;"><strong>广告标识</strong></td>
                             <td bgcolor="#e1e1e1" style="text-align: left; padding: 15px;"><strong>所属（站点）栏目</strong></td>
                             <td bgcolor="#e1e1e1"><strong>排列排序</strong></td>
                             <td bgcolor="#e1e1e1"><strong>时间</strong></td>

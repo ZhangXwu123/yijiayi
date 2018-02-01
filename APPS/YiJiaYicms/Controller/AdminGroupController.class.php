@@ -266,7 +266,7 @@ class AdminGroupController extends CommonController{
                 
                         
                 if ($upload == 1 && !empty($_FILES)) { //上传
-                            $result = $this->uplodes($_FILES, date("YmdHis",thistime).$this->getRandChar(2),0, 220, 80, 'JCHK/headpic');
+                            $result = $this->uplodes($_FILES, date("YmdHis",thistime).$this->getRandChar(2),0, 220, 80, 'YiJiaYi/headpic');
                             if ($result[0] > 0) {
                                     exit(json_encode(array("error" => 1, "errortxt" => $result[1])));
                             }

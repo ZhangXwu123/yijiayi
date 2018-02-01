@@ -1,0 +1,63 @@
+.show .img {
+     text-align: center;
+     padding: 60px 0 30px;
+}
+.show .img img {
+    width: 250px;
+    height: 250px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+}
+.show .datum{
+    height: 70px;
+    text-align: center;
+    font-size: 0;
+    color: #636363;
+}
+.show .datum div{
+    font-size: 35px;
+    line-height: 70px;
+    margin: 0 45px;
+    display: inline-block;
+}
+.show .headline{
+    text-align: center;
+}
+.show .topic{
+    display: inline-block;
+    text-align: center;
+    font-size: 35px ;
+    line-height: 2;
+    background: #f85959;
+    color: #ffffff;
+    border-radius: 35px;
+    width: 240px;
+    height: 70px;
+    vertical-align: top;
+    margin: 45px 0;
+}
+.show .student_introduce{
+    border-top: 3px solid #bebebe;
+    border-bottom: 3px solid #bebebe;
+    background: #f6f6f6;
+}
+.show .student{
+    padding: 30px 20px;
+    font-size: 30px;
+    color: #4d4d4d;
+}
+.show .product{
+    padding: 70px 50px 30px;
+}
+.show .product img{
+    width: 980px;
+    margin-bottom:40px;
+}
+.show .cert{
+    padding: 60px 0 10px;
+}
+.show .cert img{
+    width: 100%;
+    margin-bottom: 30px;
+}

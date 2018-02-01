@@ -168,7 +168,7 @@ class ColumnController extends CommonController{
                 }
 
                 if ($upload == 1 && !empty($_FILES)) { //上传
-                            $result = $this->uplodes($_FILES, date("YmdHis",thistime).$this->getRandChar(2),0, 0, 0, 'JCHK/column');
+                            $result = $this->uplodes($_FILES, date("YmdHis",thistime).$this->getRandChar(2),0, 0, 0, 'YiJiaYi/column');
                             if ($result[0] > 0) {
                                     exit(json_encode(array("error" => 1, "errortxt" => $result[1])));
                             }
@@ -374,7 +374,7 @@ class ColumnController extends CommonController{
                 }
 
                 if ($upload == 1 && !empty($_FILES)) { //上传
-                            $result = $this->uplodes($_FILES, date("YmdHis",thistime).$this->getRandChar(2),0, 0, 0, 'JCHK/column');
+                            $result = $this->uplodes($_FILES, date("YmdHis",thistime).$this->getRandChar(2),0, 0, 0, 'YiJiaYi/column');
                             if ($result[0] > 0) {
                                     exit(json_encode(array("error" => 1, "errortxt" => $result[1])));
                             }

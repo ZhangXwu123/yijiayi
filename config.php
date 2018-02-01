@@ -1,3 +1,3 @@
 <?php 
-define("cfg_web_title","北京积成航空科技有限公司");  define("cfg_web_address","http://localhost/2018.01.13/index.php");  define("cfg_web_logo","/Public/upload/JCHK/logo/2018/20180115/logo.jpg");  define("cfg_web_keyworld","积成航空 积成");  define("cfg_web_description","北京积成航空科技有限公司");  define("cfg_web_tel","400-069-0696");  define("cfg_web_link","");  define("cfg_web_img_url","");  define("cfg_web_footinfo","CopyRight @ 2016-2017 北京积成航空科技有限公司-www.integration.com All Rigths Reserved ");  define("cfg_web_beian","京ICP备150012854号-1");  
+define("cfg_web_title","壹加壹美术教育");  define("cfg_web_address","index.php");  define("cfg_web_logo","/Public/upload/YiJiaYi/logo/2018/20180201/logo.png");  define("cfg_web_keyworld","壹加壹美术教育");  define("cfg_web_description","壹加壹美术教育");  define("cfg_web_tel","400-069-0696");  define("cfg_web_footinfo","CopyRi版权所有 北京壹加壹卓越文化创意产业有限公司");  define("cfg_web_beian","京ICP备14045042号-1 ");  
  ?>

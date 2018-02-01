@@ -5,40 +5,74 @@ To change this template file, choose __PUBLIC__/Home/tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
+<head lang="en">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content=" user-scalable=no"/>
         <meta charset="UTF-8">
         <meta name="description" content="<?php echo $wdescription; ?>">
         <meta name="keywords" content="<?php echo $wkeyworld; ?>">
         <title><?php echo $btitle; ?></title>
-        <link href="__PUBLIC__/Home/css/css.css"  rel="stylesheet" type="text/css" />
-        <link href="__PUBLIC__/Home/tool/laydate/need/laydate.css" rel="stylesheet" type="text/css" />
-        <script src="__PUBLIC__/Home/javascript/jquery-1.12.3.min.js"></script>
-        <script src="__PUBLIC__/Home/javascript/javascript.js"></script>
-        <script type="text/javascript" src="__PUBLIC__/Home/tool/laydate/laydate.js"></script>
-    </head>
-    <body>
-            <div class="header">
-                <!--头部-->
-                <div class="head-top wrap">
-                    <div class="logo-img">
-                        <a href="<?php echo $rootURL; ?>"><img src="/yijiayi<?php echo $logo; ?>"/></a>
-                    </div>
-                    <div class="nav">
-                            <ul class="ul-nav">
-                               <?php echo $nav;?>
-                            </ul>
-                    </div>
-                    <div class="login-reg">
-                        <?php if(!$login_status){ ?>
-                        <a class="a1" href="javascript:;" onclick="clickReg();">注册</a>
-                        <a href="javascript:;" onclick="clickLogin();">登录</a>
-                        <?PHP }else{ ?>
-                        <a class="a1" href="<?php echo $LoginOut; ?>">已登录，退出</a>
-                        <?php } ?>
-                    </div>
-                    <div class="cl"></div>
+        <link rel="stylesheet" href="__PUBLIC__/Home/css/base.css"/>
+        <link rel="stylesheet" href="__PUBLIC__/Home/css/index.css"/>
+        <link rel="stylesheet" href="__PUBLIC__/Home/css/swiper.css">
+        <script src="__PUBLIC__/Home/javascript/jquery-1.11.3.min.js"></script>
+        <script src="__PUBLIC__/Home/javascript/swiper.min.js"></script>
+        <!-- Initialize Swiper -->
+        <script src="__PUBLIC__/Home/javascript/index.js"></script>
+    
+        <script>
+            function changeViewport() {
+                // UI-width ：WebApp布局宽度
+                // device-width ：屏幕分辨率宽度
+                // target-densitydpi = UI-width / device-width * window.devicePixelRatio * 160;
+                var uiWidth = 1080,
+                    deviceWidth = (window.orientation == 90 || window.orientation == -90) ? window.screen.height : window.screen.width;
+                devicePixelRatio = window.devicePixelRatio || 1;
+                var myScale = deviceWidth / uiWidth;
+                var targetDensitydpi = uiWidth / deviceWidth * devicePixelRatio * 160;
+                //alert(uiWidth+","+deviceWidth+","+devicePixelRatio+","+myScale+","+targetDensitydpi);
+                var viewportContent = "initial-scale=" + myScale + ", maximum-scale=" + myScale + ", minimum-scale=" + myScale + ',target-densitydpi=' + targetDensitydpi + ', width=device-width, user-scalable=no';
+                //var viewportContent = "initial-scale=" + myScale + ", maximum-scale=" + myScale + ", minimum-scale=" + myScale + ', width=device-width, user-scalable=no';
+                document.querySelector('meta[name=viewport]').attributes['content'].value = viewportContent;
+            }
+            window.addEventListener("orientationchange", function () {
+                // Announce the new orientation number
+                changeViewport();
+            }, false);
+            changeViewport();
+            $(function(){
+                $("#menu_ct").on("touchstart click",function(e){
+                    e.stopPropagation();
+                });
+                $("#menuEvent").click(function(e){
+                    e.stopPropagation();
+                    $("#menu").show();
+                    return false;
+                });
+                $(document).on("click  touchstart",function(){
+                    $("#menu").hide();
+                });
+            })
+        </script>
+</head>
+<body>
+    
+<div class="bd-container">
+    <!--上操作栏-->
+    <header>
+        <!-- 侧边栏 按钮-->
+        <nav class="sidebar" id="menuEvent">
+                <img src="__PUBLIC__/Home/tool/svg/header_menu.svg"/>
+        </nav>
+        <div id="menu">
+            <div class="menu" id="menu_ct">
+                <img src="__PUBLIC__/Home/images/menu_header.jpg" alt="">
+                <div class="menu_list">
+                    <?php echo $nav; ?>
                 </div>
             </div>
+        </div>
+        <a href="<?php echo $rootURL; ?>"><img src="<?php echo $logo; ?>" class="img-title ele-center"/></a>
+    </header>
+    <!--上操作栏结束-->

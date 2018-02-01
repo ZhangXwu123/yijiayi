@@ -1,0 +1,457 @@
+/*颜色*/
+.bule{
+  color: #F6584B;
+  font-size: 66px;
+  font-weight: 500;
+  margin-bottom: 70px;
+}
+.brown{
+  color:#595959;
+}
+
+.middeo{
+  width: 965px;
+  margin: 0 auto;
+}
+.middeo1{
+  width: 850px;
+  margin: 0 auto;
+}
+.circle{
+  width: 80px;
+  height: 80px;
+  border: 2px solid #595959;
+  color: #F6584B;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 77px;
+  font-size: 45px;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+.varied{
+  vertical-align: middle;
+  font-size: 40px;
+}
+img{
+  width: 100%;
+}
+.name{
+  margin-bottom: 165px;
+}
+.one{
+  width: 819px;
+  height: 484px;
+  margin: 0 auto;
+  margin-bottom: 143px;
+}
+.culture{
+  margin-bottom: 51px;
+}
+.major{
+  width: 965px;
+  margin: 0 auto 126px auto;
+}
+.major div{
+  color: #F6584B;
+  font-size: 66px;
+  font-weight: 500;
+  margin-bottom: 37px;
+}
+.environment{
+  width: 965px;
+  margin: 0 auto 107px auto;
+}
+.environment div:first-child{
+  color: #F6584B;
+  font-size: 66px;
+  font-weight: 500;
+  margin-bottom: 71px;
+}
+.environment .pic{
+  width:681px;
+  margin: 0 auto;
+}
+.two{
+  margin-bottom: 119px;
+}
+.course_arrangement{
+  width: 965px;
+  margin: 0 auto;
+}
+.course_arrangement div{
+  color: #F6584B;
+  font-size: 66px;
+  font-weight: 500;
+  margin-bottom: 63px;
+}
+.course_arrangement ul li{
+  margin-bottom: 63px;
+}
+.three{
+  margin-bottom: 70px;
+}
+
+/*教学团队*/
+.teach_team{
+  padding-bottom: 80px;
+  border-bottom: 3px solid #F6584B;
+}
+.teach_team ul li{
+  display: inline-block;
+  width: 474px;
+  margin-bottom: 50px;
+}
+.teach_team ul li>*{
+  display: inline-block;
+}
+.teach_team .text{
+  width: 780px;
+  margin: 0 auto;
+}
+.teach_team .text .white{
+  width: 100%;
+  height: 47px;
+  border: 1px solid #F6584B;
+}
+.teach_team .text h4{
+  color: #ffffff;
+  background-color: #F6584B;
+  height: 95px;
+  font-size: 72px;
+  font-weight: 200;
+  text-align: center;
+}
+.teach_team .text h3{
+  margin-top: 60px;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 50px;
+}
+
+/*师资考核*/
+.assess{
+  padding-bottom: 80px;
+  border-bottom: 20px solid #F6584B;
+  margin-bottom: 152px;
+}
+.assess ul li{
+  margin-bottom: 80px;
+}
+.assess ul li img{
+  width: 185px;
+  height: 185px;
+  vertical-align: top;
+  margin-right: 40px;
+}
+.assess ul li *{
+  display: inline-block;
+}
+.assess .brown{
+  width: 717px;
+  height: 200px;
+}
+.assess .brown h3{
+  font-weight: 600;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+.assess .brown h4{
+  font-size: 40px;
+  width: 700px;
+  height: 105px;
+  font-weight: 200;
+  line-height: 60px;
+}
+/*教学三大部*/
+.three_ministries{
+  border-bottom:  20px solid #F6584B;
+}
+.three_ministries .name{
+  width: 644px;
+  height: 162px;
+  border: 2px solid #F6584B;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto 78px auto;
+
+}
+.three_ministries .name p:first-child{
+  width:100%;
+  height: 90px;
+  background-color: #F6584B;
+  font-size: 65px;
+}
+.three_ministries .name p:nth-child(2){
+  width: 100%;
+  height: 25px;
+}
+.three_ministries .name p:last-child{
+  width: 100%;
+  height: 45px;
+  background-color: #F6584B;
+  font-size: 35px;
+}
+.three_ministries .class,.three_ministries .school{
+  color: #F6584B;
+  font-size: 38px;
+  margin-bottom: 80px;
+}
+.three_ministries ul li{
+  display: inline-block;
+  margin-right: 58px;
+}
+.three_ministries h6{
+  width: 700px;
+  margin: 0 auto 75px auto;
+  color: #F6584B;
+  font-size: 40px;
+  font-weight: 200;
+}
+
+
+
+
+
+/*教学模式*/
+.model_teaching{
+  margin-top: 119px;
+  border-bottom: 20px solid #F6914B;
+  padding-bottom: 61px;
+}
+.model_teaching div{
+  color: #F6914B;
+  font-size: 66px;
+  font-weight: 500;
+  margin-bottom: 80px;
+}
+.model_teaching ul{
+  margin-top: 50px;
+}
+.model_teaching ul li{
+  margin-top: 18px;
+}
+/*定制方向*/
+.custom_direction{
+  margin-top: 119px;
+  border-bottom: 20px solid #F6914B;
+  padding-bottom: 61px;
+}
+.custom_direction .middeo>div{
+  color: #F6914B;
+  font-size: 66px;
+  font-weight: 500;
+  margin-bottom: 80px;
+}
+.custom_direction ul{
+  margin-top: 80px;
+}
+.custom_direction ul li{
+  margin-bottom: 65px;
+}
+.bule_1,.brown_1{
+  display: inline-block;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 85px;
+  vertical-align: middle;
+  font-size: 50px;
+  margin-right: 10px;
+}
+.bule_1{
+  border: 2px solid #E53800;
+  color: #E53800;
+}
+.brown_1{
+  border: 2px solid #595959;
+  color: #595959;
+}
+.bule_2,.brown_2{
+  display: inline-block;
+  color: #fff;
+  width: 650px;
+  height: 90px;
+  border-radius: 0 50px 50px 0;
+  padding-left: 20px;
+  vertical-align: middle;
+  line-height: 90px;
+  font-size: 32px;
+}
+.bule_2{
+  background-color: #E53800;
+}
+.brown_2{
+  background-color: #898989;
+}
+
+
+/*定制方案*/
+
+.customize_solution .middeo>div{
+  color: #F6914B;
+  font-size: 66px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.customize_solution{
+  margin-top: 119px;
+  border-bottom: 20px solid #F6914B;
+  padding: 0 20px 60px 20px;
+}
+.customize_solution .middeo>p{
+  font-size: 45px;
+  padding-left: 25px;
+  margin-bottom: 60px;
+}
+.customize_solution h4{
+  text-align: center;
+  width: 470px;
+  height: 71px;
+  color: #E73700;
+  margin: 53px auto 33px auto;
+  font-size: 55px;
+  font-weight: 200;
+}
+.customize_solution h6{
+  width: 853px;
+  margin: 0 auto;
+  color: #595959;
+  font-size: 40px;
+}
+
+
+
+/*文化课安排*/
+.cultural_plan{
+  margin-top: 119px;
+  border-bottom: 20px solid #F6914B;
+  padding-bottom: 20px;
+}
+.cultural_plan .middeo1 .name{
+  color: #F6914B;
+  font-size: 66px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.cultural_plan .middeo1>p{
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+.cultural_plan .middeo1>h2{
+  width: 550px;
+  border-left: 8px solid #F6914B;
+  color: #F6914B;
+  padding-left: 20px;
+  font-size: 66px;
+  font-weight: 200;
+  margin-bottom: 67px;
+}
+.cultural_plan .middeo1 ul li{
+  color: #595959;
+  margin-bottom: 37px;
+  font-size: 30px;
+}
+.cultural_plan .middeo1 ul li b{
+  margin-right: 50px;
+}
+
+/*报考服务*/
+.serve{
+  margin-top: 119px;
+  border-bottom: 20px solid #F6914B;
+  padding-bottom: 20px;
+}
+.serve .middeo1 .name{
+  color: #F6914B;
+  font-size: 66px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.serve .middeo1 ul{
+  border: 1px solid #F6914B;
+  margin-bottom: 30px;
+}
+.serve .middeo1 ul li{
+  padding: 50px 30px;
+  font-size: 30px;
+  height: 250px;
+}
+.serve .middeo1 ul li div:first-child{
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.serve .middeo1 ul li:nth-child(odd){
+  color:  #595959;
+}
+.serve .middeo1 ul li:nth-child(even){
+  color:  #fff;
+  background-color: #F6914B;
+}
+.serve .call{
+  width: 905px;
+  height: 410px;
+  padding: 50px 50px 40px 50px;
+  color: #595959;
+  background-color: #F6914B;
+  font-size: 40px;
+  margin-bottom: 120px;
+}
+.serve .call div{
+  height: 70px;
+}
+/*肆*/
+.four .middeo1{
+  font-size: 47px;
+  color:#F6914B;
+}
+.four .name{
+  width: 770px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  font-weight: 200;
+  border: 3px solid #F6914B;
+  margin-bottom: 50px;
+  margin-top: 150px;
+}
+.four .name h5,.four .name h6{
+  background-color: #F5584C;
+}
+.four .name h5{
+  font-size: 75px;
+  font-weight: 200;
+}
+.four .name h6{
+  font-size: 44px;
+  font-weight: 200;
+  margin-top: 30px;
+}
+.four ul li{
+  display: inline-block;
+  vertical-align:top;
+}
+.four .ul1 li{
+  width: 380px;
+  height: 270px;
+  margin-bottom: 20px;
+}
+.four .ul1{
+  width: 775px;
+  margin: 0 auto;
+}
+/*伍*/
+.five{
+  padding-bottom:101px;
+}
+.five ul{
+  width: 997px;
+  margin:108px  auto 0 auto;
+}
+.five ul li{
+  margin-bottom: 23px;
+}
